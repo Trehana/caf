@@ -19,7 +19,7 @@ default: &default
 
 development:
   <<: *default
-  database: caffa_development
+  database: zp_caffa
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: caffa_production
+  database: zp_caffa
   username: caffa
   password: <%= ENV['CAFFA_DATABASE_PASSWORD'] %>
