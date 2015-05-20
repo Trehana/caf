@@ -45,3 +45,8 @@ end
 
 
 gem 'bootstrap-sass', '~> 3.3.4'
+
+gem 'paperclip'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+
+gem 'state_machines-activerecord'
