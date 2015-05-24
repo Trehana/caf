@@ -21,9 +21,16 @@
   </div>
   <div class="field">
     <%= f.label :meta_tags %><br>
-    <%= f.text_field :meta_tags %>
+    <%= f.text_field :meta_tags, "data-role" => "tagsinput" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+
+
+  <div class="btn-group" role="group" aria-label="Actions">
+    <%= f.submit class: "btn btn-success" %>
+    <button type="button" class="btn btn-primary">Save draft</button>
+    <%= link_to 'Destroy', @page, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  </div>
+
   </div>
 <% end %>

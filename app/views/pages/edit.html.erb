@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @page %> |
-<%= link_to 'Back', pages_path %>
+<div class="btn-group" role="group">
+  <%= link_to 'Show', @page, class: 'btn btn-default' %>
+  <%= link_to 'Back', pages_path, class: 'btn btn-default' %>
+</div>

@@ -46,9 +46,14 @@ group :development, :test do
 end
 
 
-gem 'bootstrap-sass', '~> 3.3.4'
-
+# Image and attachement handling
 gem 'paperclip'
+
+#CKEDITOR integration
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
+# Use state machine for states of CMS posts/pages
 gem 'state_machines-activerecord'
+
+# Boostrap in SASS
+gem 'bootstrap-sass', '~> 3.3.4'
