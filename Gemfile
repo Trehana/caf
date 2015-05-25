@@ -57,3 +57,5 @@ gem 'state_machines-activerecord'
 
 # Boostrap in SASS
 gem 'bootstrap-sass', '~> 3.3.4'
+
+gem 'nokogiri'

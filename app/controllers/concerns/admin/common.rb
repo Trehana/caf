@@ -11,7 +11,7 @@ module Admin
     # GET /pages
     # GET /pages.json
     def index
-      @resources = @resource_class.all
+      @resources = @resource_class.editors_content
     end
 
     # GET /pages/1

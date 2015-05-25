@@ -19,7 +19,7 @@
     <% @resources.each do |page| %>
       <tr>
         <td><%= page.title %></td>
-        <td><%= page.body %></td>
+        <td><%= Nokogiri::HTML(page.body).text %></td>
         <td><%= page.meta_tags %></td>
         <td>
           <%= link_to page, options = {title: t('common.view'), :target => '_blank', class: 'btn btn-default'} do %>
