@@ -2,6 +2,9 @@ module CommonContent
   extend ActiveSupport::Concern
 
   included do
+    extend FriendlyId
+    friendly_id :title, use: [:slugged, :finders]
+
     state_machine initial: :hidden do
       event :publish do
         transition draft: :published

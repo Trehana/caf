@@ -59,3 +59,9 @@ gem 'state_machines-activerecord'
 gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'nokogiri'
+
+#Friendly ID for SEO friendly slugs
+gem 'friendly_id', '~> 5.1.0'
+
+# SLIM Markup support
+gem "slim-rails"

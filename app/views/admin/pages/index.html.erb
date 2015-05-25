@@ -17,7 +17,7 @@
 
   <tbody>
     <% @resources.each do |page| %>
-      <tr>
+      <tr class="<%= page.state %>">
         <td><%= page.title %></td>
         <td><%= Nokogiri::HTML(page.body).text %></td>
         <td><%= page.meta_tags %></td>
