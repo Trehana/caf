@@ -2,15 +2,17 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @resource.title %>
+  <%= @page.title %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @resource.body %>
+  <%= @page.body %>
 </p>
 
 <p>
   <strong>Meta tags:</strong>
-  <%= @resource.meta_tags %>
+  <%= @page.meta_tags %>
 </p>
+
+<%= link_to 'Back', pages_path %>

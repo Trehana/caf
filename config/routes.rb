@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  resources :pages
+  resources :pages, only: [:show]
+
+  # Admin side
+  namespace :admin do
+    resources :pages do
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

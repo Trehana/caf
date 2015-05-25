@@ -20,4 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  common:
+    view: 'View'
+    edit: 'Edit'
+    delete: 'Delete'
+    state:
+      title_blank: 'Title cannot be blank'
+  page:
+    add: 'New page'
+    edit: 'Edit'
+    save_draft: 'Save draft'
+    publish: 'Publish'
+    delete: 'Delete'
+    messages:
+      deleted: 'Page deleted'
+      updated: 'Page was successfully updated.'
