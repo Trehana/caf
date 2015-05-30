@@ -65,3 +65,6 @@ gem 'friendly_id', '~> 5.1.0'
 
 # SLIM Markup support
 gem "slim-rails"
+
+# Navigation gem
+gem 'simple-navigation'
