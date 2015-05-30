@@ -1,0 +1,224 @@
+.wrap {
+	max-width:767px;
+}
+p {
+	font-size:14px;
+	line-height:20px;
+}
+#navigation {
+	ul {
+		li {
+			margin:0 20px;
+		}
+	}
+}
+#banner-navigation {
+	ul {
+		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			a {
+				font-size:14px;
+				line-height:14px;
+
+				img {
+					max-width:90%;
+					margin-top:10px !important;
+					margin-bottom:10px !important;
+				}
+			}
+		}
+	}
+}
+#footer-wrapper {
+	#footer {
+		background:url(#{$images}bg-dark.jpg);
+		min-height:30px;
+		padding-top:0;
+		
+		.wrap {
+			.mailing-wrapper, .footer-navigation, .social-wrapper {
+				float:none;
+				width:100%;
+			}
+
+			.mailing-wrapper {
+				.mailing {
+					padding-right:0;
+					border:none;
+					border-bottom:1px solid #999;
+					border-bottom:1px solid rgba(255,255,255,0.2);
+					min-height:30px;
+					padding-bottom:20px;
+				}
+				input[type="text"] {
+					width:50%;
+				}
+			}
+			.footer-navigation {
+				padding-right:0;
+				border:none;
+				border-bottom:1px solid #999;
+				border-bottom:1px solid rgba(255,255,255,0.2);
+				min-height:30px;
+				padding-bottom:0px;
+				overflow:hidden;
+			}
+		}
+	}
+}
+.social-wrapper {
+	.social {
+		.footer-logo {
+			text-align:center;
+			overflow:hidden;
+			padding-top:20px;
+
+			img, span {
+				float:none;
+				margin-left:0;
+			}
+			span {
+				width:100%;
+			}
+		}
+		.social-links {
+			padding-top: 20px;
+			text-align: center;
+			padding-bottom: 20px;
+		}
+	}
+}
+.content-coffee-news, .content-art-news {
+	.post {
+		padding:0px 25px;
+	}
+	.post-list{
+		padding:0 15px;
+	}
+}
+.content-coffee-news {
+	.post-list {
+		padding-right:0;
+	}
+}
+.content-art-news {
+	.post-list {
+		padding-left:0;
+	}
+}
+.post-list {
+	ul {
+		li {
+			a {
+				padding: 20px 10px;
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
+	}
+}
+.post-item {
+	.post-content {
+		p {
+			font-size:12px;
+			line-height:16px;
+		}
+	}
+	.post-meta {
+		.post-date {
+			font-size:12px;
+		}
+	}
+}
+.homepage {
+	.post-item {
+		.post-meta {
+			h4 {
+				font-size:20px;
+				line-height:22px;
+			}
+		}
+	}
+}
+.pagination {
+	ul {
+		li {
+			padding-right:20px;
+			margin-right:20px;
+		}
+	}
+}
+#banner {
+	.title {
+		.text1 {
+			font-size: 68px;
+			line-height: 68px;
+		}
+		.text2 {
+			font-size: 38px;
+			line-height: 35px;
+		}
+		.text3 {
+			font-size: 130px;
+			line-height: 130px;
+		}
+	}
+}
+.newspage {
+	#header-wrapper {
+		#banner {
+			.title {
+				.text3 {
+					margin-right: 170px;
+				}
+			}
+		}
+	}
+}
+.contactpage, .coffeeadventurepage {
+	#header-wrapper {
+		#banner {
+			.title {
+				.text3 {
+					top: 75px;
+				}
+			}
+		}
+	}
+}
+.cafe-list-post {
+	ul {
+		li {
+			.post-content {
+				max-height: 70px;
+				min-height: 70px;
+			}
+		}
+	}
+}
+.coffeeadventurepage {
+	#section-two {
+		h3 {
+			font-size: 20px;
+			line-height: 22px;
+			font-weight: 400;
+		}
+		p {
+			font-size: 14px;
+			line-height: 20px;
+		}
+	}
+}
+#partners-gallery {
+	padding-top:20px;
+	margin-bottom:40px;
+}
+.content-partners {
+	p {
+		padding-left:20px;
+		padding-right:20px;		
+	}
+}
+.content-racingcreatures {
+	padding-left:20px;
+	padding-right:20px;	
+}

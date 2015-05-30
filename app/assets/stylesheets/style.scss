@@ -1,0 +1,44 @@
+/*05-14-2015*/
+
+// import bootstrap
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "blueimp-gallery";
+@import "bootstrap-image-gallery";
+
+// import fonts
+@import "fonts";
+
+// import mixins
+@import "mixins";
+
+// import
+@import "layout";
+@import "buttons";
+@import "pages";
+
+/* Desktop Hires */
+@media (max-width: 1100px) {
+	//@import "960";
+}
+
+/* Desktop Lowres */
+@media (max-width: 960px) {
+	//@import "767";
+}
+
+/* Tablet */
+@media (max-width: 767px) {
+	@import "480";
+}
+
+/* Phone */
+@media (max-width: 480px) {
+	@import "320";
+}
+
+@media (max-height: 320px) {
+	#navigation ul li a {
+		padding:10px 15px;
+	}
+}

@@ -1,0 +1,216 @@
+.wrap {
+	padding:0 20px;
+}
+#tagline {
+	height:auto;
+
+	span {
+		padding:15px 0;
+		font-size:15px;
+		line-height:17px;
+	}
+}
+.section {
+	padding:50px 0;
+}
+#banner {
+	.title {
+		
+
+		.text1 {
+			font-size: 40px;
+			line-height: 40px;
+		}
+		.text2 {
+			font-size: 20px;
+			line-height: 20px;
+		}
+		.text3 {
+			font-size: 110px;
+			line-height: 110px;
+		}
+		.text4 {
+			margin-bottom:30px !important;
+			padding:0;
+		}
+	}
+}
+#banner-navigation {
+	ul {
+		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			height:120px;
+			a {
+				font-size:9px;
+				line-height:11px;
+
+				img {
+					margin-bottom:0;
+					margin-top:10px;
+				}
+			}
+		}
+	}
+	&.active {
+		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			height:110px !important;
+
+			img {
+				margin:0px auto !important;
+			}
+			&.show-sub {
+				height: 130px !important;
+  				margin-top: -10px;
+  				
+				
+			}
+		}
+	}
+}
+.homepage {
+	#banner-navigation {
+		ul {
+			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+				height:120px !important;
+				a {
+					font-size:9px;
+					line-height:11px;
+
+					img {
+						margin-top:10px !important;
+						margin-bottom:0px !important;
+					}
+				}
+			}
+		}
+
+		&.active {
+			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+				height:110px !important;
+
+				img {
+					margin:0px auto !important;
+				}
+				&.show-sub {
+					height: 130px !important;
+	  				margin-top: -10px;
+	  				
+					.sub {
+						height:auto;
+						padding:0;
+
+						li {
+							display:block;
+							width:100%;
+							text-align:left;
+						}
+						a {
+							font-size:12px;
+							display:block;
+							padding:10px;
+						}					
+					}
+				}
+			}
+		}
+	}
+
+}
+.homepage, .aboutuspage, .calendarpage, .newspage, .contactpage, .coffeeadventurepage, .partnerspage {
+	#header-wrapper {
+		min-height: 500px;
+	}
+}
+.footer-navitaion-wrapper {
+	.footer-navigation {
+		.col {
+			width:100%;
+			float:none;
+		}
+		ul {
+			li {
+				padding-left:0;
+			}
+		}
+	}
+}
+#category-navigation {
+	ul {
+		#btn-coffee-related, #btn-art-related, #btn-sponsor-events {
+			background:none;
+			a {
+				padding-top:70px;
+				font-size:12px;
+				line-height:16px;
+				min-width: 30px;
+				max-width: 100%;
+				background-size:50px;
+
+				&:hover {
+					background-size:50px;
+				}
+			}
+
+			
+			&.active {
+				a {
+					background-size:50px;
+				}
+			}
+			
+		}
+	}
+}
+#calendar-list{
+	ul {
+		li {
+			a {
+				.calendar-event {
+
+				}
+			}
+		}
+	}
+}
+.calendar-event {
+	.event-img {
+		img {
+			width: 34px;
+			height: 34px;
+		}
+	}
+	.event-date, .event-title {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	.event-address {
+		font-size: 8px;
+		line-height: 12px;
+	}
+}
+.btn-calendar {
+	padding:15px 0;
+	font-size: 12px;
+	line-height: 12px;
+
+	&.left-arrow, &.right-arrow {
+		background:none;
+	}
+}
+.calendar-navigation {
+	margin-bottom:20px;
+	.active-month {
+		font-size: 12px;
+		line-height: 12px;
+		padding: 15px 0;
+	}
+}
+#calendar-list {
+	margin-bottom:20px;
+}
+#event-gallery {
+	ul {
+		li {
+			width:50%;
+		}
+	}
+}

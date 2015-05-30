@@ -1,0 +1,538 @@
+.wrap {
+	max-width:480px;
+}
+.menu-icon {
+	display:block;
+}
+.section {
+	padding:50px 0;
+}
+#navigation {
+	@include transition;
+	z-index:100;
+	position:fixed;
+	left:-300px;
+	//left:0;
+	top:0;
+	width:300px;
+	padding: 0;
+	height: auto;
+	min-height: 100%;
+	background:#000;
+	@include box-shadow(#000000, 0, 0, 0.8, 7px);
+
+	.menu-title{
+		display:block;
+	}
+	ul{
+
+		li{
+			display:block;
+			float:none;
+			background:none;
+			border-bottom:1px solid #222;
+			text-align:left;
+			margin:0 !important;
+
+			a {
+				display:block;
+				padding: 15px;
+
+				&:hover {
+					background:rgba(255,255,255,0.1);
+				}
+			}
+		}
+	}
+
+	&.show{
+		left:0;
+	}
+}
+#banner {
+	.title {
+		padding-top:10px !important;
+		min-height:298px;
+		.text1, .text2, .text3, .text4 {
+			display:block;
+			text-align:center !important;
+			top:0 !important;
+			position:relative;
+			width:100% !important;
+			margin:0 !important;
+		}
+		.text4 {
+			margin-bottom:30px !important;
+			padding:0;
+		}
+	}
+}
+#tagline {
+	margin-top:50px;
+}
+#header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	background:#000;
+}
+#banner-navigation {
+	ul {
+		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			height:120px;
+			a {
+				font-size:10px;
+				line-height:12px;
+
+				img {
+					max-width:90%;
+					margin-top:0;
+					margin-bottom:0;
+				}
+			}
+		}
+	}
+	&.active {
+		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			height:120px !important;
+
+			img {
+				margin:0px auto !important;
+			}
+			&.show-sub {
+				height: 140px !important;
+  				margin-top: -10px;
+
+  				.banner-nav-link {
+  					padding-top:10px;
+  				}
+  				
+				.sub {
+					height:auto;
+					padding:0;
+
+					li {
+						display:block;
+						width:100%;
+						text-align:left;
+					}
+					a {
+						font-size:12px;
+						display:block;
+						padding:10px;
+					}					
+				}
+			}
+		}
+	}
+}
+.homepage {
+	#banner-navigation {
+		ul {
+			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+				height:140px !important;
+				a {
+					font-size:10px;
+					line-height:12px;
+
+					img {
+						max-width:90%;
+						margin:10px auto 10px !important;
+					}
+				}
+
+			}
+		}
+
+		&.active {
+			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+				height:120px !important;
+
+				img {
+					margin:0px auto !important;
+				}
+				&.show-sub {
+					height: 140px !important;
+	  				margin-top: -10px;
+	  				
+					.sub {
+						height:auto;
+						padding:0;
+
+						li {
+							display:block;
+							width:100%;
+							text-align:left;
+						}
+						a {
+							font-size:12px;
+							display:block;
+							padding:10px;
+						}					
+					}
+				}
+			}
+		}
+	}
+
+}
+.homepage {
+	#header-wrapper {
+		min-height:530px;
+  		background-size: contain;
+
+		.title {
+  			min-height:30px;
+		}
+	}
+}
+.aboutuspage, .calendarpage, .newspage, .contactpage, .coffeeadventurepage, .partnerspage {
+	#header-wrapper {
+		min-height:430px;
+  		background-size: cover;
+
+		.title {
+  			min-height:298px;
+		}
+	}
+}
+.content-who-we-are, .content-what-we-do {
+	.col-1 {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+
+		img {
+			margin-bottom:20px;
+		}
+	}
+	.col-2 {
+		float: none;
+		width: 100%;
+	}
+}
+.wrap-column-3 {
+	.col {
+		float:none;
+		width:100%;
+		margin-bottom:20px;
+		border:none;
+		padding:0;
+		margin:0;
+		margin-bottom:40px;
+
+		.post {
+			padding:0;
+		}
+		.post-list {
+			padding:25px 0;
+			border:none;
+		}
+	}
+}
+.content-coffee-news, .content-art-news {
+	.post-image {
+		border:none;
+		padding:0;
+
+		.category {
+			left:0;
+		}
+	}
+}
+.btn-calendar {
+	font-size:14px;
+	line-height:14px;
+	padding: 15px 10px;
+}
+.calendar-navigation {
+	.active-month {
+		font-size:14px;
+		line-height:14px;
+		padding: 15px 10px;
+	}
+}
+.calendar-event {
+	position:relative;
+	width:100%;
+	overflow:hidden;
+	
+	.event-img {
+		width:12%;
+		display:inline-block;
+		vertical-align:middle;
+		padding:15px 0;
+		text-align:center;
+		img {
+			width:44px;
+			height:44px;
+			@include border-radius(42px);
+		}
+
+		&.blue {
+			img {
+				border:3px solid $lightBlueColor;
+			}
+		}
+		&.purple {
+			img {
+				border:3px solid $purpleColor;
+			}
+		}
+		&.gold {
+			img {
+				border:3px solid $goldColor;
+			}
+		}
+	}
+	.event-date {
+		font-size:18px;
+		line-height:20px;
+	}
+	.event-title {
+		font-size:18px;
+		line-height:20px;
+	}
+	.event-address {
+		font-size:12px;
+		line-height:16px;
+	}
+}
+#footer-wrapper {
+	#footer {
+		background:url(#{$images}bg-dark.jpg);
+		min-height:30px;
+		padding-top:0;
+		.wrap {
+			.mailing-wrapper {
+				input[type="text"] {
+					width:100%;
+				}
+				.mailing {
+					p {
+						margin-bottom:5px;
+					}
+				}
+			}
+			.mailing-wrapper, .footer-navigation, .social-wrapper {
+				float:none;
+				width:100%;
+			}
+			.mailing-wrapper {
+				.mailing {
+					padding-right:0;
+					border:none;
+					border-bottom:1px solid #999;
+					border-bottom:1px solid rgba(255,255,255,0.2);
+					min-height:30px;
+					padding-bottom:20px;
+				}
+				input[type="text"] {
+					width:50%;
+				}
+			}
+			.footer-navigation {
+				padding-right:0;
+				border:none;
+				border-bottom:1px solid #999;
+				border-bottom:1px solid rgba(255,255,255,0.2);
+				min-height:30px;
+				padding-bottom:0px;
+				overflow:hidden;
+			}
+		}
+	}
+}
+.social-wrapper {
+	.social {
+		.footer-logo {
+			text-align:center;
+			overflow:hidden;
+			padding-top:20px;
+
+			img, span {
+				float:none;
+				margin-left:0;
+			}
+			span {
+				width:100%;
+			}
+		}
+		.social-links {
+			padding-top: 20px;
+			text-align: center;
+			padding-bottom: 20px;
+		}
+	}
+}
+#category-navigation {
+	margin-bottom:40px;
+	ul {
+
+
+		#btn-coffee-related, #btn-art-related, #btn-sponsor-events {
+			padding-top:40px;
+
+			a {
+				padding-top:110px;
+				font-size:16px;
+				line-height:20px;
+				min-width: 30px;
+				max-width: 100%;
+				background-size:80px;
+
+				&:hover {
+					background-size:80px;
+				}
+			}
+
+			
+			&.active {
+				a {
+					background-size:80px;
+				}
+			}
+			
+		}
+	}
+}
+.news-post-list {
+	ul {
+		li {
+			width:100%;
+
+			&:nth-child(even) {
+				margin-left:0;
+			}
+		}
+	}
+}
+.pagination {
+	ul {
+		li {
+			padding-right: 10px;
+			margin-right: 10px;
+		}
+	}
+}
+.content-aboutus {
+	.col-1, .col-2 {
+		display:block;
+		width:100%;
+		margin-right:0;
+		margin-bottom:20px;
+	}
+}
+#calendar-view {
+	table {
+		th {
+			padding:5px;
+			font-size:20px;
+			line-height:20px;
+			font-weight:300;
+		}
+
+		td {
+			height:80px;
+			padding:5px;
+			font-family: 'Lato', sans-serif;
+			font-size:14px;
+			line-height:14px;
+			font-weight:300;
+
+			.day {
+				bottom:5px;
+				left:5px;
+			}
+		}
+	}
+
+	.event-day {
+		padding:3px;
+		font-size:10px;
+		line-height:12px;
+		font-weight:400;
+	}
+}
+.map {
+	.col-1, .col-2 {
+		width:100%;
+		float:none;
+		margin-bottom:20px;
+	}
+	.contact-info {
+		padding-left:0;
+	}
+}
+.cafe-list-post {
+	
+	ul {
+		li {
+			width:100%;
+			margin:0 0 20px;
+			float:none;
+		}
+	}
+	
+}
+#cafe-list {
+	h3 {
+		margin:0 0 10px;
+		padding:0;
+	}
+	.cafe-list-sorting {
+		position: relative;
+		top: 0;
+		right:0;
+		width: 100%;
+
+		.sort-location, .sort-by {
+			width:100%;
+			float:none;
+			margin-bottom:10px;
+
+			.label {
+				width:100%;
+				float:none;
+				text-align:left;
+				padding:0;
+				margin-bottom:5px;
+			}
+
+			select {
+				width:100%;
+				float:none;
+			}
+		}
+	}
+}
+.coffeeadventurepage {
+	#section-two {
+		h3 {
+			font-size: 30px;
+			line-height: 32px;
+			font-weight: 300;
+		}
+	}
+}
+#partners-gallery {
+	padding-top:0;
+	margin-bottom:30px;
+}
+
+.modal-info-content {
+	.col-img {
+		width:100%;
+		float:none;
+		text-align:center;
+	}
+	.col-info {
+		width:100%;
+		float:none;
+
+		.name, .position {
+			text-align:center;	
+		}
+	}
+}

@@ -1,0 +1,84 @@
+
+///*  ==================================================
+//    :: variables
+//    ================================================== */
+
+//fonts
+//font-family: 'Lato', sans-serif;
+//font-family: 'Roboto Slab', serif;
+//font-family: 'Montserrat', sans-serif;
+
+
+
+//size
+$fontSize: 100%;
+$lineHeight: 20px;
+
+//font colors
+$lightColor:#777;
+$darkColor:#555;
+
+//colors
+$greenColor:#86AE4A;
+$greenDarkColor:#46602B;
+$blueColor:#417B92;
+$blueDarkColor:darken($blueColor, 3);
+$lightBlueColor:#3598B5;
+$purpleColor:#7F4056;
+$goldColor:#DEA150;
+$redColor:#D90000;
+$brownColor:#664B36;
+
+//link colors
+$linkColor:#999;
+$linkHover:#86AE4A;
+
+//image folder
+$images:"";
+//usage #{$images}
+
+/* prefixed */
+@mixin border-radius($radius: 3px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($color: #000000, $alfa: 0.25, $x:0px, $y:2px, $area:4px) {
+  -webkit-box-shadow: rgba($color,$alfa) $x $y $area;
+  -moz-box-shadow: rgba($color,$alfa) $x $y $area;
+  box-shadow: rgba($color,$alfa) $x $y $area;
+}
+
+@mixin box-shadow-inset($color: #000000, $alfa: 0.25, $x:0px, $y:2px, $area:4px) {
+  -webkit-box-shadow: rgba($color,$alfa) $x $y $area inset;
+  -moz-box-shadow: rgba($color,$alfa) $x $y $area inset;
+  box-shadow: rgba($color,$alfa) $x $y $area inset;
+}
+
+
+@mixin transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@mixin box-sizing($box-sizing: border-box){
+  -moz-box-sizing: $box-sizing;
+  -webkit-box-sizing: $box-sizing;
+  box-sizing: $box-sizing;
+}
+
+@function em($target, $context: $base-font-size) {
+   @if $target == 0 { @return 0 }
+   @return $target / $context + 0em;
+}
+
+$base-font-size: 16px;
+
+@mixin fontSize($size:20px){
+	line-height:$size + 4px;
+	font-size:em($size);
+}

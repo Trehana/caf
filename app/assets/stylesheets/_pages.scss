@@ -1,0 +1,528 @@
+.homepage {
+	#header-wrapper {
+		background:url(#{$images}bg-home-banner-pattern.jpg) repeat-x bottom center;
+		min-height:560px;
+
+	}
+	#banner-navigation {
+		ul {
+			
+			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+				height:220px !important;
+
+				img {
+					margin:30px auto 40px !important;
+				}
+			}
+		}
+		&.active {
+			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+				height:140px !important;
+
+				img {
+					margin:0px auto !important;
+				}
+				&.show-sub {
+					height: 180px !important;
+	  				margin-top: -20px;
+	  				
+	  				a {
+	  					border-bottom-color:rgba(255,255,255,0);
+	  					margin-bottom:-1px;
+	  				}
+					
+					.sub {
+						height: 50px;					
+					}
+				}
+			}
+		}
+	}
+	.post-item {
+		.post-meta {
+			h4 {
+				font-size:24px;
+				line-height:26px;
+				margin-bottom:5px;
+				font-weight:400;
+			}
+		}
+	}
+	#section-two {
+		background:url(#{$images}bg-grey.jpg);
+		background:url(#{$images}home-latest-news-top-bg.jpg) top center no-repeat, url(#{$images}home-latest-news-bottom-bg.jpg) bottom center no-repeat, url(#{$images}bg-grey.jpg);
+	}
+	#section-four {
+		background:url(#{$images}bg-blue.jpg);
+	}
+}
+.aboutuspage {
+	background:#fff;
+	#header-wrapper {
+		background:url(#{$images}bg-aboutus.jpg) no-repeat bottom center;
+		//min-height:740px;
+
+		#banner {
+			.title {
+				
+				.text3 {
+					
+				}
+				.text4 {
+					width: 354px;
+					text-align: left;
+					float: right;
+				}
+			}
+		}
+	}
+	#section-two {
+		background:url(#{$images}bg-grey.jpg);
+		background:url(#{$images}ourteam-top-bg.jpg) top center no-repeat, url(#{$images}ourteam-bottom-bg.jpg) bottom center no-repeat, url(#{$images}bg-grey.jpg);
+	}
+	#section-three {
+		background:url(#{$images}bg-white.jpg);
+	}
+	#section-four {
+		background:url(#{$images}bg-green.jpg);
+		background:url(#{$images}partner-top-bg.jpg) top center repeat-x, url(#{$images}bg-green.jpg);
+
+		h1 {
+			color:#fff;
+		}
+
+		.content-partners {
+			p {
+				color:#fff;
+				text-align:center;
+				max-width:786px;
+				margin:0 auto;
+				font-size:16px;
+				line-height:20px;
+				font-weight:300;
+				margin-bottom:20px;
+			}
+		}
+	}
+}
+.newspage {
+	#header-wrapper {
+		background:url(#{$images}bg-news.jpg) no-repeat bottom center;
+		min-height:420px;
+
+		#banner {
+			.title {
+				padding-top:20px;
+
+				.text1, .text2, .text3 {
+					position: relative;
+		  			top:0;
+		  			text-align:right;
+		  			display:block;
+				}
+				.text3 {
+					margin-right: 118px;
+				}
+			}
+		}
+	}
+}
+.contactpage {
+	#header-wrapper {
+		background:url(#{$images}bg-contact.jpg) no-repeat bottom center;
+		min-height:420px;
+
+		#banner {
+			.title {
+				//padding-top:70px;
+
+				.text3 {
+					//top:70px;
+				}
+			}
+		}
+	}
+}
+.coffeeadventurepage {
+	#header-wrapper {
+		background:url(#{$images}bg-adventure.jpg) no-repeat bottom center;
+		min-height:420px;
+
+		#banner {
+			.title {
+
+				.text3 {
+					//top:70px;
+				}
+			}
+		}
+	}
+	#section-two {
+		overflow:hidden;
+		background:url(#{$images}bg-grey.jpg);
+		background:url(#{$images}home-latest-news-top-bg.jpg) top center no-repeat, url(#{$images}bg-grey.jpg);
+
+		h3 {
+			color:$goldColor;
+		}
+
+		img {
+			margin-bottom:30px;
+		}
+
+		p {
+			font-size:16px;
+			line-height:22px;
+			font-weight:300;
+			color:$lightColor;
+			margin-bottom:30px;
+		}
+
+		.col {
+			padding:0 10px;
+		}
+	}
+}
+.content-who-we-are, .content-what-we-do {
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	margin-bottom:60px;
+
+	h2 {
+		font-size:30px;
+		line-height:32px;
+	}
+
+	.col-1 {
+		float:left;
+		width:34%;
+		margin-right:2%;
+
+		img {
+			max-width:100%;
+		}
+	}
+	.col-2 {
+		float:left;
+		width:64%;
+	}
+}
+.content-what-we-do {
+	margin-bottom:0px;
+
+	.col-1 {
+		float:right;
+	}
+	.col-2 {
+		float:right;
+	}
+}
+.content-coffee-news, .content-art-news {
+	margin-bottom:30px;
+
+	.post-image {
+		border:none;
+		border-right:1px solid rgba($greenColor, 0.3);
+		//min-height:280px;
+	}
+	.post-list {
+		border:none;
+		border-left:1px solid rgba($greenColor, 0.3);
+	}
+	.post {
+		padding:10px 25px;
+	}
+	.post-list {
+		padding:0px 25px;	
+	}
+}
+.content-coffee-news {
+	padding-right:0;
+}
+.content-art-news {
+	.col {
+		float:right;
+	}
+	h3 {
+		color:$blueColor;
+	}
+	.post-list {
+		border:none;
+		border-right:1px solid rgba($greenColor, 0.3);
+		padding-left:0;
+		padding-left:0;
+		ul {
+			li {
+				a {
+					color:$blueColor;
+
+					&:hover {
+						color:$blueDarkColor;
+					}
+				}
+			}
+		}
+	}
+	.post-meta {
+		h4 {
+			a {
+				color:$blueColor;
+
+				&:hover {
+					color:$blueDarkColor;
+				}
+			}
+		}
+	}
+	.post-image {
+		border:none;
+		border-left:1px solid rgba($greenColor, 0.3);
+		padding-left:25px;
+		.category {
+			background:$blueColor;
+			left:25px;
+		}
+	}
+	
+}
+.calendar-home {
+	h1 {
+		color:#fff;
+		background:url(#{$images}calendar-line.png) center center no-repeat;
+	}
+}
+.content-aboutus {
+	.col-1 {
+		display:inline-block;
+		vertical-align:top;
+		width:40%;
+		margin-right:2%;
+
+		img {
+			max-width:100%;
+		}
+	}
+	.col-2 {
+		display:inline-block;
+		vertical-align:top;
+		width:57%;
+	}
+}
+.content-ourteam {
+	text-align:center;
+	img {
+		width:200px;
+		height:200px;
+		@include border-radius(100px);
+		margin-bottom:30px;
+	}
+	.col {
+		width:200px;
+		display:inline-block;
+		margin:20px 30px;
+		vertical-align:top;
+	}
+	.name, .position {
+		display:block;
+		font-family: 'Lato', sans-serif;
+	}
+	.name {
+		color:$greenDarkColor;
+		font-size:18px;
+		line-height:20px;
+		margin-bottom:5px;
+	}
+	.position {
+		color:$lightColor;
+		font-size:14px;
+		line-height:16px;
+		font-style:italic;
+		margin-bottom:20px;
+	}
+	p {
+		color:$lightColor;
+		font-size:16px;
+		line-height:20px;
+		font-weight:300;
+	}
+}
+.modal-info-content {
+	overflow:hidden;
+	img {
+		max-width:90%;
+		@include border-radius(100px);
+		margin-bottom:30px;
+	}
+	.col-img {
+		width:20%;
+		float:left;
+	}
+	.col-info {
+		width:80%;
+		float:left;
+	}
+	.name, .position {
+		display:block;
+		font-family: 'Lato', sans-serif;
+	}
+	.name {
+		font-size:18px;
+		line-height:20px;
+		margin-bottom:5px;
+	}
+	.position {
+		color:$lightColor;
+		font-size:14px;
+		line-height:16px;
+		font-style:italic;
+		margin-bottom:20px;
+	}
+	p {
+		color:$lightColor;
+		font-size:16px;
+		line-height:20px;
+		font-weight:300;
+	}
+}
+.content-racingcreatures {
+	text-align:center;
+	img {
+		width:200px;
+		height:200px;
+		@include border-radius(100px);
+		margin-bottom:30px;
+	}
+	h1 {
+		color:$redColor;
+	}
+	p {
+		max-width:780px;
+		margin:0 auto 20px;
+	}
+	.col {
+		width:200px;
+		display:inline-block;
+		margin:20px 30px;
+		vertical-align:top;
+	}
+	.name, .position {
+		display:block;
+		font-family: 'Lato', sans-serif;
+	}
+	.name {
+		color:$redColor;
+		font-size:18px;
+		line-height:20px;
+		margin-bottom:5px;
+	}
+	.position {
+		color:$lightColor;
+		font-size:14px;
+		line-height:16px;
+		font-style:italic;
+		margin-bottom:20px;
+	}
+	p {
+		color:$lightColor;
+		font-size:16px;
+		line-height:20px;
+		font-weight:300;
+	}
+}
+.content-calendar {
+	h1 {
+		color:$blueColor;
+	}
+	p {
+		max-width:780px;
+		margin:0 auto 40px;
+		font-size:16px;
+		line-height:20px;
+		font-weight:300;
+		text-align:center;
+		color:$lightColor;
+	}
+}
+.content-news {
+	h1 {
+		color:$brownColor;
+	}
+	p {
+		max-width:780px;
+		margin:0 auto 40px;
+		font-weight:300;
+		text-align:center;
+		color:$lightColor;
+	}
+}
+.content-contact {
+	h1 {
+		color:$purpleColor;
+	}
+	p {
+		max-width:780px;
+		margin:0 auto 40px;
+		font-size:16px;
+		line-height:20px;
+		font-weight:300;
+		text-align:center;
+		color:$lightColor;
+	}
+}
+.content-coffee-adventure {
+	h1 {
+		color:$goldColor;
+	}
+	p {
+		max-width:780px;
+		margin:0 auto 40px;
+		font-size:16px;
+		line-height:20px;
+		font-weight:300;
+		text-align:center;
+		color:$lightColor;
+	}
+}
+.calendarpage {
+	#header-wrapper {
+		background:url(#{$images}bg-calendar.jpg) no-repeat bottom center;
+		min-height:420px;
+
+		#banner {
+			.title {
+				.text3 {
+					position: relative;
+		  			margin-left: 130px;
+		  			top:0;
+				}
+			}
+		}
+	}
+	.calendar-navigation {
+		
+		.active-month {
+			color:#fff;
+			background:$blueColor;
+		}
+	}
+	
+}
+.partnerspage {
+	#header-wrapper {
+		background:url(#{$images}bg-calendar.jpg) no-repeat bottom center;
+		min-height:420px;
+	}
+	.content-partners {
+		h1 {
+		color:$brownColor;
+		}
+		p {
+			max-width:780px;
+			margin:0 auto 40px;
+			font-weight:300;
+			text-align:center;
+			color:$lightColor;
+		}
+	}
+}
