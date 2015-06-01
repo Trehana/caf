@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   # Admin side
   namespace :admin do
-    resources :pages do
-      resources :assets
+    resources :pages, :profiles, :news, :gallery do
+      resources :assets, only: [:create]
     end
   end
 
