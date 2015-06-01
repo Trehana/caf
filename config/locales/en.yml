@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  meta_tags:
+    title: 'Caffa'
+    description: 'Coffee & Art Fringe Festival Asia'
+    keywords: "Coffee, Fringe Festival, Coffe Asia"
   common:
     view: 'View'
     edit: 'Edit'

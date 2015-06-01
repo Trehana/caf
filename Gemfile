@@ -77,3 +77,6 @@ gem 'dropzonejs-rails'
 
 # Access Rails veriables from JS
 gem 'gon'
+
+# SEO
+gem 'meta-tags'

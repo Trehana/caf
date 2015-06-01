@@ -7,15 +7,15 @@ html
   /! <![endif]
   head
     meta charset="utf-8"
-    /! Google Chrome Frame for IE
+    / Google Chrome Frame for IE
     meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
-    /! mobile meta
+    / mobile meta
     meta content="True" name="HandheldFriendly"
     meta content="320" name="MobileOptimized"
     meta content="width=device-width, initial-scale=1.0" name="viewport"
     meta content="telephone=no" name="format-detection"
 
-    /! icons and favicons
+    / icons and favicons
     == favicon_link_tag "apple-touch-icon-57x57.png", rel: "apple-touch-icon", sizes: "57x57"
     == favicon_link_tag "apple-touch-icon-60x60.png", rel: "apple-touch-icon", sizes: "60x60"
     == favicon_link_tag "apple-touch-icon-72x72.png", rel: "apple-touch-icon", sizes: "72x72"
@@ -37,9 +37,10 @@ html
     meta content="browserconfig.xml" name="msapplication-config"
     meta content="#ffffff" name="theme-color"
 
-    title #{@html_title}
+    == display_meta_tags
 
-    == include_gon
+    / need_tag: false makes it work with turbolinks
+    == include_gon need_tag: false
     == stylesheet_link_tag 'frontend/application', media: 'all', 'data-turbolinks-track' => true
     == stylesheet_link_tag '//fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,300|Montserrat', media: 'all'
     == javascript_include_tag 'frontend/application', 'data-turbolinks-track' => true
