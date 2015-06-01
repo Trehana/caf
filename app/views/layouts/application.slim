@@ -40,7 +40,7 @@ html
     == display_meta_tags
 
     / need_tag: false makes it work with turbolinks
-    == include_gon need_tag: false
+    == include_gon init: true
     == stylesheet_link_tag 'frontend/application', media: 'all', 'data-turbolinks-track' => true
     == stylesheet_link_tag '//fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,300|Montserrat', media: 'all'
     == javascript_include_tag 'frontend/application', 'data-turbolinks-track' => true
