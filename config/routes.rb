@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # Admin side
   namespace :admin do
     resources :pages do
+      resources :attachment, except: [:new, :update]
     end
   end
 

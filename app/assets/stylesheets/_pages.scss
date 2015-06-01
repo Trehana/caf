@@ -1,12 +1,11 @@
 .homepage {
 	#header-wrapper {
-		background:url(#{$images}bg-home-banner-pattern.jpg) repeat-x bottom center;
 		min-height:560px;
 
 	}
 	#banner-navigation {
 		ul {
-			
+
 			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
 				height:220px !important;
 
@@ -25,14 +24,14 @@
 				&.show-sub {
 					height: 180px !important;
 	  				margin-top: -20px;
-	  				
+
 	  				a {
 	  					border-bottom-color:rgba(255,255,255,0);
 	  					margin-bottom:-1px;
 	  				}
-					
+
 					.sub {
-						height: 50px;					
+						height: 50px;
 					}
 				}
 			}
@@ -49,24 +48,24 @@
 		}
 	}
 	#section-two {
-		background:url(#{$images}bg-grey.jpg);
-		background:url(#{$images}home-latest-news-top-bg.jpg) top center no-repeat, url(#{$images}home-latest-news-bottom-bg.jpg) bottom center no-repeat, url(#{$images}bg-grey.jpg);
+		background:url("bg-grey.jpg");
+		background:url("home-latest-news-top-bg.jpg") top center no-repeat, url("home-latest-news-bottom-bg.jpg") bottom center no-repeat, url("bg-grey.jpg");
 	}
 	#section-four {
-		background:url(#{$images}bg-blue.jpg);
+		background:url("bg-blue.jpg");
 	}
 }
 .aboutuspage {
 	background:#fff;
 	#header-wrapper {
-		background:url(#{$images}bg-aboutus.jpg) no-repeat bottom center;
+		background:url("bg-aboutus.jpg") no-repeat bottom center;
 		//min-height:740px;
 
 		#banner {
 			.title {
-				
+
 				.text3 {
-					
+
 				}
 				.text4 {
 					width: 354px;
@@ -77,15 +76,15 @@
 		}
 	}
 	#section-two {
-		background:url(#{$images}bg-grey.jpg);
-		background:url(#{$images}ourteam-top-bg.jpg) top center no-repeat, url(#{$images}ourteam-bottom-bg.jpg) bottom center no-repeat, url(#{$images}bg-grey.jpg);
+		background:url("bg-grey.jpg");
+		background:url("ourteam-top-bg.jpg") top center no-repeat, url("ourteam-bottom-bg.jpg") bottom center no-repeat, url("bg-grey.jpg");
 	}
 	#section-three {
-		background:url(#{$images}bg-white.jpg);
+		background:url("bg-white.jpg");
 	}
 	#section-four {
-		background:url(#{$images}bg-green.jpg);
-		background:url(#{$images}partner-top-bg.jpg) top center repeat-x, url(#{$images}bg-green.jpg);
+		background:url("bg-green.jpg");
+		background:url("partner-top-bg.jpg") top center repeat-x, url("bg-green.jpg");
 
 		h1 {
 			color:#fff;
@@ -107,7 +106,7 @@
 }
 .newspage {
 	#header-wrapper {
-		background:url(#{$images}bg-news.jpg) no-repeat bottom center;
+		background:url("bg-news.jpg") no-repeat bottom center;
 		min-height:420px;
 
 		#banner {
@@ -129,7 +128,7 @@
 }
 .contactpage {
 	#header-wrapper {
-		background:url(#{$images}bg-contact.jpg) no-repeat bottom center;
+		background:url("bg-contact.jpg") no-repeat bottom center;
 		min-height:420px;
 
 		#banner {
@@ -145,7 +144,7 @@
 }
 .coffeeadventurepage {
 	#header-wrapper {
-		background:url(#{$images}bg-adventure.jpg) no-repeat bottom center;
+		background:url("bg-adventure.jpg") no-repeat bottom center;
 		min-height:420px;
 
 		#banner {
@@ -159,8 +158,8 @@
 	}
 	#section-two {
 		overflow:hidden;
-		background:url(#{$images}bg-grey.jpg);
-		background:url(#{$images}home-latest-news-top-bg.jpg) top center no-repeat, url(#{$images}bg-grey.jpg);
+		background:url("bg-grey.jpg");
+		background:url("home-latest-news-top-bg.jpg") top center no-repeat, url("bg-grey.jpg");
 
 		h3 {
 			color:$goldColor;
@@ -234,7 +233,7 @@
 		padding:10px 25px;
 	}
 	.post-list {
-		padding:0px 25px;	
+		padding:0px 25px;
 	}
 }
 .content-coffee-news {
@@ -284,12 +283,12 @@
 			left:25px;
 		}
 	}
-	
+
 }
 .calendar-home {
 	h1 {
 		color:#fff;
-		background:url(#{$images}calendar-line.png) center center no-repeat;
+		background:url("calendar-line.png") center center no-repeat;
 	}
 }
 .content-aboutus {
@@ -486,7 +485,7 @@
 }
 .calendarpage {
 	#header-wrapper {
-		background:url(#{$images}bg-calendar.jpg) no-repeat bottom center;
+		background:url("bg-calendar.jpg") no-repeat bottom center;
 		min-height:420px;
 
 		#banner {
@@ -500,17 +499,17 @@
 		}
 	}
 	.calendar-navigation {
-		
+
 		.active-month {
 			color:#fff;
 			background:$blueColor;
 		}
 	}
-	
+
 }
 .partnerspage {
 	#header-wrapper {
-		background:url(#{$images}bg-calendar.jpg) no-repeat bottom center;
+		background:url("bg-calendar.jpg") no-repeat bottom center;
 		min-height:420px;
 	}
 	.content-partners {

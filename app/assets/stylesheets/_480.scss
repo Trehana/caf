@@ -301,7 +301,7 @@
 }
 #footer-wrapper {
 	#footer {
-		background:url(#{$images}bg-dark.jpg);
+		background:url("bg-dark.jpg");
 		min-height:30px;
 		padding-top:0;
 		.wrap {

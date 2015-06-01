@@ -3,7 +3,7 @@ doctype html
 /![if IE 7] <html class="no-js lt-ie9 lt-ie8"
 /![if IE 8] <html class="no-js lt-ie9"
 /! [if gt IE 8]><!
-html.no-js
+html
   /! <![endif]
   head
     meta charset="utf-8"
@@ -37,11 +37,15 @@ html.no-js
     meta content="browserconfig.xml" name="msapplication-config"
     meta content="#ffffff" name="theme-color"
 
-    title Caffa
+    title #{@html_title}
+
     == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     == stylesheet_link_tag '//fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,300|Montserrat', media: 'all'
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
     == csrf_meta_tags
-  body
-    .container
-      == yield
+body class="#{@body_class}"
+  #container
+    == render partial: 'shared/header', locals: { active_page: @active_page, banner_image: '/assets/bg-home-banner-pattern.jpg', repeat_style: 'repeat-x'}
+    == yield
+    .push
+  = render partial: 'shared/footer'

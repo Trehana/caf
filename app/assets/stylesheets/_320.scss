@@ -15,7 +15,7 @@
 }
 #banner {
 	.title {
-		
+
 
 		.text1 {
 			font-size: 40px;
@@ -60,8 +60,8 @@
 			&.show-sub {
 				height: 130px !important;
   				margin-top: -10px;
-  				
-				
+
+
 			}
 		}
 	}
@@ -93,7 +93,7 @@
 				&.show-sub {
 					height: 130px !important;
 	  				margin-top: -10px;
-	  				
+
 					.sub {
 						height:auto;
 						padding:0;
@@ -107,7 +107,7 @@
 							font-size:12px;
 							display:block;
 							padding:10px;
-						}					
+						}
 					}
 				}
 			}
@@ -150,13 +150,13 @@
 				}
 			}
 
-			
+
 			&.active {
 				a {
 					background-size:50px;
 				}
 			}
-			
+
 		}
 	}
 }

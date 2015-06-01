@@ -1,0 +1,89 @@
+- if defined?(banner_image)
+  css:
+    #header-wrapper {
+      background:url(#{banner_image}) #{repeat_style} bottom center
+      }
+
+
+#header-wrapper
+  #header
+    a.menu-icon
+      i &nbsp;
+      i &nbsp;
+      i &nbsp;
+    .wrap
+      #logo
+        a href="index.html"
+          = image_tag "caffa-logo.png", alt: 'Caffaasia'
+      nav#navigation
+        .menu-title
+          span Menu
+          a.menu-exit &times;
+        ul
+          li#btn-about-us
+            a href="about-us.html"  About Us
+          li#btn-celendar
+            a href="calendar.html"  Calendar
+          li#btn-news
+            a href="news.html"  News
+          li#btn-media
+            a href="#"  Media
+          li#btn-partners
+            a href="partners.html"  Partners
+          li#btn-contact
+            a href="contact.html"  Contact
+  /! end #header
+  #tagline
+    .wrap
+      span Coffee &amp; Art Fringe Festival Asia
+  /! end #tagline
+  #banner
+    .wrap
+      .home
+        .title
+          span.text1 COFFEE &amp; ART
+          span.text2 FRINGE FESTIVAL ASIA
+          span.text3 2015
+          p.text4 Aenean nisi odio, porta vel, tristique vel, semper mollis, mi. Donec gravida, ipsum vitae convallis sodales, urna justo commodo nunc, non venenatis nisl urna non purus.
+      #banner-navigation
+        ul
+          li#btn-coffee-event
+            a.banner-nav-link
+              = image_tag "img-coffee-event.png", alt: "Coffee Event"
+              span Coffee Event
+            ul.sub
+              li
+                a href="#"  Program
+              li
+                a href="#"  Sponsors
+              li
+                a href="#"  Photo Log
+          li#btn-coffee-adventure
+            a.banner-nav-link href="coffee-adventure.html"
+              = image_tag "img-coffee-adventure.png", alt: "Coffee Adventure"
+              span Coffee Adventure
+            ul.sub
+              li
+                a href="#"  Café List
+              li
+                a href="#"  Coffee Academy
+              li
+                a href="#"  Consultancy
+              li
+                a href="#"  Supply Network
+          li#btn-art-spot
+            a.banner-nav-link
+              = image_tag "img-art-spot.png", alt: "Art Spot"
+              span Art Spot
+            ul.sub
+              li
+                a href="#"  Emerging Artist
+              li
+                a href="#"  The Galleries
+              li
+                a href="#"  In The Studio
+          li#btn-the-caffa-store
+            a.banner-nav-link
+              = image_tag "img-the-caffa-store.png", alt: "The Caffa Store"
+              span The Caffa Store
+  /! end #banner

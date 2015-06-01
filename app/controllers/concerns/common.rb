@@ -5,6 +5,7 @@ module Common
     before_action :set_resource_class_name
     before_action :set_resource_class
     before_action :set_resource, only: [:show, :edit, :update, :destroy]
+    before_action :set_html_variables
   end
 
   # GET /pages/1
@@ -87,5 +88,9 @@ module Common
     params.require(:page).permit(:title, :body, :meta_tags)
   end
 
+  def set_html_variables
+    @html_title = defined?(@title) && !@title.empty? ? "#{@title} | Caffa" : "Caffa"
+    @body_class = @resource_class.name.underscore unless defined?(@body_class)
+  end
 
 end

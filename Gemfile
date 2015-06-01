@@ -68,3 +68,6 @@ gem "slim-rails"
 
 # Navigation gem
 gem 'simple-navigation'
+
+# JS File upload
+gem 'dropzonejs-rails'

@@ -1,0 +1,28 @@
+== form_for [:admin, @resource] do |f|
+  - if @resource.errors.any?
+    h2
+      | #{pluralize(@resource.errors.count, "error")} prohibited this page from being saved:
+    ul
+      - @resource.errors.full_messages.each do |message|
+        li #{message}
+
+  .field
+    == f.label :title
+    br
+    == f.text_field :title
+  .field
+    == f.label :body
+    br
+    == f.text_area :body, id: 'ck_editor_textarea'
+  .field
+    == f.label :meta_tags
+    br
+    == f.text_field :meta_tags, 'data-role': "tagsinput"
+  .field
+    = label_tag "Select cover photo"
+    #coverphoto_select class="dropzone dz-clickable"
+    br
+  .actions
+    .btn-group aria-label="Actions" role="group"
+      == f.button t('page.publish'),value: 'publish', class: "btn btn-success"
+      == f.button t('page.save_draft'),value: 'save_draft', class: "btn btn-primary"
