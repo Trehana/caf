@@ -48,17 +48,17 @@
 		}
 	}
 	#section-two {
-		background:url("bg-grey.jpg");
-		background:url("home-latest-news-top-bg.jpg") top center no-repeat, url("home-latest-news-bottom-bg.jpg") bottom center no-repeat, url("bg-grey.jpg");
+		background:asset-url("bg-grey.jpg");
+		background:asset-url("home-latest-news-top-bg.jpg") top center no-repeat, url("home-latest-news-bottom-bg.jpg") bottom center no-repeat, url("bg-grey.jpg");
 	}
 	#section-four {
-		background:url("bg-blue.jpg");
+		background:asset-url("bg-blue.jpg");
 	}
 }
 .aboutuspage {
 	background:#fff;
 	#header-wrapper {
-		background:url("bg-aboutus.jpg") no-repeat bottom center;
+		background:asset-url("bg-aboutus.jpg") no-repeat bottom center;
 		//min-height:740px;
 
 		#banner {
@@ -76,15 +76,15 @@
 		}
 	}
 	#section-two {
-		background:url("bg-grey.jpg");
-		background:url("ourteam-top-bg.jpg") top center no-repeat, url("ourteam-bottom-bg.jpg") bottom center no-repeat, url("bg-grey.jpg");
+		background:asset-url("bg-grey.jpg");
+		background:asset-url("ourteam-top-bg.jpg") top center no-repeat, url("ourteam-bottom-bg.jpg") bottom center no-repeat, url("bg-grey.jpg");
 	}
 	#section-three {
-		background:url("bg-white.jpg");
+		background:asset-url("bg-white.jpg");
 	}
 	#section-four {
-		background:url("bg-green.jpg");
-		background:url("partner-top-bg.jpg") top center repeat-x, url("bg-green.jpg");
+		background:asset-url("bg-green.jpg");
+		background:asset-url("partner-top-bg.jpg") top center repeat-x, url("bg-green.jpg");
 
 		h1 {
 			color:#fff;
@@ -106,7 +106,7 @@
 }
 .newspage {
 	#header-wrapper {
-		background:url("bg-news.jpg") no-repeat bottom center;
+		background:asset-url("bg-news.jpg") no-repeat bottom center;
 		min-height:420px;
 
 		#banner {
@@ -128,7 +128,7 @@
 }
 .contactpage {
 	#header-wrapper {
-		background:url("bg-contact.jpg") no-repeat bottom center;
+		background:asset-url("bg-contact.jpg") no-repeat bottom center;
 		min-height:420px;
 
 		#banner {
@@ -144,7 +144,7 @@
 }
 .coffeeadventurepage {
 	#header-wrapper {
-		background:url("bg-adventure.jpg") no-repeat bottom center;
+		background:asset-url("bg-adventure.jpg") no-repeat bottom center;
 		min-height:420px;
 
 		#banner {
@@ -158,8 +158,8 @@
 	}
 	#section-two {
 		overflow:hidden;
-		background:url("bg-grey.jpg");
-		background:url("home-latest-news-top-bg.jpg") top center no-repeat, url("bg-grey.jpg");
+		background:asset-url("bg-grey.jpg");
+		background:asset-url("home-latest-news-top-bg.jpg") top center no-repeat, url("bg-grey.jpg");
 
 		h3 {
 			color:$goldColor;
@@ -288,7 +288,7 @@
 .calendar-home {
 	h1 {
 		color:#fff;
-		background:url("calendar-line.png") center center no-repeat;
+		background:asset-url("calendar-line.png") center center no-repeat;
 	}
 }
 .content-aboutus {
@@ -485,7 +485,7 @@
 }
 .calendarpage {
 	#header-wrapper {
-		background:url("bg-calendar.jpg") no-repeat bottom center;
+		background:asset-url("bg-calendar.jpg") no-repeat bottom center;
 		min-height:420px;
 
 		#banner {
@@ -509,7 +509,7 @@
 }
 .partnerspage {
 	#header-wrapper {
-		background:url("bg-calendar.jpg") no-repeat bottom center;
+		background:asset-url("bg-calendar.jpg") no-repeat bottom center;
 		min-height:420px;
 	}
 	.content-partners {

@@ -1,7 +1,7 @@
 @mixin font_face_definition($family_name, $font-file) {
     @font-face {
         font-family: $family_name;
-        src:url('../fonts/#{$font-file}.eot');
+        src:asset-url('../fonts/#{$font-file}.eot');
         src:local('☺'),
             local($family_name),
             url('../fonts/#{$font-file}.woff') format('woff'),

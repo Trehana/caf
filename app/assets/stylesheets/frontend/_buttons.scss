@@ -63,10 +63,10 @@
 	}
 
 	&.left-arrow {
-		background:url("img-left-arrow.png") no-repeat left center;
+		background:asset-url("img-left-arrow.png") no-repeat left center;
 	}
 	&.right-arrow {
-		background:url("img-right-arrow.png") no-repeat right center;
+		background:asset-url("img-right-arrow.png") no-repeat right center;
 	}
 }
 .calendarpage {
@@ -80,15 +80,15 @@
 		}
 
 		&.left-arrow {
-			background:url("img-left-arrow-blue.png") no-repeat left center;
+			background:asset-url("img-left-arrow-blue.png") no-repeat left center;
 		}
 		&.right-arrow {
-			background:url("img-right-arrow-blue.png") no-repeat right center;
+			background:asset-url("img-right-arrow-blue.png") no-repeat right center;
 		}
 	}
 }
 .btn-like {
-	background:url("icon-like.png") no-repeat center center;
+	background:asset-url("icon-like.png") no-repeat center center;
 	float:right;
 	margin:0;
 
@@ -97,7 +97,7 @@
 	}
 
 	&:hover {
-		background:url("icon-like-green.png") no-repeat center center;
+		background:asset-url("icon-like-green.png") no-repeat center center;
 	}
 }
 .close {

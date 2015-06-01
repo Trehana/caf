@@ -20,7 +20,7 @@ body {
 	font-weight:400;
 	line-height:$lineHeight;
 	color:$darkColor;
-	background:url("bg-white.jpg") #fff;
+	background:asset-url("bg-white.jpg") #fff;
 }
 
 ::-webkit-input-placeholder { color:#d2d2d2; }
@@ -209,7 +209,7 @@ input[type="text"] {
 }
 #header-wrapper {
 	min-height:440px;
-	background:url("bg-home-banner-pattern.jpg") repeat-x bottom center;
+	background:asset-url("bg-home-banner-pattern.jpg") repeat-x bottom center;
 }
 #banner {
 	.title {
@@ -430,11 +430,11 @@ input[type="text"] {
 	}
 }
 #footer-wrapper {
-	background:url("bg-footer-top.png") no-repeat top center;
+	background:asset-url("bg-footer-top.png") no-repeat top center;
 	padding-top:50px;
 
 	#footer {
-		background:url("bg-dark.jpg");
+		background:asset-url("bg-dark.jpg");
 		min-height:286px;
 		padding-top:30px;
 
@@ -926,7 +926,7 @@ input[type="text"] {
 			width:32%;
 
 			& + li {
-				background:url("calendar-category-navigation-line.png") no-repeat left bottom;
+				background:asset-url("calendar-category-navigation-line.png") no-repeat left bottom;
 			}
 		}
 
@@ -954,42 +954,42 @@ input[type="text"] {
 		}
 		#btn-coffee-related {
 			a {
-				background:url("icon-coffee-related.png") top center no-repeat;
+				background:asset-url("icon-coffee-related.png") top center no-repeat;
 				&:hover {
-					background:url("icon-coffee-related-blue.png") top center no-repeat;
+					background:asset-url("icon-coffee-related-blue.png") top center no-repeat;
 				}
 			}
 			&.active {
 				a {
-					background:url("icon-coffee-related-blue.png") top center no-repeat;
+					background:asset-url("icon-coffee-related-blue.png") top center no-repeat;
 					opacity:1;
 				}
 			}
 		}
 		#btn-art-related {
 			a {
-				background:url("icon-art-related.png") top center no-repeat;
+				background:asset-url("icon-art-related.png") top center no-repeat;
 				&:hover {
-					background:url("icon-art-related-blue.png") top center no-repeat;
+					background:asset-url("icon-art-related-blue.png") top center no-repeat;
 				}
 			}
 			&.active {
 				a {
-					background:url("icon-art-related-blue.png") top center no-repeat;
+					background:asset-url("icon-art-related-blue.png") top center no-repeat;
 					opacity:1;
 				}
 			}
 		}
 		#btn-sponsor-events {
 			a {
-				background:url("icon-sponsor-events.png") top center no-repeat;
+				background:asset-url("icon-sponsor-events.png") top center no-repeat;
 				&:hover {
-					background:url("icon-sponsor-events-blue.png") top center no-repeat;
+					background:asset-url("icon-sponsor-events-blue.png") top center no-repeat;
 				}
 			}
 			&.active {
 				a {
-					background:url("icon-sponsor-events-blue.png") top center no-repeat;
+					background:asset-url("icon-sponsor-events-blue.png") top center no-repeat;
 					opacity:1;
 				}
 			}
@@ -1036,7 +1036,7 @@ input[type="text"] {
 
 	.event-day {
 		width:94%;
-		background:url("line-pattern.png");
+		background:asset-url("line-pattern.png");
 		color:#fff;
 		padding:8px;
 		font-size:16px;
@@ -1227,7 +1227,7 @@ input[type="text"] {
 				font-size:14px;
 				line-height:18px;
 				color:$lightColor;
-				background:url("icon-building.png") no-repeat left top;
+				background:asset-url("icon-building.png") no-repeat left top;
 				padding-left:30px;
 				display:block;
 				overflow:hidden;
