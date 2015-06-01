@@ -8,8 +8,11 @@ create_ckeditor_window = ->
 
   coverphoto = undefined
   coverphoto = new Dropzone('div#coverphoto_select',
-    url: '/admin/pages/'
-    maxFiles: 1)
+    url: gon.asset_submit_path
+    maxFiles: 1
+    paramName: 'cover_photo_asset[data]'
+    headers: "X-CSRF-Token" : $('meta[name="csrf-token"]').attr('content')
+    )
 
 $(document).ready(create_ckeditor_window)
 $(document).on('page:load', create_ckeditor_window)

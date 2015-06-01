@@ -39,6 +39,7 @@ html
 
     title #{@html_title}
 
+    == include_gon
     == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     == stylesheet_link_tag '//fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,300|Montserrat', media: 'all'
     == javascript_include_tag 'application', 'data-turbolinks-track' => true

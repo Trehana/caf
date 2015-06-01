@@ -36,7 +36,6 @@ module Admin
     # POST /pages.json
     def create
       @resource = @resource_class.new(resource_params)
-
       respond_to do |format|
         if @resource.save
           format.html { redirect_to @resource, notice: 'Page was successfully created.' }
@@ -88,12 +87,6 @@ module Admin
     def set_resource
       @resource = @resource_class.find(params[:id])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def resource_params
-      params.require(:page).permit(:title, :body, :meta_tags)
-    end
-
 
   end
 end

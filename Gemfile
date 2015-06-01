@@ -43,6 +43,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  #Display better errors
+  gem "better_errors"
 end
 
 
@@ -71,3 +74,6 @@ gem 'simple-navigation'
 
 # JS File upload
 gem 'dropzonejs-rails'
+
+# Access Rails veriables from JS
+gem 'gon'

@@ -1,10 +1,9 @@
-class Picture < Asset
+class CoverPhoto < Asset
   has_attached_file :data,
-                    url: "/assets/pictures/:hash.:extension",
+                    url: "/assets/cover_photos/:hash.:extension",
                     hash_data: ":class/:attachment/:id/:style/:updated_at",
                     hash_secret: "lppernpidvyywzxuljqvbwcldganplmzythvizrcvkjlquejfdyewgsyowbojvhneeqopaijhnovhxgqnbevryojpqsmibszekwi",
-                    :styles => { :content => '800>', :thumb => '118x100#' }
-
+                    styles: { :thumb => '100x100' }
 
   validates_attachment_presence :data
   validates_attachment_size :data, :less_than => 2.megabytes
