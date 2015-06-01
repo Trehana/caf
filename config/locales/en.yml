@@ -32,6 +32,8 @@ en:
     save_draft: 'Save draft'
     publish: 'Publish'
     delete: 'Delete'
+    cover_photo_select: 'Select cover photo'
+    cover_photo_repeat: 'Tile cover photo'
     messages:
       deleted: 'Page deleted'
       updated: 'Page was successfully updated.'

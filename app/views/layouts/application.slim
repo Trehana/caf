@@ -40,13 +40,13 @@ html
     title #{@html_title}
 
     == include_gon
-    == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    == stylesheet_link_tag 'frontend/application', media: 'all', 'data-turbolinks-track' => true
     == stylesheet_link_tag '//fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,300|Montserrat', media: 'all'
-    == javascript_include_tag 'application', 'data-turbolinks-track' => true
+    == javascript_include_tag 'frontend/application', 'data-turbolinks-track' => true
     == csrf_meta_tags
 body class="#{@body_class}"
   #container
-    == render partial: 'shared/header', locals: { active_page: @active_page, banner_image: '/assets/bg-home-banner-pattern.jpg', repeat_style: 'repeat-x'}
+    == render partial: 'shared/header', locals: { active_page: @active_page, cover_photo_url: @cover_photo_url, repeat_style: @cover_photo_repeat }
     == yield
     .push
   = render partial: 'shared/footer'

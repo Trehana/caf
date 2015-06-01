@@ -19,12 +19,14 @@
     br
     == f.text_field :meta_tags, 'data-role': "tagsinput"
   .field
-    = label_tag "Select cover photo"
+    == label_tag t('page.cover_photo_select')
     #coverphoto_select class="dropzone dz-clickable"
       - if @resource.cover_photo
         .dz-image-preview
           .dz-image
             == image_tag @resource.cover_photo.url_thumb
+    == f.label :cover_photo_repeat, t('page.cover_photo_repeat')
+    == f.check_box :cover_photo_repeat
   br
   .actions
     .btn-group aria-label="Actions" role="group"

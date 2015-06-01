@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525101116) do
+ActiveRecord::Schema.define(version: 20150601192142) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -43,13 +43,14 @@ ActiveRecord::Schema.define(version: 20150525101116) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "body",       limit: 65535
-    t.string   "meta_tags",  limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "state",      limit: 255
-    t.string   "slug",       limit: 255
+    t.string   "title",              limit: 255
+    t.text     "body",               limit: 65535
+    t.string   "meta_tags",          limit: 255
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.string   "state",              limit: 255
+    t.string   "slug",               limit: 255
+    t.integer  "cover_photo_repeat", limit: 1,     default: 0
   end
 
 end

@@ -3,3 +3,6 @@
  *= require admin/style
  *= require admin/pages
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import 'dropzone/dropzone';
