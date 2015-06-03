@@ -22,9 +22,11 @@
     == label_tag t('page.cover_photo_select')
     #coverphoto_select class="dropzone dz-clickable"
       - if @resource.cover_photo
-        .dz-image-preview
-          .dz-image
-            == image_tag @resource.cover_photo.url_thumb
+        .dropzone_thumb
+            == link_to (image_tag @resource.cover_photo.url(:thumb), :title => I18n.t('common.buttons.delete')),
+                url_for([:admin, @resource, @resource.cover_photo, :format => :json]),
+                remote: :true, method: :delete, :data => {confirm: t('page.cover_photo_delete_confirn')}, class: "delete_dropzone_thumb"
+
     == f.label :cover_photo_repeat, t('page.cover_photo_repeat')
     == f.check_box :cover_photo_repeat
   br

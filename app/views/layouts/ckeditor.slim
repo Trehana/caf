@@ -1,0 +1,18 @@
+doctype html
+html xmlns="http://www.w3.org/1999/xhtml"
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    meta content="noindex, nofollow" name="robots" /
+    == csrf_meta_tag
+    title == I18n.t('page_title', :scope => [:ckeditor])
+    == stylesheet_link_tag "ckeditor/application"
+    == javascript_include_tag "ckeditor/application"
+
+  javascript:
+    var CKEditorFuncNum = $.QueryString["CKEditorFuncNum"];
+    var CKEditorName = $.QueryString["CKEditor"];
+    var CKEDITOR = window.opener.CKEDITOR;
+    var EDITOR = CKEDITOR.instances[CKEditorName];
+  body
+    == yield
+    == render :partial => 'ckeditor/shared/asset_tmpl'

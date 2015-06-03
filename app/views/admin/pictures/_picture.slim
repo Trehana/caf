@@ -1,0 +1,16 @@
+- @assets.each do |asset|
+  == content_tag(:div, :id => dom_id(asset), :class => "gal-item", :"data-url" => image_path(asset.url_content))
+    == link_to image_tag('ckeditor/filebrowser/images/gal_del.png',
+      :title => I18n.t('common.buttons.delete')),
+      url_for([:admin, @nested_resource, asset, :format => :json]),
+        :remote => true,
+        :method => :delete,
+        :data => {:confirm => t('common.delete_fonfirm')},
+        :class => "fileupload-cancel gal-del"
+    .fileupload-file.gal-inner-holder
+      .img == image_tag(asset.url(:thumb), :title => asset.filename)
+      .img-data
+        .img-name == asset.filename
+        .time-size
+          .time == asset.format_created_at
+          .fileupload-size.size == number_to_human_size(asset.size) if asset.size

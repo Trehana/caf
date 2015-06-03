@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # Admin side
   namespace :admin do
     resources :pages, :profiles, :news, :gallery do
-      resources :assets, only: [:create]
+      resources :assets, only: [:index, :create, :destroy]
+      resources :pictures, controller: :assets, only: [:index, :create, :destroy]
+      resources :cover_photo, controller: :assets, only: [:create, :destroy]
     end
   end
 

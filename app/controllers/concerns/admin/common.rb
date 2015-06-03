@@ -6,18 +6,13 @@ module Admin
       before_action :set_resource_class_name
       before_action :set_resource_class
       before_action :set_resource, only: [:show, :edit, :update, :destroy]
+      before_action :set_js_vars, only: [:edit, :update, :destroy]
     end
 
-    # GET /pages
-    # GET /pages.json
     def index
       @resources = @resource_class.editors_content
     end
 
-    # GET /pages/1
-    # GET /pages/1.json
-    def show
-    end
 
     # GET /pages/new
     def new
@@ -32,8 +27,6 @@ module Admin
     def edit
     end
 
-    # POST /pages
-    # POST /pages.json
     def create
       @resource = @resource_class.new(resource_params)
       respond_to do |format|
@@ -47,8 +40,6 @@ module Admin
       end
     end
 
-    # PATCH/PUT /pages/1
-    # PATCH/PUT /pages/1.json
     def update
       respond_to do |format|
         resource_singular_name = @resource.class.model_name.singular
@@ -68,12 +59,10 @@ module Admin
       end
     end
 
-    # DELETE /pages/1
-    # DELETE /pages/1.json
     def destroy
       @resource.move_to_trash
       respond_to do |format|
-        format.html { redirect_to @resource_index_path, notice: t('page.messages.deleted') }
+        format.html { redirect_to @resource_index_path, notice: t("#{resource_singular_name}.messages.deleted") }
         format.json { head :no_content }
       end
     end
@@ -88,5 +77,8 @@ module Admin
       @resource = @resource_class.find(params[:id])
     end
 
+    def set_js_vars
+      gon.push assets_path: url_for([:admin, @resource, :assets])
+    end
   end
 end

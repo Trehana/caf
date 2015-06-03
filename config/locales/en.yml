@@ -28,6 +28,7 @@ en:
     view: 'View'
     edit: 'Edit'
     delete: 'Delete'
+    delete_fonfirm: 'Do you want to delete'
     state:
       title_blank: 'Title cannot be blank'
   page:
@@ -38,6 +39,7 @@ en:
     delete: 'Delete'
     cover_photo_select: 'Select cover photo'
     cover_photo_repeat: 'Tile cover photo'
+    cover_photo_delete_confirn: 'Do you want to remove cover photo'
     messages:
       deleted: 'Page deleted'
       updated: 'Page was successfully updated.'
