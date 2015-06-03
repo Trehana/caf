@@ -5,10 +5,14 @@ initialise_edit_tools = ->
   if $('#ck_editor_textarea').length > 0
     config =
       toolbar: 'mini'
-      filebrowserBrowseUrl: gon.assets_path
+      filebrowserBrowseUrl: gon.assets_path + '?type=pictures'
       filebrowserImageBrowseUrl: gon.assets_path + '?type=pictures'
-      filebrowserUploadUrl: gon.assets_path
-      filebrowserImageUploadUrl: gon.assets_path
+      filebrowserUploadUrl: gon.assets_path + '?type=pictures'
+      filebrowserImageUploadUrl: gon.assets_path + '?type=pictures'
+      filebrowserFlashBrowseUrl: gon.assets_path + '?type=attachment_files'
+      filebrowserFlashUploadUrl: gon.assets_path + '?type=attachment_files'
+      filebrowserImageBrowseLinkUrl: gon.assets_path + '?type=pictures'
+
 
     ck_editor_textarea = CKEDITOR.replace 'ck_editor_textarea', config
 

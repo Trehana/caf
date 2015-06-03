@@ -17,9 +17,14 @@ class Admin::AssetsController < AdminController
   layout 'layouts/ckeditor'
 
   # JS vars doesnt need to be set for asset operations
-  skip_before_filter :set_js_vars
+  skip_before_filter :set_js_vars, only: [:destroy]
 
   def index
+    logger.debug "-------------------- @nested_resource: #{@nested_resource} -----------"
+    logger.debug "-------------------- @resource_class_name: #{@resource_class_name} -----------"
+    logger.debug "--------------------------@nested_resource_class: #{@nested_resource_class}"
+    logger.debug "----------- check_association: #{check_association} --------------"
+    logger.debug "----------- check_association[:transform]: #{check_association[:transform]} --------------"
     @assets = @nested_resource.send(@resource_class_name.underscore.send("#{check_association[:transform]}"))
     respond_to do |format|
       format.html { render "admin/#{@resource_class_name.underscore.pluralize}/index" }
