@@ -30,7 +30,6 @@ initialise_edit_tools = ->
     coverphoto = undefined
     coverphoto = new Dropzone('div#coverphoto_select',
       url: gon.assets_path
-      maxFiles: 1
       paramName: 'cover_photo_asset[data]'
       headers: "X-CSRF-Token" : $('meta[name="csrf-token"]').attr('content')
       )
