@@ -4,5 +4,5 @@
 #= require jquery.turbolinks
 #= require jquery_ujs
 #= require ckeditor/init
-#= require admin/pages
+#= require admin/common_editor_tools_config
 #= require dropzone
