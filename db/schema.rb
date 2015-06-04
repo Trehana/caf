@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601192142) do
+ActiveRecord::Schema.define(version: 20150603235506) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 20150601192142) do
     t.string   "state",              limit: 255
     t.string   "slug",               limit: 255
     t.integer  "cover_photo_repeat", limit: 1,     default: 0
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.string   "designation", limit: 255
+    t.string   "bio_short",   limit: 255
+    t.text     "bio",         limit: 65535
+    t.string   "state",       limit: 255
+    t.string   "slug",        limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

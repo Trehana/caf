@@ -2,143 +2,21 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 initialise_edit_tools = ->
+  config =
+    filebrowserBrowseUrl: gon.assets_path + '?type=pictures'
+    filebrowserImageBrowseUrl: gon.assets_path + '?type=pictures'
+    filebrowserUploadUrl: gon.assets_path + '?type=pictures'
+    filebrowserImageUploadUrl: gon.assets_path + '?type=pictures'
+    filebrowserFlashBrowseUrl: gon.assets_path + '?type=attachment_files'
+    filebrowserFlashUploadUrl: gon.assets_path + '?type=attachment_files'
+    filebrowserImageBrowseLinkUrl: gon.assets_path + '?type=pictures'
+
   if $('#ck_editor_textarea').length > 0
-    config =
-      toolbar:  [
-                  {
-                    name: 'clipboard'
-                    groups: [
-                      'clipboard'
-                      'undo'
-                    ]
-                    items: [
-                      'Cut'
-                      'Copy'
-                      'Paste'
-                      'PasteText'
-                      'PasteFromWord'
-                      '-'
-                      'Undo'
-                      'Redo'
-                    ]
-                  }
-                  {
-                    name: 'editing'
-                    groups: [
-                      'find'
-                      'selection'
-                      'spellchecker'
-                    ]
-                    items: [
-                      'Find'
-                      'Replace'
-                      '-'
-                      'SelectAll'
-                      '-'
-                      'Scayt'
-                    ]
-                  }
-                  {
-                    name: 'basicstyles'
-                    groups: [
-                      'basicstyles'
-                      'cleanup'
-                    ]
-                    items: [
-                      'Bold'
-                      'Italic'
-                      'Underline'
-                      'Strike'
-                      'Subscript'
-                      'Superscript'
-                      '-'
-                      'RemoveFormat'
-                    ]
-                  }
-                  {
-                    name: 'paragraph'
-                    groups: [
-                      'list'
-                      'indent'
-                      'blocks'
-                      'align'
-                      'bidi'
-                    ]
-                    items: [
-                      'NumberedList'
-                      'BulletedList'
-                      '-'
-                      'Outdent'
-                      'Indent'
-                      '-'
-                      'Blockquote'
-                      'CreateDiv'
-                      '-'
-                      'JustifyLeft'
-                      'JustifyCenter'
-                      'JustifyRight'
-                      'JustifyBlock'
-                    ]
-                  }
-                  {
-                    name: 'links'
-                    items: [
-                      'Link'
-                      'Unlink'
-                      'Anchor'
-                    ]
-                  }
-                  {
-                    name: 'insert'
-                    items: [
-                      'Image'
-                      'Table'
-                      'HorizontalRule'
-                      'Smiley'
-                      'SpecialChar'
-                      'PageBreak'
-                      'Iframe'
-                    ]
-                  }
-                  {
-                    name: 'styles'
-                    items: [
-                      'Styles'
-                      'Format'
-                      'Font'
-                      'FontSize'
-                    ]
-                  }
-                  {
-                    name: 'colors'
-                    items: [
-                      'TextColor'
-                      'BGColor'
-                    ]
-                  }
-                  {
-                    name: 'tools'
-                    items: [
-                      'Maximize'
-                      'ShowBlocks',
-                      'Source'
-                    ]
-                  }
-                  {
-                    name: 'others'
-                    items: [ '-' ]
-                  }
-                ]
-
-      filebrowserBrowseUrl: gon.assets_path + '?type=pictures'
-      filebrowserImageBrowseUrl: gon.assets_path + '?type=pictures'
-      filebrowserUploadUrl: gon.assets_path + '?type=pictures'
-      filebrowserImageUploadUrl: gon.assets_path + '?type=pictures'
-      filebrowserFlashBrowseUrl: gon.assets_path + '?type=attachment_files'
-      filebrowserFlashUploadUrl: gon.assets_path + '?type=attachment_files'
-      filebrowserImageBrowseLinkUrl: gon.assets_path + '?type=pictures'
-
-
+    config =  if $('#ck_editor_textarea').attr('rel') == 'no-images'
+                $.extend(config, window.CKEDITOR_config.without_images)
+              else
+                $.extend(config, window.CKEDITOR_config.with_images)
+    #
     ck_editor_textarea = CKEDITOR.replace 'ck_editor_textarea', config
 
     CKEDITOR.on 'dialogDefinition', (ev) ->
@@ -155,11 +33,14 @@ initialise_edit_tools = ->
         dialog_definition_content.elements[0]['action'] = action_url
       return
 
-  if $('div#coverphoto_select').length > 0
-    coverphoto = undefined
-    coverphoto = new Dropzone('div#coverphoto_select',
+  if $('div#single_photo_select').length > 0
+    photo = undefined
+    # The controller expects a class name with _asset to be the data hashe's
+    # key. And the form has to have rel field set to that. i.e: 'cover_photo'
+    photo_class_data = $('div#single_photo_select').attr('rel') + '_asset[data]'
+    photo = new Dropzone('div#single_photo_select',
       url: gon.assets_path
-      paramName: 'cover_photo_asset[data]'
+      paramName: photo_class_data
       headers: "X-CSRF-Token" : $('meta[name="csrf-token"]').attr('content')
       )
 

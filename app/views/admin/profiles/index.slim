@@ -1,0 +1,21 @@
+== render partial: 'admin/shared/index_header'
+table.table
+  thead
+    tr
+      th == t('helpers.label.profile.title')
+      th == t('helpers.label.profile.designation')
+      th == t('helpers.label.profile.bio_short')
+      th colspan="2"
+  tbody
+    - @resources.each do |profile|
+      tr class="#{profile.state}"
+        td == profile.title
+        td == profile.designation
+        td == profile.bio_short
+
+        td
+          == render partial: 'admin/shared/index_edit_resource', locals: {resource: profile}
+        td
+          == render partial: 'admin/shared/index_delete_resource', locals: {resource: profile}
+
+== render partial: 'admin/shared/index_footer'

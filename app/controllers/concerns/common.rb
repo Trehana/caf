@@ -83,11 +83,6 @@ module Common
     @resource = @resource_class.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def resource_params
-    params.require(:page).permit(:title, :body, :meta_tags)
-  end
-
   def set_html_variables
     @body_class = @resource_class.name.underscore unless defined?(@body_class)
     set_meta_tags   title: @resource.try(:title) && !@resource.try(:title).empty? ? "#{@resource.try(:title)} | #{t('meta_tags.title')}" : "#{t('meta_tags.title')}",

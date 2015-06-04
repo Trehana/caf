@@ -10,19 +10,25 @@
     == f.label :title
     br
     == f.text_field :title
-  .field
-    == f.label :body
     br
-    == f.text_area :body, id: 'ck_editor_textarea'
-  .field
-    == f.label :meta_tags
     br
-    == f.text_field :meta_tags, 'data-role': "tagsinput"
-  .field
-    == f.label :cover_photo_select
-    == render partial: 'admin/shared/dropzone_single_photo_upload', locals: {photo_class: 'cover_photo', resource: @resource}
+    == f.label :designation
+    br
+    == f.text_field :designation
 
-    == f.label :cover_photo_repeat
-    == f.check_box :cover_photo_repeat
+  .field
+    == f.label :profile_photo_select
+    == render partial: 'admin/shared/dropzone_single_photo_upload', locals: {photo_class: 'profile_photo', resource: @resource}
+
+  .field
+    == f.label :bio_short
+    br
+    == f.text_field :bio_short
+
+  .field
+    == f.label :bio
+    br
+    == f.text_area :bio, id: 'ck_editor_textarea', rel: 'no-images'
+
   br
   == render partial: 'admin/shared/edit_form_footer', locals: {f: f}

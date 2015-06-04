@@ -2,13 +2,29 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :pages, only: [:show]
+  resources :news, only: [:index, :show]
 
-  # Admin side
+
+  # ADMIN
+  # ==========
+
+  concern :has_assets do
+    resources :assets, only: [:index, :create, :destroy]
+  end
+
+  concern :has_pictures do
+    resources :pictures, controller: :assets, only: [:index, :create, :destroy]
+  end
+
+  concern :has_cover_photo do
+    resources :cover_photo, controller: :assets, only: [:create, :destroy]
+  end
+
   namespace :admin do
-    resources :pages, :profiles, :news, :gallery do
-      resources :assets, only: [:index, :create, :destroy]
-      resources :pictures, controller: :assets, only: [:index, :create, :destroy]
-      resources :cover_photo, controller: :assets, only: [:create, :destroy]
+    resources :pages, :news, concerns: [:has_assets, :has_pictures, :has_cover_photo]
+    resources :gallery, concerns: :has_pictures
+    resources :profiles, concerns: [:has_assets] do
+      resources :profile_photo, controller: :assets, only: [:create, :destroy]
     end
   end
 

@@ -17,6 +17,7 @@ module Admin
     # GET /pages/new
     def new
       @resource = @resource_class.create
+      set_js_vars
       respond_to do |format|
         format.html { render :edit }
         format.json { render :show, status: :ok, location: @resource }
