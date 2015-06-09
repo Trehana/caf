@@ -14,10 +14,10 @@ table.table
         td == Nokogiri::HTML(page.body).text
         td == page.meta_tags
         td
-          == render partial: 'admin/shared/index_view_resource', locals: {resource: profile}
+          == render partial: 'admin/shared/index_view_resource', locals: {resource: page}
         td
-          == render partial: 'admin/shared/index_edit_resource', locals: {resource: profile}
+          == render partial: 'admin/shared/index_edit_resource', locals: {resource: page}
         td
-          == render partial: 'admin/shared/index_delete_resource', locals: {resource: profile}
+          == render partial: 'admin/shared/index_delete_resource', locals: {resource: page}
 
 == render partial: 'admin/shared/index_footer'
