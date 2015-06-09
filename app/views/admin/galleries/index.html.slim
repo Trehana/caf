@@ -1,0 +1,20 @@
+== render partial: 'admin/shared/index_header'
+table.table
+  thead
+    tr
+      th == t('helpers.label.gallery.title')
+      th == t('helpers.label.gallery.preview')
+      th colspan="2"
+  tbody
+    - @resources.each do |gallery|
+      tr class="#{gallery.state}"
+        td
+          == gallery.title
+        td
+          == render partial: 'admin/galleries/preview'
+        td
+          == render partial: 'admin/shared/index_edit_resource', locals: {resource: gallery}
+        td
+          == render partial: 'admin/shared/index_delete_resource', locals: {resource: gallery}
+
+== render partial: 'admin/shared/index_footer'
