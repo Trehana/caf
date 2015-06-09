@@ -44,15 +44,15 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  #Display better errors
-  gem "better_errors"
+  # Display better errors
+  gem 'better_errors'
 end
 
 
 # Image and attachement handling
 gem 'paperclip'
 
-#CKEDITOR integration
+# CKEDITOR integration
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
 # Use state machine for states of CMS posts/pages
@@ -63,11 +63,11 @@ gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'nokogiri'
 
-#Friendly ID for SEO friendly slugs
+# Friendly ID for SEO friendly slugs
 gem 'friendly_id', '~> 5.1.0'
 
 # SLIM Markup support
-gem "slim-rails"
+gem 'slim-rails'
 
 # Navigation gem
 gem 'simple-navigation'
@@ -80,3 +80,6 @@ gem 'gon'
 
 # SEO
 gem 'meta-tags'
+
+# Shortcodes for insert content such as galleries into pages
+gem 'shortcode', github: 'kernow/shortcode'

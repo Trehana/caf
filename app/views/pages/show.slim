@@ -1,4 +1,5 @@
 #section-one class="section"
   .wrap
-    h1 == @resource.title
-    p == @resource.body
+    .content
+      h1 == @resource.title
+      == content @resource.body

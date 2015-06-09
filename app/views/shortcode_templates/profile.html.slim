@@ -1,0 +1,10 @@
+- profile = Profile.find(@attributes[:id].to_s) 
+- if profile
+  .col
+    == image_tag (profile.profile_photo ? profile.profile_photo.url(:standard) : 'img-temp-team'), alt: profile.title
+    span.name == profile.title
+    span.position == profile.designation
+    p == profile.bio_short
+  .hidden
+    == image_tag (profile.profile_photo ? profile.profile_photo.url(:thumb) : 'img-temp-team'), alt: profile.title
+    p == profile.bio
