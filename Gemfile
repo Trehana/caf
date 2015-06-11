@@ -46,6 +46,9 @@ group :development, :test do
 
   # Display better errors
   gem 'better_errors'
+
+  # View emails locally
+  gem "letter_opener"
 end
 
 
@@ -83,3 +86,9 @@ gem 'meta-tags'
 
 # Shortcodes for insert content such as galleries into pages
 gem 'shortcode', github: 'kernow/shortcode'
+
+
+# Use devise for Authentication
+gem 'devise'
+# Use pundit for Authorization
+gem 'pundit'

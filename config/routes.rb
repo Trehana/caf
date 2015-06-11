@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :pages, only: [:show]
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
     end
 
   end
+
+  root to: redirect('/pages/home')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

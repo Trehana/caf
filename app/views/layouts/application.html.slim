@@ -48,6 +48,12 @@ body class="#{@body_class}"
   == include_gon
   #container
     == render partial: 'shared/header', locals: { active_page: @active_page, cover_photo_url: @cover_photo_url, repeat_style: @cover_photo_repeat }
+    
+    - if notice
+      p class="alert alert-success" == notice
+    - if alert
+      p class="alert alert-danger" == alert
+    
     == yield
     .push
   = render partial: 'shared/footer'
