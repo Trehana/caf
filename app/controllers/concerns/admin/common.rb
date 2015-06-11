@@ -89,7 +89,7 @@ module Admin
       return unless Shortcode && !Shortcode.configuration.self_closing_tags.empty?
       %w(body bio).each do |content_attribute|
         # Go to next in loop if the conditions aren't met
-        next unless (content = params[@resource.class.model_name.singular.to_sym].key?(content_attribute.to_s)).nil?
+        next if (content = params[@resource.class.model_name.singular.to_sym][content_attribute.to_s]).nil?
         #
         # 1. read the html output and extract the code
         # 2. Extract the occurences of shortcodes
@@ -105,7 +105,10 @@ module Admin
         end
 
         short_code_chunks.each do |short_code_chunk|
-          content.gsub! CGI.escapeHTML(short_code_chunk), short_code_chunk
+          # * Replace the escaped text with unescaped text.
+          # * Replace single qoute occurences with double qoutes
+          #   since short code doesnt work for single qoutes
+          content.gsub! CGI.escapeHTML(short_code_chunk), (short_code_chunk.gsub! "'", '"')
         end
 
         params[@resource.class.model_name.singular.to_sym][content_attribute] = content
