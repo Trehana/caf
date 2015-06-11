@@ -55,3 +55,10 @@ en:
         profile_photo_select: 'Select profile photo'
         bio_short: 'Short bio'
         bio: 'Biography'
+        short_code: 'Short code'
+        short_code_instructions: 'Copy and paste the short code to embed the profile'
+      gallery:
+        title: 'Title'
+        gallery_photos: 'Gallery photos'
+        short_code: 'Short code'
+        short_code_instructions: 'Copy and paste the short code to embed the gallery'

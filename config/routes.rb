@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   concern :has_pictures do
-    resources :pictures, controller: :assets, only: [:index, :create, :destroy]
+    resources :pictures, controller: :assets, only: [:index, :create, :destroy], concerns: :has_assets
   end
 
   concern :has_cover_photo do
@@ -22,10 +22,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :pages, :news, concerns: [:has_assets, :has_pictures, :has_cover_photo]
-    resources :gallery, concerns: :has_pictures
+    resources :galleries, concerns: [:has_pictures, :has_assets]
     resources :profiles, concerns: [:has_assets] do
       resources :profile_photo, controller: :assets, only: [:create, :destroy]
     end
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

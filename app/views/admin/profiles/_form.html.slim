@@ -5,7 +5,9 @@
     ul
       - @resource.errors.full_messages.each do |message|
         li #{message}
-
+  
+  == render partial: 'admin/shared/shortcode', locals: { resource: @resource, f: f }
+  
   .field
     == f.label :title
     br
@@ -18,7 +20,7 @@
 
   .field
     == f.label :profile_photo_select
-    == render partial: 'admin/shared/dropzone_single_photo_upload', locals: {photo_class: 'profile_photo', resource: @resource}
+    == render partial: 'admin/shared/dropzone_single_photo_upload', locals: { photo_class: 'profile_photo', resource: @resource }
 
   .field
     == f.label :bio_short

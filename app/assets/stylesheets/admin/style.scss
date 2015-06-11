@@ -1,8 +1,35 @@
-#single_photo_select {
-  width: 300px;
-  border: 2px dashed #0087f7;
-  border-radius: 5px;
-  min-height: 150px;
-  width: 175px;
-  padding: 10px;
+.resource_class_name {
+  opacity: 0.3;
+}
+
+.resource_form {
+  input, textarea {
+    width: 100%;
+  }
+
+  #photo_select {
+    border: 2px dashed #0087f7;
+    border-radius: 5px;
+    min-height: 150px;
+    padding: 10px;
+  }
+
+  #photo_select.single {
+    width: 300px;
+    width: 175px;
+
+  }
+
+  #photo_select.multiple {
+    width: 100%;
+    min-height: 150px;
+  }
+
+  label
+   span {
+     font-weight: normal;
+     margin-left: 0.5em;
+     opacity: 0.3;
+   }
+
 }

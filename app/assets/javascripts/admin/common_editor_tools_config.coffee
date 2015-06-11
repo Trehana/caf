@@ -33,12 +33,12 @@ initialise_edit_tools = ->
         dialog_definition_content.elements[0]['action'] = action_url
       return
 
-  if $('div#single_photo_select').length > 0
+  if $('div#photo_select').length > 0
     photo = undefined
     # The controller expects a class name with _asset to be the data hashe's
     # key. And the form has to have rel field set to that. i.e: 'cover_photo'
-    photo_class_data = $('div#single_photo_select').attr('rel') + '_asset[data]'
-    photo = new Dropzone('div#single_photo_select',
+    photo_class_data = $('div#photo_select').attr('rel') + '_asset[data]'
+    photo = new Dropzone('div#photo_select',
       url: gon.assets_path
       paramName: photo_class_data
       headers: "X-CSRF-Token" : $('meta[name="csrf-token"]').attr('content')

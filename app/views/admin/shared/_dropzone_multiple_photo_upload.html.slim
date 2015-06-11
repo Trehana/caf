@@ -1,7 +1,7 @@
-#single_photo_select class="dropzone dz-clickable" rel="#{photo_class}"
+#photo_select class="multiple dropzone dz-clickable" rel="#{photo_class}"
       - if resource.send(photo_class.pluralize)
         .dropzone_thumb
-          resource.send(photo_class.pluralize).each do |photo|
+          - resource.send(photo_class.pluralize).each do |photo|
             == link_to (image_tag photo.url(:thumb), :title => t('common.delete')),
                 url_for([:admin, resource, photo, :format => :json]),
                 remote: :true, method: :delete, :data => {confirm: t('common.delete_confirm')}, class: "delete_dropzone_thumb"

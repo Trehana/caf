@@ -1,4 +1,4 @@
-#single_photo_select class="dropzone dz-clickable" rel="#{photo_class}"
+#photo_select class="single dropzone dz-clickable" rel="#{photo_class}"
       - if resource.send(photo_class)
         .dropzone_thumb
             == link_to (image_tag resource.send(photo_class).url(:thumb), :title => t('common.delete')),

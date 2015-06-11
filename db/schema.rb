@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150609150942) do
 
   create_table "galleries", force: :cascade do |t|
     t.string "title", limit: 255
+    t.string "state", limit: 255
     t.string "slug",  limit: 255
   end
 
