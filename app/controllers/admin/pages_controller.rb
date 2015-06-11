@@ -1,5 +1,8 @@
-class Admin::PagesController < AdminController
-  private
+module Admin
+  # Pages Add/Edit/Delete
+  class PagesController < AdminController
+    private
+
     # Set classname for concerns to set the other parameters
     def set_resource_class_name
       @resource_class_name = 'Page'
@@ -9,4 +12,5 @@ class Admin::PagesController < AdminController
     def resource_params
       params.require(:page).permit(:title, :body, :meta_tags, :cover_photo_repeat)
     end
+  end
 end

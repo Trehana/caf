@@ -1,5 +1,8 @@
-class Admin::GalleriesController < AdminController
-  private
+module Admin
+  # Galleries Add/Edit/Delete
+  class GalleriesController < AdminController
+    private
+
     # Set classname for concerns to set the other parameters
     def set_resource_class_name
       @resource_class_name = 'Gallery'
@@ -8,4 +11,5 @@ class Admin::GalleriesController < AdminController
     def resource_params
       params.require(:gallery).permit(:title)
     end
+  end
 end

@@ -1,3 +1,4 @@
+# Common methods and validations for models
 module CommonContent
   extend ActiveSupport::Concern
 
@@ -28,9 +29,10 @@ module CommonContent
     end
   end
 
+  # Class Methods
   module ClassMethods
     def published_content
-      where.not(state: ['deleted', 'draft'])
+      where.not(state: %w('deleted', 'draft'))
     end
 
     def editors_content

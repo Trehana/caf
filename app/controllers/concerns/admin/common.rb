@@ -1,4 +1,5 @@
 module Admin
+  # Common methods shared between admin controllers
   module Common
     extend ActiveSupport::Concern
 
@@ -70,6 +71,7 @@ module Admin
     end
 
     private
+
     def set_resource_class
       @resource_class = Object.const_get(@resource_class_name)
       @resource_index_path = "admin_#{@resource_class.name.underscore.pluralize}".to_sym
@@ -84,30 +86,29 @@ module Admin
     end
 
     def fix_shortcode_sanitisation
-      if Shortcode && !Shortcode.configuration.self_closing_tags.empty?
-        %w(body bio).each do |content_attribute|
-          if params[@resource.class.model_name.singular.to_sym].key?(content_attribute.to_s)
-            content = params[@resource.class.model_name.singular.to_sym][content_attribute]
-            # 1. read the html output and extract the code
-            plain_text = Nokogiri::HTML(content).text
-            # 2. Extract the occurences of shortcodes
-            # 3. convert the code to encoded strings array
-            short_code_chunks = []
-            Shortcode.configuration.self_closing_tags.each do |short_code|
-              short_code_chunks.push(*plain_text.scan(/\[#{short_code.to_s}\s+id=.+\]/).flatten.compact)
-            end
-            short_code_chunks_to_html_hash = {}
-            short_code_chunks.each do |short_code_chunk|
-              short_code_chunks_to_html_hash[short_code_chunk] = CGI.escapeHTML(short_code_chunk)
-            end
-            # 4. search for the encoded strings with respective unsanitised plain text code
-            short_code_chunks_to_html_hash.each do |short_code, short_code_html|
-              content.gsub! short_code_html, short_code
-            end
-            # 5. update params hash
-            params[@resource.class.model_name.singular.to_sym][content_attribute] = content
-          end
+      return unless Shortcode && !Shortcode.configuration.self_closing_tags.empty?
+      %w(body bio).each do |content_attribute|
+        # Go to next in loop if the conditions aren't met
+        next unless (content = params[@resource.class.model_name.singular.to_sym].key?(content_attribute.to_s)).nil?
+        #
+        # 1. read the html output and extract the code
+        # 2. Extract the occurences of shortcodes
+        # 3. convert the code to encoded strings array
+        # 4. search for the encoded strings with respective unsanitised plain text code
+        # 5. update params hash
+
+        plain_text = Nokogiri::HTML(content).text
+        short_code_chunks = []
+
+        Shortcode.configuration.self_closing_tags.each do |short_code|
+          short_code_chunks.push(*plain_text.scan(/\[#{short_code.to_s}\s+id=.+\]/).flatten.compact)
         end
+
+        short_code_chunks.each do |short_code_chunk|
+          content.gsub! CGI.escapeHTML(short_code_chunk), short_code_chunk
+        end
+
+        params[@resource.class.model_name.singular.to_sym][content_attribute] = content
       end
     end
   end

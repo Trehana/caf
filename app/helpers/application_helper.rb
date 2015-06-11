@@ -1,3 +1,4 @@
+# ApplicationHelper
 module ApplicationHelper
   def content(c)
     Shortcode.process(c)
