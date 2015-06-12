@@ -10,11 +10,10 @@ html
     == include_gon
     nav.navbar.navbar-default
       .container-fluid
-        / Brand and toggle get grouped for better mobile display
         .navbar-header
           button.navbar-toggle.collapsed data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
-          a.navbar-brand href="#"  Caffa
-        / Collect the nav links, forms, and other content for toggling
+          == link_to 'Caffa', admin_pages_path, class: 'navbar-brand'
+          
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           = render_navigation context: :admin, renderer: :bootstrap
     .container

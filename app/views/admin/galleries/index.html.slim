@@ -11,7 +11,7 @@ table.table
         td
           == gallery.title
         td
-          == render partial: 'admin/galleries/preview'
+          == render partial: 'admin/galleries/preview', locals: {resource: gallery}
         td
           == render partial: 'admin/shared/index_edit_resource', locals: {resource: gallery}
         td

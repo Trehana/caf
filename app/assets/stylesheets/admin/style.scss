@@ -33,3 +33,7 @@
    }
 
 }
+
+.gallery-preview {
+  @include border-radius(20px);
+}
