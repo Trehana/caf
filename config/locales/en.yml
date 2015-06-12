@@ -46,12 +46,14 @@ en:
   helpers:
     label:
       page:
+        nav_name: 'Pages'
         title: 'Title'
         body: 'Content'
         meta_tags: 'Meta tags'
         cover_photo_select: 'Select cover photo'
         cover_photo_repeat: 'Tile cover photo'
       profile:
+        nav_name: 'Profiles'
         title: 'Name'
         designation: 'Designation'
         profile_photo_select: 'Select profile photo'
@@ -60,7 +62,11 @@ en:
         short_code: 'Short code'
         short_code_instructions: 'Copy and paste the short code to embed the profile'
       gallery:
+        nav_name: 'Galleries'
         title: 'Title'
         gallery_photos: 'Gallery photos'
         short_code: 'Short code'
         short_code_instructions: 'Copy and paste the short code to embed the gallery'
+      user:
+        nav_name: 'Users'
+        email: 'Email'

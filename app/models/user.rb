@@ -13,7 +13,11 @@ class User < ActiveRecord::Base
     role
   end
 
-  delegate :can?, :cannot?, :to => :ability
+  def ability
+    @ability ||= AdminAbility.new(self)
+  end
+  #
+  delegate :can?, :cannot?, to: :ability
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

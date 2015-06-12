@@ -1,0 +1,11 @@
+== render partial: 'admin/shared/index_header'
+table.table
+  thead
+    tr
+      th Email
+      th Role
+      th Action
+  tbody
+    - @users.each do |user|
+      tr
+        = render user

@@ -74,6 +74,7 @@ gem 'slim-rails'
 
 # Navigation gem
 gem 'simple-navigation'
+gem 'simple-navigation-bootstrap'
 
 # JS File upload
 gem 'dropzonejs-rails'
