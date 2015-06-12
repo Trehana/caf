@@ -16,6 +16,11 @@ module Admin
   class AssetsController < BaseController
     layout 'layouts/ckeditor'
 
+    # Skip authorization for create since it breaks the
+    # operation (reason under investigation)
+    # authorize the create function seperately
+    skip_load_and_authorize_resource :only => :create
+
     # JS vars doesnt need to be set for asset operations
     skip_before_filter :set_js_vars, only: [:destroy]
 
@@ -29,12 +34,14 @@ module Admin
     def create
       @resource = @resource_class.new(resource_params)
       @resource.assetable = @nested_resource
+      authorize! :new, @resource
 
       # If the association is has_one automatically deletes the previous file and,
       # replace with newly uploaded file if the new file is valid
       if check_association[:association] == 'has_one' && @resource.valid? && @nested_resource.send(@resource_class_name.underscore)
         @nested_resource.send(@resource_class_name.underscore).destroy
       end
+
 
       ###
       if @resource.save
@@ -58,7 +65,7 @@ module Admin
     end
 
     def destroy
-      @resource.destroy
+      authorize! :destroy, @resource
       respond_to do |format|
         format.json { render nothing: true, status: 204 }
       end

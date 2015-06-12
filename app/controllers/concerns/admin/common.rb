@@ -5,8 +5,6 @@ module Admin
 
     included do
       load_and_authorize_resource
-      # before_action :authenticate_user!
-      # before_action :check_authorization
       before_action :set_resource_class_name
       before_action :set_resource_class
       before_action :set_resource, only: [:show, :edit, :update, :destroy]
@@ -93,13 +91,13 @@ module Admin
       %w(body bio).each do |content_attribute|
         # Go to next in loop if the conditions aren't met
         next if (content = params[@resource.class.model_name.singular.to_sym][content_attribute.to_s]).nil?
-        #
+
         # 1. read the html output and extract the code
         # 2. Extract the occurences of shortcodes
         # 3. convert the code to encoded strings array
         # 4. search for the encoded strings with respective unsanitised plain text code
         # 5. update params hash
-
+        #
         plain_text = Nokogiri::HTML(content).text
         short_code_chunks = []
 
@@ -111,7 +109,7 @@ module Admin
           # * Replace the escaped text with unescaped text.
           # * Replace single qoute occurences with double qoutes
           #   since short code doesnt work for single qoutes
-          content.gsub! CGI.escapeHTML(short_code_chunk), (short_code_chunk.gsub! "'", '"')
+          content.gsub! CGI.escapeHTML(short_code_chunk), short_code_chunk.tr("'", '"')
         end
 
         params[@resource.class.model_name.singular.to_sym][content_attribute] = content
