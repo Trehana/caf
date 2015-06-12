@@ -4,6 +4,9 @@ module Admin
     extend ActiveSupport::Concern
 
     included do
+      load_and_authorize_resource
+      # before_action :authenticate_user!
+      # before_action :check_authorization
       before_action :set_resource_class_name
       before_action :set_resource_class
       before_action :set_resource, only: [:show, :edit, :update, :destroy]
@@ -113,6 +116,14 @@ module Admin
 
         params[@resource.class.model_name.singular.to_sym][content_attribute] = content
       end
+    end
+
+    def check_authorization
+      redirect_to :back, alert: t('authorization.not_authorized') unless current_user.admin? || current_user.super_admin?
+    end
+
+    def current_ability
+      @current_ability ||= AdminAbility.new(current_user)
     end
   end
 end

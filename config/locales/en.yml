@@ -40,6 +40,8 @@ en:
     messages:
       deleted: 'Page deleted'
       updated: 'Page was successfully updated.'
+  authorization:
+    not_authorized: 'Insufficient permissions to perfom that action'
 
   helpers:
     label:

@@ -31,5 +31,4 @@ module Common
                   description: t('meta_tags.description'),
                   keywords: "#{t('meta_tags.keywords')}#{@resource.try(:meta_tags) && !@resource.try(:meta_tags).empty? ? ', ' + @resource.try(:meta_tags) : ''}".squish
   end
-  #
 end

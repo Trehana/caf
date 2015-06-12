@@ -1,6 +1,6 @@
 module Admin
   # Galleries Add/Edit/Delete
-  class GalleriesController < AdminController
+  class GalleriesController < BaseController
     private
 
     # Set classname for concerns to set the other parameters

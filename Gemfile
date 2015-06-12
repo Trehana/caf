@@ -90,5 +90,4 @@ gem 'shortcode', github: 'kernow/shortcode'
 
 # Use devise for Authentication
 gem 'devise'
-# Use pundit for Authorization
-gem 'pundit'
+gem 'cancancan'

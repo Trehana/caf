@@ -13,7 +13,7 @@ module Admin
   #
   # The nested resource class will be identified by the nested resource id
   # page_id => Page (class)
-  class AssetsController < AdminController
+  class AssetsController < BaseController
     layout 'layouts/ckeditor'
 
     # JS vars doesnt need to be set for asset operations

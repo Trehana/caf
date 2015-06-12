@@ -1,6 +1,6 @@
 module Admin
   # Profiles Add/Edit/Delete
-  class ProfilesController < AdminController
+  class ProfilesController < BaseController
     private
 
     # Set classname for concerns to set the other parameters

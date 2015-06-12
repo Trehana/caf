@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     resources :profiles, concerns: [:has_assets] do
       resources :profile_photo, controller: :assets, only: [:create, :destroy]
     end
+    #
+    resources :users
 
   end
 
