@@ -17,25 +17,36 @@ set :linked_dirs, %w(log tmp vendor/bundle public/assets public/system)
 namespace :deploy do
   desc 'Precompile assets'
   namespace :assets do
-    task :precompile do
-      run_locally do
-        execute("RAILS_ENV=#{fetch(:rails_env)} bundle exec rake assets:clean && RAILS_ENV=#{fetch(:rails_env)} bundle exec rake assets:precompile")
+    task :clean_and_precompile do
+      if fetch(:rails_env) != 'development'
+        'deploy:cleanup_assets'
+        'deploy:compile_assets'
       end
     end
   end
 
-  desc 'Restart application'
-  namespace :app_server do
-    task :restart do
-      on roles(:app), in: :sequence, wait: 5 do
-        run_locally do
-          execute :bundle, 'exec unicorn restart'
-        end
-      end
-    end
+  desc 'Start the application'
+  task :start, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_path} && RAILS_ENV=#{stage} bundle exec puma -b 'unix://#{shared_path}/sockets/puma.sock' -S #{shared_path}/sockets/puma.state --control 'unix://#{shared_path}/sockets/pumactl.sock' >> #{shared_path}/log/puma-#{stage}.log 2>&1 &", :pty => false
+  end
+
+  desc "Stop the application"
+  task :stop, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_path} && RAILS_ENV=#{stage} bundle exec pumactl -S #{shared_path}/sockets/puma.state stop"
+  end
+
+  desc "Restart the application"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_path} && RAILS_ENV=#{stage} bundle exec pumactl -S #{shared_path}/sockets/puma.state restart"
+  end
+
+  desc "Status of the application"
+  task :status, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_path} && RAILS_ENV=#{stage} bundle exec pumactl -S #{shared_path}/sockets/puma.state stats"
   end
 
   after 'deploy', 'bundler:install'
-  after 'bundler:install', 'deploy:assets:precompile'
-  after 'deploy:assets:precompile', 'deploy:app_server:restart'
+  after 'bundler:install', 'deploy:migrate'
+  after 'deploy:migrate', 'deploy:assets:clean_and_precompile'
+  after 'deploy:published', 'deploy:restart'
 end
