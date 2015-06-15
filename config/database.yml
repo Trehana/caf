@@ -50,7 +50,7 @@ test:
 #
 production:
   <<: *default
-    database: <%= ENV['CAFFA_DB_NAME'] %>
-    username: <%= ENV['CAFFA_DB_USER'] %>
-    password: <%= ENV['CAFFA_DB_PASSWORD'] %>
-    socket: <%= ENV['CAFFA_DB_SOCKET'] %>
+  database: <%= ENV['CAFFA_DB_NAME'] %>
+  username: <%= ENV['CAFFA_DB_USER'] %>
+  password: <%= ENV['CAFFA_DB_PASSWORD'] %>
+  socket: <%= ENV['CAFFA_DB_SOCKET'] %>
