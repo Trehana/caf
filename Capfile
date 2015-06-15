@@ -7,6 +7,8 @@ require 'capistrano/deploy'
 # Rails specific support
 require 'capistrano/rails'
 
+require 'capistrano/puma'
+
 # Include tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
