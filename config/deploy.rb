@@ -27,6 +27,5 @@ namespace :deploy do
 
   after 'deploy', 'bundler:install'
   after 'bundler:install', 'deploy:migrate'
-  # after 'deploy:migrate', 'deploy:assets:clean_and_precompile'
   after 'deploy:published', 'puma:restart'
 end
