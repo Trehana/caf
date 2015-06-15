@@ -12,19 +12,13 @@ set :pty, false
 set :use_sudo, true
 set :ssh_options, forward_agent: true
 
-# set :linked_files, %w[
-#   config/database.yml
-#   config/environments/production.rb
-#   config/environments/staging.rb
-#   config/environments/development.rb
-# ]
-
 set :linked_dirs, %w(log tmp vendor/bundle public/assets public/system)
+
 namespace :deploy do
   namespace :assets do
     task :bunde_exec do
       if fetch(:rails_env) == 'development'
-        within release_path do
+        run_locally do
           execute :bundle, 'install'
         end
       end
@@ -33,7 +27,7 @@ namespace :deploy do
 
   namespace :assets do
     task :precompile do
-      within release_path do
+      run_locally do
         execute("RAILS_ENV=#{fetch(:rails_env)} bundle exec rake assets:clean && RAILS_ENV=#{fetch(:rails_env)} bundle exec rake assets:precompile")
       end
     end
@@ -42,7 +36,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      within release_path do
+      run_locally do
         execute :bundle, 'exec unicorn restart'
       end
     end
