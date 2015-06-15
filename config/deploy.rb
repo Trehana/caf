@@ -15,16 +15,7 @@ set :ssh_options, forward_agent: true
 set :linked_dirs, %w(log tmp vendor/bundle public/assets public/system)
 
 namespace :deploy do
-  namespace :assets do
-    task :bunde_exec do
-      if fetch(:rails_env) == 'development'
-        run_locally do
-          execute :bundle, 'install'
-        end
-      end
-    end
-  end
-
+  desc 'Precompile assets'
   namespace :assets do
     task :precompile do
       run_locally do
@@ -34,11 +25,17 @@ namespace :deploy do
   end
 
   desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      run_locally do
-        execute :bundle, 'exec unicorn restart'
+  namespace :app_server do
+    task :restart do
+      on roles(:app), in: :sequence, wait: 5 do
+        run_locally do
+          execute :bundle, 'exec unicorn restart'
+        end
       end
     end
   end
+
+  after 'deploy', 'bundler:install'
+  after 'bundler:install', 'deploy:assets:precompile'
+  after 'deploy:assets:precompile', 'deploy:app_server:restart'
 end
