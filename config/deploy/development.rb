@@ -3,15 +3,16 @@ set :branch, ENV['branch'] || 'master'
 set :rails_env, :development
 
 server '128.199.252.34',
-  user: 'rails',
-  roles: %w{web app},
-  ssh_options: {
-    user: 'root', # overrides user setting above
-    keys: %w(/Users/buddhi/.ssh/id_rsa),
-    forward_agent: false,
-    auth_methods: %w(publickey)
-  }
+       user: 'rails',
+       roles: %w(web app),
+       ssh_options: {
+         user: 'root', # overrides user setting above
+         keys: %w(/Users/buddhi/.ssh/id_rsa),
+         forward_agent: false,
+         auth_methods: %w(publickey)
+       }
 
+# role :puma_nginx, %w{root@128.199.252.34}
 
 # server-based syntax
 # ======================

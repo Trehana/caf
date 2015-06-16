@@ -8,6 +8,8 @@ require 'capistrano/deploy'
 require 'capistrano/rails'
 
 require 'capistrano/puma'
+require 'capistrano/puma/workers'
+require 'capistrano/puma/nginx'
 
 # Include tasks from other gems included in your Gemfile
 #

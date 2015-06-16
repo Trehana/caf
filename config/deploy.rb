@@ -14,6 +14,11 @@ set :ssh_options, forward_agent: true
 
 set :linked_dirs, %w(log tmp vendor/bundle public/assets public/system)
 
+set :puma_state, "#{shared_path}/tmp/puma.state"
+set :puma_pid, "#{shared_path}/tmp/puma.pid"
+set :puma_bind, "unix://#{shared_path}/tmp/puma.sock"
+set :puma_default_control_app, "unix://#{shared_path}/tmp/pumactl.sock"
+
 namespace :deploy do
   # desc 'Precompile assets'
   # namespace :assets do
