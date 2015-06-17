@@ -15,7 +15,6 @@ html
           == link_to 'Caffa', admin_pages_path, class: 'navbar-brand'
           
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          = render_navigation context: :admin, renderer: :bootstrap
+          = render_navigation context: :nav_admin, renderer: :bootstrap
     .container
-      - logger.debug "-------- #{current_user.ability} --------"
       == yield
