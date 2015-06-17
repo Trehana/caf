@@ -12,7 +12,7 @@ server '128.199.252.34',
          auth_methods: %w(publickey)
        }
 
-role :puma_nginx, %w{root@128.199.252.34}
+# role :puma_nginx, %w{root@128.199.252.34}
 
 # server-based syntax
 # ======================
