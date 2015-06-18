@@ -2,6 +2,7 @@
 # Configures your navigation
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
+    primary.dom_class = 'footer_nav'
     primary.item :first, '' do |first|
       first.dom_class = 'col'
       first.item :coffee_adventure, t('nav.header.the_caffa_store.the_caffa_store') , '#'
