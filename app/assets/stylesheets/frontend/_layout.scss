@@ -202,7 +202,7 @@ input[type="text"] {
 			}
 		}
 
-		#btn-media {
+		#media {
 			margin-left:124px;
 		}
 	}
@@ -265,43 +265,46 @@ input[type="text"] {
 		padding:0;
 		list-style:none;
 		text-align:center;
-		#btn-coffee-event {
-			a {
-				background:#FF7D49;
-				border:1px solid #fff;
+		li {
+			&#coffee_event {
+				a {
+					background:#FF7D49;
+					border:1px solid #fff;
+				}
+				.sub {
+					background:#FF7D49;
+				}
 			}
-			.sub {
-				background:#FF7D49;
+			&#coffee_adventure {
+				a {
+					background:#DAB91B;
+					border:1px solid #fff;
+				}
+				.sub {
+					background:#DAB91B;
+				}
+			}
+			&#art_spot {
+				a {
+					background:#88B757;
+					border:1px solid #fff;
+				}
+				.sub {
+					background:#88B757;
+				}
+			}
+			&#the_caffa_store {
+				a {
+					background:#56C0B0;
+					border:1px solid #fff;
+				}
+				.sub {
+					background:#56C0B0;
+				}
 			}
 		}
-		#btn-coffee-adventure {
-			a {
-				background:#DAB91B;
-				border:1px solid #fff;
-			}
-			.sub {
-				background:#DAB91B;
-			}
-		}
-		#btn-art-spot {
-			a {
-				background:#88B757;
-				border:1px solid #fff;
-			}
-			.sub {
-				background:#88B757;
-			}
-		}
-		#btn-the-caffa-store {
-			a {
-				background:#56C0B0;
-				border:1px solid #fff;
-			}
-			.sub {
-				background:#56C0B0;
-			}
-		}
-		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+
+		#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 				display:block;
 				float:left;
 				width:23%;
@@ -323,20 +326,17 @@ input[type="text"] {
 					position:relative;
 					@include transition;
 					cursor:pointer;
+					color:#fff;
+					text-transform:uppercase;
+					text-align:center;
+
 					img {
 						max-width:60%;
 						margin:10px auto;
 						@include transition;
-					}
-					span {
-						color:#fff;
-						text-transform:uppercase;
-						display:block;
-						text-align:center;
-
+						display: block;
 					}
 				}
-
 
 			.sub {
 				display:block;
@@ -352,37 +352,33 @@ input[type="text"] {
 				text-align:center;
 				@include transition;
 
-				 li {
-				 	display:inline-block;
-				 	width:24%;
+				li {
+					display:inline-block;
+					width:24%;
 
-				 	a {
-				 		display:inline-block;
-				 		font-size:18px;
-				 		line-height:20px;
-				 		text-transform:uppercase;
-				 		border:none;
-				 		color:#fff;
-				 		opacity:0.5;
-				 		@include transition;
-				 		font-size:14px;
+					a {
+						display:inline-block;
+						font-size:18px;
+						line-height:20px;
+						text-transform:uppercase;
+						border:none;
+						color:#fff;
+						opacity:0.5;
+						@include transition;
+						font-size:14px;
 						line-height:16px;
 
-				 		&:hover {
-				 			opacity:1;
-				 		}
-				 	}
-				 }
+						&:hover {
+							opacity:1;
+						}
+					}
+				}
 			}
 		}
-
-
-
-
 	}
 
 	&.active {
-		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+		#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 			height:140px !important;
 
 			img {

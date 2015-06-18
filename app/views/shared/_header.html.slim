@@ -4,7 +4,6 @@
       background:url(#{cover_photo_url}) #{repeat_style} bottom center
       }
 
-
 #header-wrapper
   #header
     a.menu-icon
@@ -19,24 +18,11 @@
         .menu-title
           span Menu
           a.menu-exit &times;
-        ul
-          li#btn-about-us
-            a href="about-us.html"  About Us
-          li#btn-celendar
-            a href="calendar.html"  Calendar
-          li#btn-news
-            a href="news.html"  News
-          li#btn-media
-            a href="#"  Media
-          li#btn-partners
-            a href="partners.html"  Partners
-          li#btn-contact
-            a href="contact.html"  Contact
-  /! end #header
+        = render_navigation context: :nav_header_top
+
   #tagline
     .wrap
       span Coffee &amp; Art Fringe Festival Asia
-  /! end #tagline
   #banner
     .wrap
       .home
@@ -46,44 +32,4 @@
           span.text3 2015
           p.text4 Aenean nisi odio, porta vel, tristique vel, semper mollis, mi. Donec gravida, ipsum vitae convallis sodales, urna justo commodo nunc, non venenatis nisl urna non purus.
       #banner-navigation
-        ul
-          li#btn-coffee-event
-            a.banner-nav-link
-              = image_tag "img-coffee-event.png", alt: "Coffee Event"
-              span Coffee Event
-            ul.sub
-              li
-                a href="#"  Program
-              li
-                a href="#"  Sponsors
-              li
-                a href="#"  Photo Log
-          li#btn-coffee-adventure
-            a.banner-nav-link href="coffee-adventure.html"
-              = image_tag "img-coffee-adventure.png", alt: "Coffee Adventure"
-              span Coffee Adventure
-            ul.sub
-              li
-                a href="#"  Café List
-              li
-                a href="#"  Coffee Academy
-              li
-                a href="#"  Consultancy
-              li
-                a href="#"  Supply Network
-          li#btn-art-spot
-            a.banner-nav-link
-              = image_tag "img-art-spot.png", alt: "Art Spot"
-              span Art Spot
-            ul.sub
-              li
-                a href="#"  Emerging Artist
-              li
-                a href="#"  The Galleries
-              li
-                a href="#"  In The Studio
-          li#btn-the-caffa-store
-            a.banner-nav-link
-              = image_tag "img-the-caffa-store.png", alt: "The Caffa Store"
-              span The Caffa Store
-  /! end #banner
+        = render_navigation context: :nav_header, expand_all: true

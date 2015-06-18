@@ -20,6 +20,35 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  nav:
+    header:
+      coffee_event:
+        coffee_event:  'Coffe Event'
+        program: 'Program'
+        sponsors: 'Sponsors'
+        photo_log: 'Photo log'
+      coffee_adventure:
+        coffee_adventure: 'Coffee Adventure'
+        cafe_list: 'Café List'
+        coffee_academy: 'Coffee Academy'
+        consultancy: 'Consultancy'
+        supply_network: 'Supply Network'
+      art_spot:
+        art_spot: 'Art Spot'
+        emerging_artists: 'Emerging Artists'
+        the_galleries: 'The Galleries'
+        in_the_studio: 'In The Studio'
+      the_caffa_store:
+        the_caffa_store: 'The Caffa Store'
+    header_top:
+      about_us: 'About Us'
+      calendar: 'Calendar'
+      news: 'News'
+      media: 'Media'
+      partners: 'Partners'
+      contact: 'Contact'
+    footer:
+
   meta_tags:
     title: 'Caffa'
     description: 'CAFFA celebrates the wonders and benefits of coffee and art. CAFFA aims to develop, educate and nurture an appreciation for the art of coffee and be a platform for coffee education, appreciation as well as a celebration of contemporary and fringe art in its many forms.'
