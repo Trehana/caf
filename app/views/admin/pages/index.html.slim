@@ -6,16 +6,16 @@ table.table
       th Body
       th colspan="3"
   tbody
-    - @resources.each do |page|
-      tr class="#{page.state}"
+    - @resources.each do |resource|
+      tr class="#{resource.state}"
         td
-          == page.title
-        td == Nokogiri::HTML(page.body).text
+          == resource.title
+        td == Nokogiri::HTML(resource.body).text
         td
-          == render partial: 'admin/shared/index_view_resource', locals: {resource: page}
+          == render partial: 'admin/shared/index_view_resource', locals: {resource: resource}
         td
-          == render partial: 'admin/shared/index_edit_resource', locals: {resource: page}
+          == render partial: 'admin/shared/index_edit_resource', locals: {resource: resource}
         td
-          == render partial: 'admin/shared/index_delete_resource', locals: {resource: page}
+          == render partial: 'admin/shared/index_delete_resource', locals: {resource: resource}
 
 == render partial: 'admin/shared/index_footer'

@@ -80,6 +80,13 @@ en:
         meta_tags: 'Meta tags'
         cover_photo_select: 'Select cover photo'
         cover_photo_repeat: 'Tile cover photo'
+      cafe:
+        nav_name: 'Cafes'
+        title: 'Title'
+        body: 'Content'
+        menu: 'Menu'
+        cover_photo_select: 'Select cover photo'
+        cover_photo_repeat: 'Tile cover photo'
       profile:
         nav_name: 'Profiles'
         title: 'Name'

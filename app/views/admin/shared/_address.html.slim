@@ -1,0 +1,6 @@
+.address
+  - resource.build_address unless resource.address
+  = f.fields_for :address do |a|
+    = a.text_field :address
+    = a.text_field :postal_code
+    = a.country_select :country_code, priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK']

@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :pages, only: [:show]
-  resources :news, only: [:index, :show]
-
+  resources :news, :cafes, only: [:index, :show]
 
   # ADMIN
   # ==========
@@ -22,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :pages, :news, concerns: [:has_assets, :has_pictures, :has_cover_photo]
+    resources :pages, :cafes, :news, concerns: [:has_assets, :has_pictures, :has_cover_photo]
     resources :galleries, concerns: [:has_pictures, :has_assets]
     resources :profiles, concerns: [:has_assets] do
       resources :profile_photo, controller: :assets, only: [:create, :destroy]

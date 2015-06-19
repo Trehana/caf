@@ -15,14 +15,20 @@
     br
     == f.text_area :body, class: 'ck_editor_textarea'
   .field
-    == f.label :meta_tags
+    == f.label :menu
     br
-    == f.text_field :meta_tags, 'data-role': "tagsinput"
+    == f.text_area :menu, class: 'ck_editor_textarea'
   .field
     == f.label :cover_photo_select
     == render partial: 'admin/shared/dropzone_single_photo_upload', locals: {photo_class: 'cover_photo', resource: @resource}
 
     == f.label :cover_photo_repeat
     == f.check_box :cover_photo_repeat
+    
+    .field
+      == f.label :address
+      br
+      = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
+
   br
   == render partial: 'admin/shared/edit_form_footer', locals: {f: f}

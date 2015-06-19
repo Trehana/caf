@@ -1,6 +1,4 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# Editor tools config
 initialise_edit_tools = ->
   config =
     filebrowserBrowseUrl: gon.assets_path + '?type=pictures'
@@ -11,13 +9,17 @@ initialise_edit_tools = ->
     filebrowserFlashUploadUrl: gon.assets_path + '?type=attachment_files'
     filebrowserImageBrowseLinkUrl: gon.assets_path + '?type=pictures'
 
-  if $('#ck_editor_textarea').length > 0
-    config =  if $('#ck_editor_textarea').attr('rel') == 'no-images'
-                $.extend(config, window.CKEDITOR_config.without_images)
-              else
-                $.extend(config, window.CKEDITOR_config.with_images)
-    #
-    ck_editor_textarea = CKEDITOR.replace 'ck_editor_textarea', config
+  # Iterate through elements with ck_editor_textarea class and
+  # CKEditor editor
+  $.each $('.ck_editor_textarea'), (index, editor_area)->
+    console.log editor_area
+    config =
+      if $(editor_area).attr('rel') == 'no-images'
+        $.extend(config, window.CKEDITOR_config.without_images)
+      else
+        $.extend(config, window.CKEDITOR_config.with_images)
+
+    window[$(editor_area).attr('id')] = CKEDITOR.replace $(editor_area).attr('id'), config
 
     CKEDITOR.on 'dialogDefinition', (ev) ->
       dialogName = ev.data.name

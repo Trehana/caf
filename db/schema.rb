@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611225149) do
+ActiveRecord::Schema.define(version: 20150619020916) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "address",          limit: 255
+    t.string   "country_code",     limit: 2
+    t.string   "postal_code",      limit: 10
+    t.integer  "addressable_id",   limit: 4
+    t.string   "addressable_type", limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -28,6 +38,17 @@ ActiveRecord::Schema.define(version: 20150611225149) do
 
   add_index "assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "cafes", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.string   "slug",               limit: 255
+    t.text     "body",               limit: 65535
+    t.text     "menu",               limit: 65535
+    t.integer  "cover_photo_repeat", limit: 1,     default: 0
+    t.string   "state",              limit: 255
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false

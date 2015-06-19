@@ -53,7 +53,6 @@ group :development, :test do
   gem 'capistrano3-puma', github: 'seuros/capistrano-puma'
 end
 
-
 # Image and attachement handling
 gem 'paperclip'
 
@@ -94,3 +93,7 @@ gem 'shortcode', github: 'kernow/shortcode'
 # Use devise for Authentication
 gem 'devise'
 gem 'cancancan'
+
+
+gem 'country_select', github: 'stefanpenner/country_select'
+gem 'countries'
