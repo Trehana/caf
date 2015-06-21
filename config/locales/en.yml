@@ -71,6 +71,9 @@ en:
   authorization:
     not_authorized: 'Insufficient permissions to perfom that action'
 
+  business_hours:
+    not_defined: 'No business hours being set'
+
   helpers:
     label:
       page:

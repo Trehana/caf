@@ -25,10 +25,15 @@
     == f.label :cover_photo_repeat
     == f.check_box :cover_photo_repeat
     
-    .field
-      == f.label :address
-      br
-      = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
+  .field
+    == f.label :address
+    br
+    = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
+    
+  .field
+    == f.label :business_hours
+    br
+    = render partial: 'admin/shared/business_hours', locals: {f: f, resource: @resource }
 
   br
   == render partial: 'admin/shared/edit_form_footer', locals: {f: f}

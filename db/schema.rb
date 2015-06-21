@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619020916) do
+ActiveRecord::Schema.define(version: 20150621112305) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address",          limit: 255
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150619020916) do
     t.string   "state",              limit: 255
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+    t.text     "business_hours",     limit: 65535
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
