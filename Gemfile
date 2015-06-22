@@ -100,3 +100,6 @@ gem 'countries'
 
 # Pagination
 gem 'kaminari'
+
+# Search
+gem 'searchkick'

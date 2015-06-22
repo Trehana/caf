@@ -10,4 +10,5 @@
 #= require frontend/main
 
 #= require ckeditor/init
-#= require frontend/pages
+
+#= require common/form_functions

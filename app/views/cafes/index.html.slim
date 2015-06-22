@@ -2,20 +2,20 @@
 	.wrap
   		.content-coffee-adventure
 			
-			h1 Coffee Adventure
-			p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum
+			h1 = t('helpers.label.cafe.index_title')
+			p = t('helpers.label.cafe.index_description')
 			hr
 			
 			#cafe-list
 				h3 Café List
 				.cafe-list-sorting
-					= form_for :cafe_search do |f|
+					= form_for :search, url: { action: "index" }, html: { method: 'get' } do |f|
 						.sort-location
-							= f.label :location, t('helpers.label.cafe.location')
-							= f.country_select :location, priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK']
+							= f.label :country, t('helpers.label.cafe.location')
+							= f.country_select :country, {priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK'], selected: @country_code }, {class: 'submit_on_change'}
 						.sort-by
-							= f.label :sort_by, t('helpers.label.cafe.sort_by')
-							= f.select :sort_by, options_for_select([['Name', 'title'], ['Date', 'updated_at']])
+							= f.label :ordered, t('helpers.label.cafe.sort_by')
+							= f.select :ordered, options_for_select([['Name', 'title'], ['Date', 'updated_at']], selected = @order_by), {}, {class: 'submit_on_change'}
 						
 				.cafe-list-post
 					ul

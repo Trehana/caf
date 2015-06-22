@@ -7,3 +7,5 @@
 #= require dropzone
 #= require admin/config_variables
 #= require admin/common_editor_tools_config
+#= require admin/gallery
+#= require common/form_functions

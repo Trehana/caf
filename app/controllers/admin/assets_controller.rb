@@ -66,8 +66,13 @@ module Admin
 
     def destroy
       authorize! :destroy, @resource
+      @resource.destroy
       respond_to do |format|
-        format.json { render nothing: true, status: 204 }
+        if params[:CKEditor].blank?
+          format.json { render nothing: true, status: 204 }
+        else
+          format.json { render nothing: true, status: 204 }
+        end
       end
     end
 

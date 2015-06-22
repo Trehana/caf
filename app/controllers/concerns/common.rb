@@ -10,7 +10,11 @@ module Common
   end
 
   def index
-    @resources = @resource_class.published_content.page params[:page]
+    if params[:search] && @search_critera
+      @resources = @resource_class.published_content.search @search_critera
+    else
+      @resources = @resource_class.published_content.page params[:page]
+    end
   end
 
   # GET /pages/1

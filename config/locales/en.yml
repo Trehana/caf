@@ -94,6 +94,8 @@ en:
         sort_by: 'Sort'
         read_more: 'Read More'
         view_menu: 'View Menu'
+        index_title: 'Coffee Adventure'
+        index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
       profile:
         nav_name: 'Profiles'
         title: 'Name'

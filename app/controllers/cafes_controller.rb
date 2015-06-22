@@ -3,6 +3,7 @@ class CafesController < ApplicationController
   include Common
   before_action :set_page_variables, only: [:show]
   before_action :set_body_class
+  before_action :set_search_criteria, only: [:index]
 
   private
 
@@ -18,5 +19,13 @@ class CafesController < ApplicationController
 
   def set_body_class
     @body_class = 'coffeeadventurepage'
+  end
+
+  def set_search_criteria
+    return unless params[:search]
+    @order_by = params[:search][:ordered]
+    @country_code = params[:search][:country]
+    desc_or_asc = params[:search][:ordered] == 'name' ? 'asc' : 'desc'
+    @search_critera =  { where: { country_code: @country_code }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
   end
 end

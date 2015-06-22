@@ -16,7 +16,6 @@ module Admin
       @resources = @resource_class.editors_content
     end
 
-
     # GET /pages/new
     def new
       @resource = @resource_class.create

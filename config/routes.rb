@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
   resources :news, :cafes, only: [:index, :show]
 
+
+
   # ADMIN
   # ==========
 
