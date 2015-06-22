@@ -4,7 +4,7 @@ class Cafe < ActiveRecord::Base
   include AddBusinessHours
   include DefaultImage
 
-  searchkick
+  searchkick callbacks: :async
 
   paginates_per 6
 
