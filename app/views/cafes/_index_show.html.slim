@@ -1,0 +1,14 @@
+.post-item
+  - if resource.default_image
+    .post-image
+      = image_tag resource.default_image
+      span.category Coffee
+  .post-meta
+    h4.post-title = resource.title
+    span.post-location = resource.address
+  .post-content
+    p = strip_tags(resource.body)
+    
+  .btn-holder
+    = link_to t('helpers.label.cafe.read_more'), cafe_path(resource), class: 'btn'
+    = link_to t('helpers.label.cafe.view_menu'), cafe_path(resource, anchor: 'menu'), class: 'btn'

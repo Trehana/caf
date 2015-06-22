@@ -97,3 +97,6 @@ gem 'cancancan'
 
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'countries'
+
+# Pagination
+gem 'kaminari'

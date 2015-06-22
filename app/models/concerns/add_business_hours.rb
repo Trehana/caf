@@ -8,6 +8,5 @@ module AddBusinessHours
 
   # Class Methods
   module ClassMethods
-
   end
 end

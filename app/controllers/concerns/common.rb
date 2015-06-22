@@ -9,6 +9,10 @@ module Common
     before_action :set_html_variables, only: [:show]
   end
 
+  def index
+    @resources = @resource_class.published_content.page params[:page]
+  end
+
   # GET /pages/1
   # GET /pages/1.json
   def show
