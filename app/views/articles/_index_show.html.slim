@@ -1,0 +1,13 @@
+.post-item
+  - if resource.default_image
+    .post-image
+      = image_tag resource.default_image
+      span.category Coffee
+  .post
+    .post-meta
+      h4.post-title = resource.title
+    .post-content
+      p = preview_text(strip_tags(resource.body), 30)
+      
+    .btn-holder
+      = link_to t('helpers.label.news.read_more'), article_path(resource), class: 'btn'

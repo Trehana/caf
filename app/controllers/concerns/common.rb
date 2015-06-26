@@ -26,7 +26,6 @@ module Common
 
   def set_resource_class
     @resource_class = Object.const_get(@resource_class_name)
-    @resource_index_path = "admin_#{@resource_class.name.underscore.pluralize}".to_sym
   end
   # Use callbacks to share common setup or constraints between actions.
   def set_resource

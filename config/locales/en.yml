@@ -76,6 +76,18 @@ en:
 
   helpers:
     label:
+      news:
+        nav_name: 'News'
+        title: 'Title'
+        body: 'Content'
+        category: 'Category'
+        cover_photo_select: 'Select cover photo'
+        cover_photo_repeat: 'Tile cover photo'
+        index_title: 'News'
+        index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
+        category_nav:
+          coffee_related: 'Coffee related'
+          art_related: 'Art related'
       page:
         nav_name: 'Pages'
         title: 'Title'

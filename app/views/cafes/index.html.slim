@@ -1,27 +1,27 @@
 #section-one.section
-	.wrap
-  		.content-coffee-adventure
-			
-			h1 = t('helpers.label.cafe.index_title')
-			p = t('helpers.label.cafe.index_description')
-			hr
-			
-			#cafe-list
-				h3 Café List
-				.cafe-list-sorting
-					= form_for :search, url: { action: "index" }, html: { method: 'get' } do |f|
-						.sort-location
-							= f.label :country, t('helpers.label.cafe.location')
-							= f.country_select :country, {priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK'], selected: @country_code }, {class: 'submit_on_change'}
-						.sort-by
-							= f.label :ordered, t('helpers.label.cafe.sort_by')
-							= f.select :ordered, options_for_select([['Name', 'title'], ['Date', 'updated_at']], selected = @order_by), {}, {class: 'submit_on_change'}
-						
-				.cafe-list-post
-					ul
-						- @resources.each do |resource|
-							li
-								= render partial: 'index_show', locals: {resource: resource}
+  .wrap
+      .content-coffee-adventure
+      
+      h1 = t('helpers.label.cafe.index_title')
+      p = t('helpers.label.cafe.index_description')
+      hr
+      
+      #cafe-list
+        h3 Café List
+        .cafe-list-sorting
+          = form_for :search, url: { action: "index" }, html: { method: 'get' } do |f|
+            .sort-location
+              = f.label :country, t('helpers.label.cafe.location')
+              = f.country_select :country, {priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK'], selected: @country_code }, {class: 'submit_on_change'}
+            .sort-by
+              = f.label :ordered, t('helpers.label.cafe.sort_by')
+              = f.select :ordered, options_for_select([['Name', 'title'], ['Date', 'updated_at']], selected = @order_by), {}, {class: 'submit_on_change'}
+            
+        .cafe-list-post
+          ul
+            - @resources.each do |resource|
+              li
+                = render partial: 'index_show', locals: {resource: resource}
 
-					
-					= paginate @resources
+          
+          = paginate @resources

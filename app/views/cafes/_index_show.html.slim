@@ -7,7 +7,7 @@
     h4.post-title = resource.title
     span.post-location = resource.address
   .post-content
-    p = strip_tags(resource.body)
+    p = preview_text(strip_tags(resource.body), 30)
     
   .btn-holder
     = link_to t('helpers.label.cafe.read_more'), cafe_path(resource), class: 'btn'
