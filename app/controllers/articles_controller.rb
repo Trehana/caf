@@ -22,10 +22,10 @@ class ArticlesController < ApplicationController
   end
 
   def set_search_criteria
-    return unless params[:search]
-    @order_by = params[:search][:ordered]
-    @country_code = params[:search][:country]
-    desc_or_asc = params[:search][:ordered] == 'name' ? 'asc' : 'desc'
-    @search_critera =  { where: { country_code: @country_code }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
+    return unless params[:tag]
+    @order_by = 'updated_at'
+    @tag = params[:tag]
+    desc_or_asc = 'desc'
+    @search_critera =  { where: { tag_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
   end
 end

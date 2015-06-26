@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :pages, only: [:show]
-  resources :cafes, :news, :articles, only: [:index, :show]
+  resources :cafes, :articles, only: [:index, :show]
+
+  resources :news, controller: 'articles'
+  get '/news/category/:tag' => 'articles#index', as: 'news_tags'
 
   # ADMIN
   # ==========

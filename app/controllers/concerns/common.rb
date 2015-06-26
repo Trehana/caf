@@ -10,7 +10,7 @@ module Common
   end
 
   def index
-    if params[:search] && @search_critera
+    if @search_critera
       @resources = @resource_class.published_content.search @search_critera
     else
       @resources = @resource_class.published_content.page params[:page]

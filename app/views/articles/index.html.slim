@@ -10,9 +10,9 @@
     #category-navigation
       ul
         li#btn-coffee-related
-          a href="#"  = t('helpers.label.news.category_nav.coffee_related')
+          = link_to t('helpers.label.news.category_nav.coffee_related'), news_tags_path(tag: 'coffee')
         li#btn-art-related
-          a href="#"  = t('helpers.label.news.category_nav.art_related')
+          = link_to t('helpers.label.news.category_nav.art_related'), news_tags_path(tag: 'art')
 
               
     .news-post-list

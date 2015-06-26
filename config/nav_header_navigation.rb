@@ -12,7 +12,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :coffee_adventure, "#{image_tag 'img-coffee-adventure.png', alt: t('nav.header.coffee_adventure.coffee_adventure')}".html_safe + "#{t('nav.header.coffee_adventure.coffee_adventure')}", '#' do |coffee_adventure|
       coffee_adventure.dom_id = 'coffee_event'
       coffee_adventure.dom_class = 'sub'
-      coffee_adventure.item :program, t('nav.header.coffee_adventure.cafe_list'), '#'
+      coffee_adventure.item :program, t('nav.header.coffee_adventure.cafe_list'), cafes_path
       coffee_adventure.item :sponsors, t('nav.header.coffee_adventure.coffee_academy'), '#'
       coffee_adventure.item :photo_log, t('nav.header.coffee_adventure.consultancy'), '#'
       coffee_adventure.item :photo_log, t('nav.header.coffee_adventure.supply_network'), '#'
