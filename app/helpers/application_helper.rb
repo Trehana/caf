@@ -9,6 +9,7 @@ module ApplicationHelper
   end
 
   def preview_text(content, limit)
+    return if content.nil? || content.empty?
     content = content.split(' ')
     content.count > limit ? "#{content[0..(limit - 1)].join(' ')}..." : content.join(' ')
   end
