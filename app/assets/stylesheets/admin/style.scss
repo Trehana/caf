@@ -1,3 +1,10 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "frontend/mixins";
+@import 'dropzone/dropzone';
+@import "admin/pages";
+@import "admin/awesome-bootstrap-checkbox";
+
 .resource_class_name {
   opacity: 0.3;
 }

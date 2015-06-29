@@ -1,4 +1,4 @@
-== form_for [:admin, @resource] do |f|
+= form_for [:admin, @resource] do |f|
   - if @resource.errors.any?
     h2
       | #{pluralize(@resource.errors.count, "error")} prohibited this page from being saved:
@@ -7,18 +7,22 @@
         li #{message}
 
   .field
-    == f.label :title
+    = f.label :title
     br
-    == f.text_field :title
+    = f.text_field :title
   .field
     == f.label :body
     br
-    == f.text_area :body, class: 'ck_editor_textarea'
-  .field
-    == f.label :cover_photo_select
-    == render partial: 'admin/shared/dropzone_single_photo_upload', locals: {photo_class: 'cover_photo', resource: @resource}
+    = f.text_area :body, class: 'ck_editor_textarea'
+    
+    = render partial: 'admin/shared/tags', locals: { resource: @resource, f: f }
 
-    == f.label :cover_photo_repeat
-    == f.check_box :cover_photo_repeat
+    .field
+      = f.label :cover_photo_select
+      = render partial: 'admin/shared/dropzone_single_photo_upload', locals: { photo_class: 'cover_photo', resource: @resource }
+
+      .checkbox
+        = f.check_box :cover_photo_repeat
+        = f.label :cover_photo_repeat
   br
-  == render partial: 'admin/shared/edit_form_footer', locals: {f: f}
+  = render partial: 'admin/shared/edit_form_footer', locals: { f: f }

@@ -10,7 +10,7 @@ module Admin
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:article).permit(:title, :body, :cover_photo_repeat)
+      params.require(:article).permit(:title, :body, :cover_photo_repeat, set_tags: [])
     end
   end
 end

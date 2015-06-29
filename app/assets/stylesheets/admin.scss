@@ -1,9 +1,4 @@
 /*
  *= require_self
+ *= require admin/style
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "frontend/mixins";
-@import 'dropzone/dropzone';
-@import 'admin/style';
-@import "admin/pages";

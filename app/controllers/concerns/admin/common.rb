@@ -10,6 +10,7 @@ module Admin
       before_action :set_resource, only: [:show, :edit, :update, :destroy]
       before_action :set_js_vars, only: [:edit, :update, :destroy]
       before_action :fix_shortcode_sanitisation, only: [:update]
+      before_action :filter_allowed_tags, only: [:update]
     end
 
     def index
@@ -46,6 +47,13 @@ module Admin
     def update
       respond_to do |format|
         resource_singular_name = @resource.class.model_name.singular
+
+        if params[:article][:set_tags]
+          new_params = params[:article][:set_tags]
+          @resource.tags.collect { |tag| @resource.tags.delete(tag) unless new_params.index(tag.name) }
+          new_params.collect { |tag_name| @resource.tag(tag_name) }
+        end
+
         if @resource.update(resource_params)
           if params[:button] == 'publish' && @resource.state != 'published'
             @resource.publish
@@ -121,6 +129,10 @@ module Admin
 
     def current_ability
       @current_ability ||= AdminAbility.new(current_user)
+    end
+
+    def filter_allowed_tags
+      @allowed_tags = @resource_class.try('allowed_tags')
     end
   end
 end

@@ -1,0 +1,8 @@
+- if resource.class.try('allowed_tags')
+  - resource.taggings.build unless resource.taggings
+  - resource.tags.build unless resource.tags
+  .field
+    .checkbox
+      - resource.class.allowed_tags.each do |tag_name|
+          = f.check_box('set_tags', { multiple: true }, tag_name, nil)
+          = f.label tag_name

@@ -13,6 +13,9 @@ group :development, :test do
   gem 'capistrano-rails' # Capistrano for deployment
   gem 'capistrano-bundler'
   gem 'capistrano3-puma', github: 'seuros/capistrano-puma'
+
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 gem 'rails', '4.2.1'
@@ -36,11 +39,11 @@ gem 'simple-navigation' # Navigation gem
 gem 'simple-navigation-bootstrap' # Bootstrap support for simple-navigation
 
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
-gem 'bootstrap-sass', '~> 3.3.4'
 gem 'dropzonejs-rails' # JS File upload
 gem 'gon' # Access Rails veriables from JS
 gem 'coffee-rails', '~> 4.1.0'
