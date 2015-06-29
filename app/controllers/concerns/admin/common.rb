@@ -61,10 +61,10 @@ module Admin
             @resource.save_draft
           end
           #
-          format.html { render :edit, notice: t("#{resource_singular_name}.messages.updated") }
+          format.html { redirect_to url_for([:admin, @resource, action: 'edit']), notice: t("#{resource_singular_name}.messages.updated") }
           format.json { render :show, status: :ok, location: @resource }
         else
-          format.html { render :edit }
+          format.html { redirect_to url_for([:admin, @resource, action: 'edit']) }
           format.json { render json: @resource.errors, status: :unprocessable_entity }
         end
       end

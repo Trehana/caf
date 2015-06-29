@@ -4,5 +4,5 @@
   .field
     .checkbox
       - resource.class.allowed_tags.each do |tag_name|
-          = f.check_box('set_tags', { multiple: true }, tag_name, nil)
+          = f.check_box('set_tags', { multiple: true, checked: resource.tag_names.include?(tag_name) }, tag_name, nil)
           = f.label tag_name

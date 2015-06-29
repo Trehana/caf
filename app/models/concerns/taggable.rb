@@ -12,7 +12,7 @@ module Taggable
 
   def tag(name)
     name.strip!
-    return unless self.class.try('allowed_tags') && self.class.allowed_tags.index(name)
+    return unless self.class.try('allowed_tags') && self.class.allowed_tags.include?(name)
     tag = Tag.where(name: name.downcase).first_or_create
     taggings.where(tag_id: tag.id).first_or_create
   end
@@ -26,7 +26,7 @@ module Taggable
   end
 
   def before_save
-    tags.collect { |tag| tags.delete(tag) unless new_tags.index(tag.name) }
+    tags.collect { |tag| tags.delete(tag) unless new_tags.include?(tag.name) }
     set_tags.collect { |tag_name| tag(tag_name) }
   end
 end
