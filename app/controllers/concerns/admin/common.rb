@@ -48,7 +48,7 @@ module Admin
       respond_to do |format|
         resource_singular_name = @resource.class.model_name.singular
 
-        if params[:article][:set_tags]
+        if params["#{@resource_class_name.downcase}".to_sym][:set_tags]
           new_params = params[:article][:set_tags]
           @resource.tags.collect { |tag| @resource.tags.delete(tag) unless new_params.index(tag.name) }
           new_params.collect { |tag_name| @resource.tag(tag_name) }
