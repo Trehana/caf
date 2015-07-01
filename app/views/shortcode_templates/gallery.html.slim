@@ -3,4 +3,4 @@
   .gallery class="#{gallery.slug}"
     - gallery.pictures.each do |picture|
       .gallery-image id="#{picture.id}"
-        == image_tag picture.url(:content)
+        = image_tag picture.url(:content)

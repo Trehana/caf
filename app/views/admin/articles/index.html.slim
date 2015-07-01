@@ -1,4 +1,4 @@
-== render partial: 'admin/shared/index_header'
+= render partial: 'admin/shared/index_header'
 table.table
   thead
     tr
@@ -9,13 +9,13 @@ table.table
     - @resources.each do |resource|
       tr class="#{resource.state}"
         td
-          == resource.title
-        td == Nokogiri::HTML(resource.body).text
+          = resource.title
+        td = Nokogiri::HTML(resource.body).text
         td
-          == render partial: 'admin/shared/index_view_resource', locals: {resource: resource}
+          = render partial: 'admin/shared/index_view_resource', locals: {resource: resource}
         td
-          == render partial: 'admin/shared/index_edit_resource', locals: {resource: resource}
+          = render partial: 'admin/shared/index_edit_resource', locals: {resource: resource}
         td
-          == render partial: 'admin/shared/index_delete_resource', locals: {resource: resource}
+          = render partial: 'admin/shared/index_delete_resource', locals: {resource: resource}
 
-== render partial: 'admin/shared/index_footer'
+= render partial: 'admin/shared/index_footer'

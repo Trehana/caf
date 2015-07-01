@@ -1,4 +1,4 @@
-== form_for [:admin, @resource] do |f|
+= form_for [:admin, @resource] do |f|
   - if @resource.errors.any?
     h2
       | #{pluralize(@resource.errors.count, "error")} prohibited this page from being saved:
@@ -6,18 +6,18 @@
       - @resource.errors.full_messages.each do |message|
         li #{message}
         
-  == render partial: 'admin/shared/shortcode', locals: { resource: @resource, f: f }
+  = render partial: 'admin/shared/shortcode', locals: { resource: @resource, f: f }
 
   .field
-    == f.label :title
+    = f.label :title
     br
-    == f.text_field :title
+    = f.text_field :title
     br
     br
 
     .field
-    == f.label :gallery_photos
-    == render partial: 'admin/shared/dropzone_multiple_photo_upload', locals: {photo_class: 'picture', resource: @resource}
+    = f.label :gallery_photos
+    = render partial: 'admin/shared/dropzone_multiple_photo_upload', locals: {photo_class: 'picture', resource: @resource}
 
   br
-  == render partial: 'admin/shared/edit_form_footer', locals: {f: f}
+  = render partial: 'admin/shared/edit_form_footer', locals: {f: f}
