@@ -1,7 +1,7 @@
 # Cover photo for html pages
 class CoverPhoto < Asset
   has_attached_file :data,
-                    url: '/assets/cover_photos/:hash.:extension',
+                    url: '/images/cover_photos/:hash.:extension',
                     hash_data: ':class/:attachment/:id/:style/:updated_at',
                     hash_secret: 'lppernpidvyywzxuljqvbwcldganplmzythvizrcvkjlquejfdyewgsyowbojvhneeqopaijhnovhxgqnbevryojpqsmibszekwi',
                     styles: { thumb: '120x120#' }
