@@ -10,7 +10,7 @@ table.table
       tr class="#{resource.state}"
         td
           = resource.title
-        td = Nokogiri::HTML(resource.body).text
+        td = Nokogiri::HTML(preview_text(resource.body, 30)).text
         td
           = render partial: 'admin/shared/index_view_resource', locals: {resource: resource}
         td

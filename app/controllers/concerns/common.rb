@@ -11,7 +11,7 @@ module Common
 
   def index
     if @search_critera
-      @resources = @resource_class.published_content.search @search_critera
+      @resources = @resource_class.published_content.search @search_critera, page: params[:page]
     else
       @resources = @resource_class.published_content.page params[:page]
     end
