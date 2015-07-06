@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
-	$(".banner-nav-link").click(function() {
+	$("#banner-navigation > ul > li > a").click(function() {
 		
 		if($(this).parent().hasClass('show-sub')){
-			$(".banner-nav-link").parent().removeClass('show-sub');
+			$("#banner-navigation > ul > li").removeClass('show-sub');
 			$("#banner-navigation").removeClass('active')
 		}
 		else{
-			$(".banner-nav-link").parent().removeClass('show-sub');
+			$("#banner-navigation > ul > li").removeClass('show-sub');
 			$("#banner-navigation").addClass('active')
 			$(this).parent().addClass('show-sub');
 		}

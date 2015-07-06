@@ -324,6 +324,7 @@ input[type="text"] {
 					color:#fff;
 					text-transform:uppercase;
 					text-align:center;
+					outline: 0;
 					img {
 						max-width:60%;
 						margin:10px auto;
@@ -377,7 +378,7 @@ input[type="text"] {
 	}
 
 	&.active {
-		#coffee_event, #coffee_adventure, #art_spot, #the_caffa-store {
+		#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 			height:140px !important;
 
 			img {
