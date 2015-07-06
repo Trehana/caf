@@ -13,4 +13,13 @@ module ApplicationHelper
     content = content.split(' ')
     content.count > limit ? "#{content[0..(limit - 1)].join(' ')}..." : content.join(' ')
   end
+
+  def list_tags(resoruce)
+    return unless resoruce.tags
+    tag_names = []
+    resoruce.tags.each do |tag|
+      tag_names << tag.to_s.upcase
+    end
+    tag_names.join(', ')
+  end
 end
