@@ -14,7 +14,7 @@ module Admin
     end
 
     def index
-      @resources = @resource_class.editors_content
+      @resources = @resource_class.editors_content.page params[:page]
     end
 
     # GET /pages/new
