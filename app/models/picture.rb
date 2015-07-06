@@ -1,7 +1,7 @@
 # Picture assets for pages, galleries that are not cover photos or profile photos
 class Picture < Asset
   has_attached_file :data,
-                    url: '/assets/pictures/:hash.:extension',
+                    url: '/images/pictures/:hash.:extension',
                     hash_data: ':class/:attachment/:id/:style/:updated_at',
                     hash_secret: 'lppernpidvyywzxuljqvbwcldganplmzythvizrcvkjlquejfdyewgsyowbojvhneeqopaijhnovhxgqnbevryojpqsmibszekwi',
                     styles: { content: '800>', thumb: '118x100#' }

@@ -1,7 +1,7 @@
 # Profile photo for Profils
 class ProfilePhoto < Asset
   has_attached_file :data,
-                    url: '/assets/profile_photos/:hash.:extension',
+                    url: '/images/profile_photos/:hash.:extension',
                     hash_data: ':class/:attachment/:id/:style/:updated_at',
                     hash_secret: 'lppernpidvyywzxuljqvbwcldganplmzythvizrcvkjlquejfdyewgsyowbojvhneeqopaijhnovhxgqnbevryojpqsmibszekwi',
                     styles: { standard: '200x200#', thumb: '102x102#' }

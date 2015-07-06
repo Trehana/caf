@@ -12,7 +12,7 @@ set :pty, false
 set :use_sudo, true
 set :ssh_options, forward_agent: true
 
-set :linked_dirs, %w(log tmp vendor/bundle public/assets public/system)
+set :linked_dirs, %w(log tmp vendor/bundle public/assets public/system public/images)
 
 set :puma_state, "#{shared_path}/tmp/puma.state"
 set :puma_pid, "#{shared_path}/tmp/puma.pid"

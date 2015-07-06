@@ -1,7 +1,7 @@
 # PagesController
 class PagesController < ApplicationController
   include Common
-  before_action :set_page_variables, only: [:show]
+  before_action :set_page_variables, only: [:show, :home]
 
   def home
     @resource = Page.find('home')
