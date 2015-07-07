@@ -45,6 +45,10 @@
   @include border-radius(20px);
 }
 
+body {
+  background:asset-url("bg-white.jpg") #fff;
+}
+
 .pagination {
   display: block;
   margin-bottom: 20px;
@@ -92,5 +96,55 @@
         }
       }
     }
+  }
+}
+
+.navbar-default {
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  border:none;
+  border-radius:0;
+
+  .navbar-nav > li > a {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    opacity: 0.5;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+      opacity: 1;
+    }
+
+    &.active {
+      background:rgba(255,255,255,0.2);
+      color:#fff;
+      opacity: 1;
+    }
+  }
+  .navbar-toggle {
+    background:asset-url("icon-admin-menu.png") no-repeat center center;
+    width: 26px;
+    height:26px;
+    border:none;
+    border-radius:0;
+    opacity: 0.5;
+    cursor:pointer;
+    padding:0;
+    margin: 12px 15px 0;
+
+    &:hover, &:focus {
+      opacity: 1;
+      background:asset-url("icon-admin-menu.png") no-repeat center center;
+    }
+  }
+
+  .navbar-brand{
+    background:asset-url("brand-logo-admin.png") no-repeat center center;
+    width: 70px;
+    height:50px;
+    text-indent: -9999px;
   }
 }
