@@ -1,8 +1,7 @@
 - if defined?(cover_photo_url)
-  css:
-    #header-wrapper {
-      background:asset-url("banner-bottom-effect.png") bottom center,url(#{cover_photo_url}) #{repeat_style} bottom center
-      }
+  sass:
+    #header-wrapper
+      background: asset-url "banner-bottom-effect.png" bottom center, url #{cover_photo_url} #{repeat_style} bottom center
 
 #header-wrapper
   #header
