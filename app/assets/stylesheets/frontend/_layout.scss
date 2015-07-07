@@ -212,7 +212,8 @@ input[type="text"] {
 	}
 }
 #header-wrapper {
-	min-height:440px;
+	background:asset-url("banner-bottom-effect.png") no-repeat bottom center, asset-url("banner-default.jpg") no-repeat bottom center;
+	min-height:420px;
 }
 #banner {
 	.title {
