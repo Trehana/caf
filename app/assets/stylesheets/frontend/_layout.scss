@@ -212,6 +212,7 @@ input[type="text"] {
 	}
 }
 #header-wrapper {
+	background:asset-url("banner-default.jpg") no-repeat bottom center;
 	background:asset-url("banner-bottom-effect.png") no-repeat bottom center, asset-url("banner-default.jpg") no-repeat bottom center;
 	min-height:420px;
 }
@@ -667,47 +668,7 @@ input[type="text"] {
 			}
 		}
 	}
-	.pagination {
-		ul {
-			margin:0;
-			padding:0;
-			list-style:none;
-			overflow:hidden;
-			li {
-				display:inline-block;
-				margin-right:30px;
-				padding-right:30px;
-				border-right:1px solid #ccc;
-				font-family: 'Lato', sans-serif;
-					font-size:20px;
-					line-height:20px;
-					font-weight:300;
-					color:$lightColor;
-
-				
-
-				&:last-child {
-					border-right:none;
-				}
-
-				a {
-					text-decoration:none;
-					span {
-						color:$brownColor;
-						border-bottom:1px solid $brownColor;
-					}
-
-					&:hover {
-						text-decoration:none;
-						span {
-							color:$greenDarkColor;
-							border-bottom:1px solid $greenDarkColor;
-						}
-					}
-				}
-			}
-		}
-	}
+	
 }
 .pagination {
 	ul {
@@ -733,7 +694,7 @@ input[type="text"] {
 			}
 
 			a {
-				text-decoration:none;
+				text-decoration:underline;
 				span {
 					color:$brownColor;
 					border-bottom:1px solid $brownColor;
@@ -747,6 +708,12 @@ input[type="text"] {
 					}
 				}
 			}
+
+			&.active {
+		        a {
+		          text-decoration: none;
+		        }
+		    }
 		}
 	}
 }
