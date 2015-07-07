@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def home
     @resource = Page.find('home')
+    @body_class = 'homepage'
     set_page_variables
   end
 
