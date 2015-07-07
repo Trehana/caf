@@ -6,7 +6,7 @@ module DefaultImage
     # May nedd to change in the future
     def default_image
       return unless pictures.count > 0
-      pictures.first.url(:content)
+      pictures.first.url(:index_thumb)
     end
   end
 
