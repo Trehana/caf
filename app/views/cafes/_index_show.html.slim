@@ -1,7 +1,6 @@
 .post-item
-  - if resource.default_image
-    .post-image
-      = image_tag resource.default_image
+  .post-image
+    = default_resource_image(resource)
       span.category Coffee
   .post-meta
     h4.post-title = resource.title

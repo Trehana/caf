@@ -22,4 +22,9 @@ module ApplicationHelper
     end
     tag_names.join(', ')
   end
+
+  def default_resource_image(resource)
+    default_resource_image = resource.default_image ? resource.default_image : asset_path('placeholder.png')
+    tag(:img, src: default_resource_image, alt: resource.title)
+  end
 end
