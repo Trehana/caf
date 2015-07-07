@@ -3,10 +3,15 @@
 		min-height:560px;
 
 	}
+	#section-one {
+		h1 {
+			display: none;
+		}
+	}
 	#banner-navigation {
 		ul {
 
-			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 				height:220px !important;
 
 				img {
@@ -15,7 +20,7 @@
 			}
 		}
 		&.active {
-			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 				height:140px !important;
 
 				img {
@@ -61,7 +66,7 @@
 		background:asset-url("bg-aboutus.jpg") no-repeat bottom center;
 		//min-height:740px;
 
-		#banner {
+		/*#banner {
 			.title {
 
 				.text3 {
@@ -73,7 +78,7 @@
 					float: right;
 				}
 			}
-		}
+		}*/
 	}
 	#section-two {
 		background:asset-url("bg-grey.jpg");
@@ -109,7 +114,7 @@
 		background:asset-url("bg-news.jpg") no-repeat bottom center;
 		min-height:420px;
 
-		#banner {
+		/*#banner {
 			.title {
 				padding-top:20px;
 
@@ -123,7 +128,7 @@
 					margin-right: 118px;
 				}
 			}
-		}
+		}*/
 	}
 }
 .contactpage {
@@ -489,7 +494,7 @@
 		background:asset-url("bg-calendar.jpg") no-repeat bottom center;
 		min-height:420px;
 
-		#banner {
+		/*#banner {
 			.title {
 				.text3 {
 					position: relative;
@@ -497,7 +502,7 @@
 		  			top:0;
 				}
 			}
-		}
+		}*/
 	}
 	.calendar-navigation {
 
