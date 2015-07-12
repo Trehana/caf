@@ -5,6 +5,15 @@ class EventsController < ApplicationController
   before_action :set_body_class
   before_action :set_search_criteria, only: [:index]
 
+
+  def calendar
+    @resources = @resource_class.published_content.page params[:page]
+    respond_to do |format|
+      format.html { render @resources }
+      format.json { render @resources, status: :ok }
+    end
+  end
+
   private
 
   def set_page_variables
