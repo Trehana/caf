@@ -15,8 +15,15 @@ class Event < ActiveRecord::Base
 
   has_one :cover_photo, as: :assetable, dependent: :destroy
   has_many :pictures, as: :assetable, dependent: :destroy
-
   has_one :address, as: :addressable, dependent: :destroy
+
+  def opens_at
+    super.utc.strftime("%I:%M %p")
+  end
+
+  def closes_at
+    super.utc.strftime("%I:%M %p")
+  end
 
   def self.allowed_tags
     %w(coffee art sponsored)

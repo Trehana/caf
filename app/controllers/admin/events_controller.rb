@@ -13,6 +13,12 @@ module Admin
       params.require(:event).permit(
         :title,
         :description,
+        :starts_at,
+        :ends_at,
+        :opens_at,
+        :closes_at,
+        :admission,
+        :address,
         :cover_photo_repeat,
         set_tags: [],
         address_attributes: [:id, :address, :postal_code, :country_code]
