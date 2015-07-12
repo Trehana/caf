@@ -1,5 +1,5 @@
-# NewsController
-class ArticlesController < ApplicationController
+# EventsController
+class EventsController < ApplicationController
   include Common
   before_action :set_page_variables, only: [:show]
   before_action :set_body_class
@@ -14,16 +14,16 @@ class ArticlesController < ApplicationController
 
   # Set classname for concerns to set the other parameters
   def set_resource_class_name
-    @resource_class_name = 'Article'
+    @resource_class_name = 'Event'
   end
 
   def set_body_class
-    @body_class = 'newspage'
+    @body_class = 'events'
   end
 
   def set_search_criteria
     return unless params[:tag]
-    @order_by = 'updated_at'
+    @order_by = 'starts_at'
     @tag = params[:tag]
     desc_or_asc = 'desc'
     @search_critera =  { where: { tag_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }

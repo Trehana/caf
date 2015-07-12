@@ -1,0 +1,13 @@
+.post-item
+  .post-image
+    = default_resource_image(resource)
+      span.category = list_tags(resource)        
+    
+  .post
+    .post-meta
+      h4.post-title = resource.title
+    .post-content
+      p = preview_text(strip_tags(resource.body), 30)
+      
+    .btn-holder
+      = link_to t('helpers.label.events.read_more'), news_url(id: resource), class: 'btn'

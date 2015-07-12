@@ -1,0 +1,23 @@
+= render partial: 'admin/shared/index_header'
+table.table
+  thead
+    tr
+      th Title
+      th Description
+      th colspan="3"
+  tbody
+    - @resources.each do |resource|
+      tr class="#{resource.state}"
+        td
+          = resource.title
+        td = Nokogiri::HTML(preview_text(resource.description, 30)).text
+        td
+          = render partial: 'admin/shared/index_view_resource', locals: {resource: resource}
+        td
+          = render partial: 'admin/shared/index_edit_resource', locals: {resource: resource}
+        td
+          = render partial: 'admin/shared/index_delete_resource', locals: {resource: resource}
+
+= paginate @resources
+
+= render partial: 'admin/shared/index_footer'

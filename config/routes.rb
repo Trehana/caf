@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :news, controller: 'articles'
   get '/news/category/:tag' => 'articles#index', as: 'news_tags'
 
+  resources :events
+  get '/events/category/:tag' => 'events#index', as: 'events_tags'
+
   # ADMIN
   # ==========
 
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :pages, :cafes, :articles, concerns: [:has_assets, :has_pictures, :has_cover_photo]
+    resources :pages, :cafes, :articles, :events, concerns: [:has_assets, :has_pictures, :has_cover_photo]
     resources :galleries, concerns: [:has_pictures, :has_assets]
     resources :profiles, concerns: [:has_assets] do
       resources :profile_photo, controller: :assets, only: [:create, :destroy]

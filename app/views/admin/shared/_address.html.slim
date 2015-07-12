@@ -1,6 +1,13 @@
-.address
+.address.form-group
+  = f.label :address
+  br
   - resource.build_address unless resource.address
   = f.fields_for :address do |a|
-    = a.text_field :address
-    = a.text_field :postal_code
+    = a.label :street_address, class: 'control-label font-normal'
+    = a.text_field :address, class: 'form-control'
+    = a.label :postal_code, class: 'control-label font-normal'
+    = a.text_field :postal_code, class: 'form-control'
+    = a.label :country, class: 'control-label font-normal'
+    br
     = a.country_select :country_code, priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK']
+    br

@@ -95,7 +95,7 @@ module Admin
 
     def fix_shortcode_sanitisation
       return unless Shortcode && !Shortcode.configuration.self_closing_tags.empty?
-      %w(body bio).each do |content_attribute|
+      %w(body bio description).each do |content_attribute|
         # Go to next in loop if the conditions aren't met
         next if (content = params[@resource.class.model_name.singular.to_sym][content_attribute.to_s]).nil?
 
