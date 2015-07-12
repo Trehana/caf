@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
   include CommonContent
   include DefaultImage
   include Taggable
+  include DefaultAddress
 
   searchkick callbacks: :async
   def search_data
@@ -15,13 +16,14 @@ class Event < ActiveRecord::Base
 
   has_one :cover_photo, as: :assetable, dependent: :destroy
   has_many :pictures, as: :assetable, dependent: :destroy
-  has_one :address, as: :addressable, dependent: :destroy
 
   def opens_at
+    return nil unless super
     super.utc.strftime("%I:%M %p")
   end
 
   def closes_at
+    return nil unless super
     super.utc.strftime("%I:%M %p")
   end
 

@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :pages, only: [:show]
-  resources :cafes, :articles, only: [:index, :show]
+  resources :cafes, only: [:index, :show]
 
-  resources :news, controller: 'articles'
+  # resources :news, controller: 'articles'
+  resources :articles, path: 'news', only: [:index, :show]
   get '/news/category/:tag' => 'articles#index', as: 'news_tags'
 
   resources :events
@@ -27,7 +28,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :pages, :cafes, :articles, :events, concerns: [:has_assets, :has_pictures, :has_cover_photo]
+    resources :pages, :cafes, :events, concerns: [:has_assets, :has_pictures, :has_cover_photo]
+    resources :articles, path: 'news', concerns: [:has_assets, :has_pictures, :has_cover_photo]
     resources :galleries, concerns: [:has_pictures, :has_assets]
     resources :profiles, concerns: [:has_assets] do
       resources :profile_photo, controller: :assets, only: [:create, :destroy]
