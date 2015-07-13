@@ -14,7 +14,7 @@ SimpleNavigation::Configuration.run do |navigation|
       second.dom_class = 'col'
       second.item :about_us, t('nav.header_top.about_us'), '#'
       second.item :calendar, t('nav.header_top.calendar'), '#'
-      second.item :news, t('nav.header_top.news'), news_index_path
+      second.item :news, t('nav.header_top.news'), articles_path
       second.item :media, t('nav.header_top.media'), '#'
     end
     primary.item :third, '' do |third|

@@ -1,24 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   nav:
     header:
@@ -88,6 +67,20 @@ en:
         category_nav:
           coffee_related: 'Coffee related'
           art_related: 'Art related'
+      events:
+        nav_name: 'Events'
+        title: 'Title'
+        description: 'Description'
+        category: 'Category'
+        event_date: 'Event date'
+        event_time: 'Open hours'
+        cover_photo_select: 'Select cover photo'
+        cover_photo_repeat: 'Tile cover photo'
+        index_title: 'Events'
+        index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
+        category_nav:
+          coffee_related: 'Coffee related'
+          art_related: 'Art related'
       page:
         nav_name: 'Pages'
         title: 'Title'
@@ -126,3 +119,26 @@ en:
       user:
         nav_name: 'Users'
         email: 'Email'
+
+
+
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.

@@ -6,31 +6,29 @@
       - @resource.errors.full_messages.each do |message|
         li #{message}
 
-  .field
+  .form-group
     = f.label :title
     br
-    = f.text_field :title
-  .field
+    = f.text_field :title, class: 'form-control'
+  .form-group
     = f.label :body
     br
     = f.text_area :body, class: 'ck_editor_textarea'
-  .field
+  .form-group
     = f.label :menu
     br
     = f.text_area :menu, class: 'ck_editor_textarea'
-  .field
+  .form-group
     = f.label :cover_photo_select
     = render partial: 'admin/shared/dropzone_single_photo_upload', locals: {photo_class: 'cover_photo', resource: @resource}
 
-    = f.label :cover_photo_repeat
-    = f.check_box :cover_photo_repeat
+    .checkbox
+      = f.label :cover_photo_repeat, class: 'control-label col-sm-2'
+      = f.check_box :cover_photo_repeat
+  br    
+  = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
     
-  .field
-    = f.label :address
-    br
-    = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
-    
-  .field
+  .form-group
     = f.label :business_hours
     br
     = render partial: 'admin/shared/business_hours', locals: {f: f, resource: @resource }

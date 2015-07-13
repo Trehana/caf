@@ -1,8 +1,11 @@
 - if resource.class.try('allowed_tags')
   - resource.taggings.build unless resource.taggings
   - resource.tags.build unless resource.tags
-  .field
+  .form-group
+    = f.label :tags
     .checkbox
       - resource.class.allowed_tags.each do |tag_name|
           = f.check_box('set_tags', { multiple: true, checked: resource.tag_names.include?(tag_name) }, tag_name, nil)
-          = f.label tag_name
+          = f.label tag_name, class: 'control-label col-sm-1', for: "#{@resource_class_name.downcase}_set_tags_#{tag_name}"
+
+  br

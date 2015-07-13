@@ -1,0 +1,25 @@
+#section-one.section
+  .wrap
+    .content-events      
+      h1
+        = t('helpers.label.events.index_title')
+      p
+        = t('helpers.label.events.index_description')
+      hr
+      
+    #category-navigation
+      ul
+        li#btn-coffee-related
+          = link_to t('helpers.label.events.category_nav.coffee_related'), events_tags_path(tag: 'coffee')
+        li#btn-art-related
+          = link_to t('helpers.label.events.category_nav.art_related'), events_tags_path(tag: 'art')
+
+              
+    .events-post-list
+      ul
+        - @resources.each do |resource|
+          li
+            = render partial: 'index_show', locals: {resource: resource}
+
+        
+    = paginate @resources

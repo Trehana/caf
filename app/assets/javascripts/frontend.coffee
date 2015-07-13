@@ -8,7 +8,3 @@
 #= require frontend/jquery.blueimp-gallery.min
 #= require frontend/html5
 #= require frontend/main
-
-#= require ckeditor/init
-
-#= require common/form_functions

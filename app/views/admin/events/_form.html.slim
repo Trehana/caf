@@ -1,0 +1,53 @@
+= form_for [:admin, @resource] do |f|
+  - if @resource.errors.any?
+    h2
+      | #{pluralize(@resource.errors.count, "error")} prohibited this page from being saved:
+    ul
+      - @resource.errors.full_messages.each do |message|
+        li #{message}
+
+  .form-group
+    = f.label :title
+    br
+    = f.text_field :title, class: 'form-control'
+
+  .form-group
+    = f.label t('helpers.label.events.event_date')
+    .input-daterange.input-group
+      = f.text_field :starts_at, { 'data-provide': "datepicker", 'data-date-format': "dd/mm/yyyy", class: 'input-sm form-control' }
+      span.input-group-addon
+      = f.text_field :ends_at, { 'data-provide': "datepicker", 'data-date-format': "dd/mm/yyyy", class: 'input-sm form-control' }
+
+  .form-group
+    = f.label t('helpers.label.events.event_time')
+    .input-daterange.input-group
+      = f.text_field :opens_at, { class: 'timepicker input-sm form-control' }
+      span.input-group-addon
+      = f.text_field :closes_at, { class: 'timepicker input-sm form-control' }
+
+  .form-group
+    = f.label :admission
+    br
+    = f.text_field :admission, class: 'form-control'
+
+  br
+  = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
+
+  .form-group
+    = f.label :description
+    br
+    = f.text_area :description, class: 'ck_editor_textarea'
+    
+    = render partial: 'admin/shared/tags', locals: { resource: @resource, f: f }
+
+
+  .form-group
+    = f.label :cover_photo_select
+    = render partial: 'admin/shared/dropzone_single_photo_upload', locals: { photo_class: 'cover_photo', resource: @resource }
+
+    .checkbox
+      = f.check_box :cover_photo_repeat
+      = f.label :cover_photo_repeat
+
+  br
+  = render partial: 'admin/shared/edit_form_footer', locals: { f: f }

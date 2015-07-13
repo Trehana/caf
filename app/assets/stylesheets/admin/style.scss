@@ -4,6 +4,8 @@
 @import 'dropzone/dropzone';
 @import "admin/pages";
 @import "admin/awesome-bootstrap-checkbox";
+@import "shared/bootstrap-datepicker3";
+@import "shared/bootstrap-timepicker";
 
 .resource_class_name {
   opacity: 0.3;
@@ -68,7 +70,7 @@ body {
         font-weight:300;
         color:$lightColor;
 
-      
+
 
       &:last-child {
         border-right:none;
@@ -109,7 +111,7 @@ body {
     color: #fff;
     font-family: 'Lato', sans-serif;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 25px;
     opacity: 0.5;
     text-decoration: none;
 
@@ -144,7 +146,12 @@ body {
   .navbar-brand{
     background:asset-url("brand-logo-admin.png") no-repeat center center;
     width: 70px;
-    height:50px;
+    height:55px;
     text-indent: -9999px;
   }
+}
+
+// Misc helper styles
+.font-normal {
+  font-weight: normal;
 }

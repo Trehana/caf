@@ -49,7 +49,7 @@ module Admin
         resource_singular_name = @resource.class.model_name.singular
 
         if params["#{@resource_class_name.downcase}".to_sym][:set_tags]
-          new_params = params[:article][:set_tags]
+          new_params = params[@resource_class_name.downcase.to_sym][:set_tags]
           @resource.tags.collect { |tag| @resource.tags.delete(tag) unless new_params.index(tag.name) }
           new_params.collect { |tag_name| @resource.tag(tag_name) }
         end
@@ -95,7 +95,7 @@ module Admin
 
     def fix_shortcode_sanitisation
       return unless Shortcode && !Shortcode.configuration.self_closing_tags.empty?
-      %w(body bio).each do |content_attribute|
+      %w(body bio description).each do |content_attribute|
         # Go to next in loop if the conditions aren't met
         next if (content = params[@resource.class.model_name.singular.to_sym][content_attribute.to_s]).nil?
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626131322) do
+ActiveRecord::Schema.define(version: 20150708235545) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address",          limit: 255
@@ -59,6 +59,22 @@ ActiveRecord::Schema.define(version: 20150626131322) do
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.text     "business_hours",     limit: 65535
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.string   "slug",               limit: 255
+    t.date     "starts_at"
+    t.date     "ends_at"
+    t.time     "opens_at"
+    t.time     "closes_at"
+    t.string   "admission",          limit: 255
+    t.string   "location",           limit: 255
+    t.text     "description",        limit: 65535
+    t.integer  "cover_photo_repeat", limit: 1,     default: 0
+    t.string   "state",              limit: 255
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
