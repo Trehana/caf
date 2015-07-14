@@ -1325,3 +1325,70 @@ input[type="text"] {
 .modal-title {
 	font-weight:300;
 }
+.content-event {
+	width:100%;
+	overflow:hidden;
+
+	.col-1 {
+		width: 40%;
+		float: left;
+		padding:20px 0;
+	}
+	.col-2 {
+		width: 57%;
+		float: right;
+		padding:20px 0;
+	}
+	.date, .time, .address, .email, .social-links, .poster {
+		display: block;
+		font-size: 14px;
+		line-height: 16px;
+		margin-bottom: 10px;
+		padding-left:40px;
+		background-repeat:no-repeat;
+		background-position:top left;
+		min-height: 30px;
+		padding-top:6px;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 18px;
+		
+		strong {
+			display: none;
+		}
+	}
+	.poster {
+		padding:0;
+	}
+	.organizer {
+		display: block;
+		padding:10px 0;
+		font-size: 14px;
+		line-height: 16px;
+	}
+	.date {
+		background-image: url(#{$images}icon-calendar.png);
+	}
+	.time {
+		background-image: url(#{$images}icon-time.png);
+	}
+	.address {
+		background-image: url(#{$images}icon-location.png);
+	}
+	.email {
+		background-image: url(#{$images}icon-email.png);
+	}
+	.social-links {
+		padding:0;
+		padding-bottom: 10px;
+		ul {
+			display: block;
+			margin:0;
+			padding:0;
+
+			li {
+				display: inline-block;
+				margin-right: 15px;
+			}
+		}
+	}
+}
