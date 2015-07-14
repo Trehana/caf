@@ -1,0 +1,49 @@
+.fc-basic-view td.fc-day-number {
+  font-family: "Lato",sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  padding: 3px;
+}
+
+.fc-widget-header {
+  border-top-color: #FFFFFF !important;
+  border-left-color: #FFFFFF !important;
+  border-right-color: #FFFFFF !important;
+}
+
+th.fc-day-header {
+  font-family: "Lato",sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 40px;
+  text-align: center;
+  border: #000000;
+  padding-bottom: 15px;
+ }
+
+.fc-event {
+  background: asset-url("line-pattern.png") repeat scroll 0 0;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  padding: 8px;
+  border: none;
+
+  &.coffee {
+    background-color: #99a9c1;
+  }
+
+  &.art {
+    background-color: #c87f9c;
+  }
+
+  &.sponsored {
+    background-color: #b9ca99;
+  }
+}
+
+.fc-content {
+  white-space: normal !important;
+}

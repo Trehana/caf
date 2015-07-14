@@ -29,6 +29,11 @@
     = f.label :admission
     br
     = f.text_field :admission, class: 'form-control'
+  
+  .form-group
+    = f.label :email
+    br
+    = f.text_field :email, class: 'form-control'
 
   br
   = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }

@@ -8,3 +8,6 @@
 #= require frontend/jquery.blueimp-gallery.min
 #= require frontend/html5
 #= require frontend/main
+#= require moment
+#= require fullcalendar
+#= require shared/calendar

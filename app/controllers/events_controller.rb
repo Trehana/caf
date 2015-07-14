@@ -5,12 +5,17 @@ class EventsController < ApplicationController
   before_action :set_body_class
   before_action :set_search_criteria, only: [:index]
 
-
   def calendar
-    @resources = @resource_class.published_content.page params[:page]
+    # @resources = @resource_class.published_content.page params[:page]
+    # respond_to do |format|
+    #   format.html { render @resources }
+    #   format.json { render @resources, status: :ok }
+    # end
+    @resources = Event.published_content
+    # @resources = Event.between(params['start'], params['end']) if params['start'] && params['end']
     respond_to do |format|
-      format.html { render @resources }
-      format.json { render @resources, status: :ok }
+      format.html # index.html.erb
+      format.json { render json: @resources }
     end
   end
 

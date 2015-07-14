@@ -49,6 +49,7 @@ gem 'gon' # Access Rails veriables from JS
 gem 'coffee-rails', '~> 4.1.0'
 gem 'slim-rails'
 gem 'bower-rails', github: 'rharriso/bower-rails' # Bower package managment for rails
-gem 'twitter-typeahead-rails', github: 'yourabi/twitter-typeahead-rails'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 gem 'puma' # Use Puma as the app server

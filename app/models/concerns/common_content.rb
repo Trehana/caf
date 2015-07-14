@@ -24,15 +24,19 @@ module CommonContent
       end
 
       state :published, :draft do
-        validates_presence_of :title, message: I18n.t('common.state.title_blank')
+        validate :validate_model
       end
+    end
+
+    def validate_model
+      validates_presence_of :title, message: I18n.t('common.state.slug_blank')
     end
   end
 
   # Class Methods
   module ClassMethods
     def published_content
-      where.not(state: %w('deleted', 'draft'))
+      where.not(state: %w(deleted draft hidden))
     end
 
     def editors_content

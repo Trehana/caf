@@ -35,15 +35,6 @@ GIT
       countries (~> 0.11.0)
       sort_alphabetical (~> 1.0)
 
-GIT
-  remote: git://github.com/yourabi/twitter-typeahead-rails.git
-  revision: 47d80b2d58bbeb1007b068ed97b1c5d90acb4361
-  specs:
-    twitter-typeahead-rails (0.11.1)
-      actionpack (>= 3.1)
-      jquery-rails
-      railties (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -154,6 +145,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    fullcalendar-rails (2.3.1.0)
+      jquery-rails (>= 3.1.1, < 5.0.0)
+      momentjs-rails (~> 2.8, >= 2.8.4)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     gon (5.2.3)
@@ -192,6 +186,8 @@ GEM
     mime-types (2.5)
     mini_portile (0.6.2)
     minitest (5.6.1)
+    momentjs-rails (2.10.3)
+      railties (>= 3.1)
     multi_json (1.11.0)
     multipart-post (2.0.0)
     mysql2 (0.3.18)
@@ -336,6 +332,7 @@ DEPENDENCIES
   devise
   dropzonejs-rails
   friendly_id (~> 5.1.0)
+  fullcalendar-rails
   gon
   jbuilder (~> 2.0)
   jquery-rails
@@ -343,6 +340,7 @@ DEPENDENCIES
   kaminari
   letter_opener
   meta-tags
+  momentjs-rails
   mysql2
   nokogiri
   paperclip
@@ -360,6 +358,5 @@ DEPENDENCIES
   spring
   state_machines-activerecord
   turbolinks
-  twitter-typeahead-rails!
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

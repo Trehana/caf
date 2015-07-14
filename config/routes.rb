@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :events
   get '/events/category/:tag' => 'events#index', as: 'events_tags'
+  get '/calendar' => 'events#calendar', as: 'calendar'
 
   # ADMIN
   # ==========
