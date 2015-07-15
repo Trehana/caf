@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_page_variables, only: [:show]
   before_action :set_body_class
   before_action :set_search_criteria, only: [:index]
+  before_action :set_index_title, only: [:index]
 
   private
 
@@ -27,5 +28,9 @@ class ArticlesController < ApplicationController
     @tag = params[:tag]
     desc_or_asc = 'desc'
     @search_critera =  { where: { tag_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
+  end
+
+  def set_index_title
+    set_meta_tags title: "#{t('helpers.label.news.index_title')} | #{t('meta_tags.title')}"
   end
 end

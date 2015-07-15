@@ -6,7 +6,6 @@ module Common
     before_action :set_resource_class_name
     before_action :set_resource_class
     before_action :set_resource, only: [:show, :edit, :update, :destroy]
-    before_action :set_title
     before_action :set_html_variables
   end
 
@@ -31,10 +30,6 @@ module Common
   # Use callbacks to share common setup or constraints between actions.
   def set_resource
     @resource = @resource_class.find(params[:id])
-  end
-
-  def set_title
-    # left blank to be overridden by the controller
   end
 
   def set_html_variables

@@ -5,9 +5,11 @@ class EventsController < ApplicationController
   before_action :set_body_class
   before_action :set_search_criteria, only: [:index]
 
+
   def calendar
     @body_class = 'calendarpage'
     @title = 'Calendar'
+    set_meta_tags title: "#{t('helpers.label.events.calendar.index_title')} | #{t('meta_tags.title')}"
     @resources = Event.published_content
     @resources = Event.between(params['start'], params['end']) if params['start'] && params['end']
     respond_to do |format|
@@ -38,9 +40,5 @@ class EventsController < ApplicationController
     @tag = params[:tag]
     desc_or_asc = 'desc'
     @search_critera =  { where: { tag_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
-  end
-
-  def set_title
-    @title = 'Calendar'
   end
 end
