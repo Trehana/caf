@@ -1307,16 +1307,16 @@ input[type="text"] {
 		line-height: 16px;
 	}
 	.date {
-		background-image: url(#{$images}icon-calendar.png);
+		background-image: asset-url("icon-calendar.png");
 	}
 	.time {
-		background-image: url(#{$images}icon-time.png);
+		background-image: asset-url("icon-time.png");
 	}
 	.address {
-		background-image: url(#{$images}icon-location.png);
+		background-image: asset-url("icon-location.png");
 	}
 	.email {
-		background-image: url(#{$images}icon-email.png);
+		background-image: asset-url("icon-email.png");
 	}
 	.social-links {
 		padding:0;

@@ -55,7 +55,7 @@
 	}
 	#section-two {
 		background:asset-url("bg-grey.jpg");
-		background:asset-url("home-latest-news-top-bg.jpg") top center no-repeat, url("home-latest-news-bottom-bg.jpg") bottom center no-repeat, url("bg-grey.jpg");
+		background:asset-url("home-latest-news-top-bg.jpg") top center no-repeat, asset-url("home-latest-news-bottom-bg.jpg") bottom center no-repeat, asset-url("bg-grey.jpg");
 	}
 	#section-four {
 		background:asset-url("bg-blue.jpg");
@@ -83,14 +83,14 @@
 	}
 	#section-two {
 		background:asset-url("bg-grey.jpg");
-		background:asset-url("ourteam-top-bg.jpg") top center no-repeat, url("ourteam-bottom-bg.jpg") bottom center no-repeat, url("bg-grey.jpg");
+		background:asset-url("ourteam-top-bg.jpg") top center no-repeat, asset-url("ourteam-bottom-bg.jpg") bottom center no-repeat, asset-url("bg-grey.jpg");
 	}
 	#section-three {
 		background:asset-url("bg-white.jpg");
 	}
 	#section-four {
 		background:asset-url("bg-green.jpg");
-		background:asset-url("partner-top-bg.jpg") top center repeat-x, url("bg-green.jpg");
+		background:asset-url("partner-top-bg.jpg") top center repeat-x, asset-url("bg-green.jpg");
 
 		h1 {
 			color:#fff;
@@ -165,7 +165,7 @@
 	#section-two {
 		overflow:hidden;
 		background:asset-url("bg-grey.jpg");
-		background:asset-url("home-latest-news-top-bg.jpg") top center no-repeat, url("bg-grey.jpg");
+		background:asset-url("home-latest-news-top-bg.jpg") top center no-repeat, asset-url("bg-grey.jpg");
 
 		h3 {
 			color:$goldColor;
