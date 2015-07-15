@@ -19,18 +19,9 @@
       #calendar_caffa
 
       .month-select
+        - months = %w(January February March April May June July August September October November December)
+        - this_year = Date.today.year
         select#month-select
           option selected="" value=""  Monthly View
-          option value="january"  January
-          option value="february"  February
-          option value="march"  March
-          option value="april"  April
-          option value="may"  May
-          option value="june"  June
-          option value="july"  July
-          option value="august"  August
-          option value="september"  September
-          option value="october"  October
-          option value="november"  November
-          option value="december"  December
-      
+          - months.each do |month|
+            option value="#{Date.parse("#{this_year}-#{month}-01").strftime("%Y-%m-%d")}"  = month

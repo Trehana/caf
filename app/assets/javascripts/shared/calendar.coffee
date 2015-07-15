@@ -61,6 +61,10 @@ $(document).ready ->
     return
 
 
-$('#month-select').change ->
-  console.log this.value
-  return
+  $('#month-select').change ->
+    console.log this.value
+    if this.value != ''
+      $('#calendar_caffa').fullCalendar( 'gotoDate', this.value )
+    else
+      $('#calendar_caffa').fullCalendar('today')
+    return
