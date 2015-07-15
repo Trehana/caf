@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   before_action :set_page_variables, only: [:show]
 
   def home
+    set_meta_tags title: "#{t('meta_tags.title')}"
     @resource = Page.find('home')
     @body_class = 'homepage'
     set_page_variables

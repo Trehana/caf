@@ -39,14 +39,15 @@ en:
     delete_confirm: 'Are you sure, you want to delete?'
     state:
       slug_blank: "Title/Name cannot be blank"
-    add: "New %{@resource_class_name.underscore}"
+    add_resource: "New %{resource_class_name}"
     save_draft: 'Save draft'
     publish: 'Publish'
     delete: "Delete"
     cover_photo_delete_confirn: 'Do you want to remove cover photo'
     messages:
-      deleted: 'Page deleted'
-      updated: 'Page was successfully updated.'
+      created: '%{resource_class_name} was successfully created'
+      deleted: '%{resource_class_name} deleted'
+      updated: '%{resource_class_name} was successfully updated.'
   authorization:
     not_authorized: 'Insufficient permissions to perfom that action'
 
@@ -67,7 +68,7 @@ en:
         category_nav:
           coffee_related: 'Coffee related'
           art_related: 'Art related'
-      events:
+      event:
         nav_name: 'Events'
         title: 'Title'
         description: 'Description'
@@ -134,24 +135,3 @@ en:
       models:
         event:
           blank: "%{attribute} cannot be blank"
-
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.

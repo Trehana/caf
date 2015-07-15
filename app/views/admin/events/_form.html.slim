@@ -12,14 +12,14 @@
     = f.text_field :title, class: 'form-control'
 
   .form-group
-    = f.label t('helpers.label.events.event_date')
+    = f.label t('helpers.label.event.event_date')
     .input-daterange.input-group
       = f.text_field :starts_at, { 'data-provide': "datepicker", 'data-date-format': "yyyy-mm-dd", class: 'input-sm form-control' }
       span.input-group-addon
       = f.text_field :ends_at, { 'data-provide': "datepicker", 'data-date-format': "yyyy-mm-dd", class: 'input-sm form-control' }
 
   .form-group
-    = f.label t('helpers.label.events.event_time')
+    = f.label t('helpers.label.event.event_time')
     .input-daterange.input-group
       = f.text_field :opens_at, { class: 'timepicker input-sm form-control' }
       span.input-group-addon

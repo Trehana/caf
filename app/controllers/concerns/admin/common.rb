@@ -35,7 +35,7 @@ module Admin
       @resource = @resource_class.new(resource_params)
       respond_to do |format|
         if @resource.save
-          format.html { redirect_to @resource, notice: 'Page was successfully created.' }
+          format.html { redirect_to @resource, notice: t('common.messages.created', resource_class_name: @resource_class_name) }
           format.json { render :show, status: :created, location: @resource }
         else
           format.html { render :new }
@@ -46,8 +46,6 @@ module Admin
 
     def update
       respond_to do |format|
-        resource_singular_name = @resource.class.model_name.singular
-
         if params["#{@resource_class_name.downcase}".to_sym][:set_tags]
           new_params = params[@resource_class_name.downcase.to_sym][:set_tags]
           @resource.tags.collect { |tag| @resource.tags.delete(tag) unless new_params.index(tag.name) }
@@ -61,7 +59,7 @@ module Admin
             @resource.save_draft
           end
           #
-          format.html { redirect_to url_for([:admin, @resource, action: 'edit']), notice: t("#{resource_singular_name}.messages.updated") }
+          format.html { redirect_to url_for([:admin, @resource, action: 'edit']), notice: t('common.messages.updated', resource_class_name: @resource_class_name) }
           format.json { render :show, status: :ok, location: @resource }
         else
           format.html { redirect_to url_for([:admin, @resource, action: 'edit']) }
@@ -73,7 +71,7 @@ module Admin
     def destroy
       @resource.move_to_trash
       respond_to do |format|
-        format.html { redirect_to @resource_index_path, notice: t("#{resource_singular_name}.messages.deleted") }
+          format.html { redirect_to @resource_index_path, notice: t('common.messages.deleted', resource_class_name: @resource_class_name) }
         format.json { head :no_content }
       end
     end
