@@ -17,7 +17,8 @@ class Event < ActiveRecord::Base
 
   paginates_per 9
 
-  scope :between, ->(start_time, end_time) { published_content.where('? < starts_at < ?', Event.format_date(start_time), Event.format_date(end_time)) }
+  #
+  scope :between, ->(start_time, end_time) { published_content.where('starts_at BETWEEN ? AND ?', Date.parse(start_time), Date.parse(end_time)) }
 
   def as_json(options = {})
     {
@@ -27,10 +28,6 @@ class Event < ActiveRecord::Base
       url: Rails.application.routes.url_helpers.event_path(slug),
       className: tags.to_a.join(' ')
     }
-  end
-
-  def self.format_date(date_time)
-    Time.zone.at(date_time.to_i).to_formatted_s(:db)
   end
 
   def validate_model
