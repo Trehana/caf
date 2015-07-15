@@ -1,0 +1,29 @@
+div class="content-#{category}-news"
+  h3  = t("helpers.label.news.home_page.#{category}_news")
+  .post-item.wrap-column-3
+    - news
+    - return unless news.count > 0
+    ul
+      - news.each_with_index do |resource, index|
+        - if index == 0
+          li
+            .col
+              .post-image
+                = default_resource_image(resource)
+                  span.category = category.capitalize
+          li
+            .col
+              .post
+                .post-meta
+                  h4.post-title
+                    = link_to resource.title, article_path(resource)
+                  span.post-date
+                    = resource.updated_at.strftime('%d %b %y')
+                .post-content
+                  p = preview_text(strip_tags(resource.body), 30)
+                .btn-holder
+                  = link_to t('helpers.label.news.read_more'), article_url(id: resource), class: 'btn'
+
+        - else
+            li.post-list.col
+              = link_to resource.title, article_path(resource)

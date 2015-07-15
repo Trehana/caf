@@ -71,6 +71,10 @@ en:
         category_nav:
           coffee_related: 'Coffee related'
           art_related: 'Art related'
+        home_page:
+          heading: 'Latest News'
+          coffee_news: 'Coffee News'
+          art_news: 'Art News'
       event:
         nav_name: 'Events'
         title: 'Title'

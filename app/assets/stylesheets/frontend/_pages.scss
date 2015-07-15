@@ -226,6 +226,14 @@
 .content-coffee-news, .content-art-news {
 	margin-bottom:30px;
 
+	ul {
+		list-style: none;
+		padding-left: 0;
+		padding-right: 0;
+		li {
+		}
+	}
+
 	.post-image {
 		border:none;
 		border-right:1px solid rgba($greenColor, 0.3);
@@ -244,6 +252,12 @@
 }
 .content-coffee-news {
 	padding-right:0;
+
+	.post-image {
+		border:none;
+		border-right:1px solid rgba($greenColor, 0.3);
+		padding-right:25px;
+	}
 }
 .content-art-news {
 	.col {
@@ -252,21 +266,18 @@
 	h3 {
 		color:$blueColor;
 	}
-	.post-list {
+	li.post-list {
 		border:none;
 		border-right:1px solid rgba($greenColor, 0.3);
 		padding-left:0;
 		padding-left:0;
-		ul {
-			li {
-				a {
-					color:$blueColor;
+		float: right;
+			a {
+				color:$blueColor;
 
-					&:hover {
-						color:$blueDarkColor;
-					}
+				&:hover {
+					color:$blueDarkColor;
 				}
-			}
 		}
 	}
 	.post-meta {

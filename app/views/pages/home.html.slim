@@ -5,7 +5,13 @@
       == content @resource.body
 
 #section-two.section
+  .wrap
+    h1 = t('helpers.label.news.home_page.heading')
+    = render partial: 'home_news', locals: { category: 'coffee', news: Article.coffee_news.limit(4) }
+    = render partial: 'home_news', locals: { category: 'art', news: Article.art_news.limit(4) }
 
 #section-three.section
+  = render partial: 'home_event_gallery'
 
 #section-four.section
+    = render partial: 'home_calendar'
