@@ -7,11 +7,7 @@ class EventsController < ApplicationController
 
   def calendar
     @body_class = 'calendarpage'
-    # @resources = @resource_class.published_content.page params[:page]
-    # respond_to do |format|
-    #   format.html { render @resources }
-    #   format.json { render @resources, status: :ok }
-    # end
+    @title = 'Calendar'
     @resources = Event.published_content
     @resources = Event.between(params['start'], params['end']) if params['start'] && params['end']
     respond_to do |format|
@@ -42,5 +38,9 @@ class EventsController < ApplicationController
     @tag = params[:tag]
     desc_or_asc = 'desc'
     @search_critera =  { where: { tag_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
+  end
+
+  def set_title
+    @title = 'Calendar'
   end
 end

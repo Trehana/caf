@@ -6,7 +6,8 @@ module Common
     before_action :set_resource_class_name
     before_action :set_resource_class
     before_action :set_resource, only: [:show, :edit, :update, :destroy]
-    before_action :set_html_variables, only: [:show]
+    before_action :set_title
+    before_action :set_html_variables
   end
 
   def index
@@ -32,9 +33,24 @@ module Common
     @resource = @resource_class.find(params[:id])
   end
 
+  def set_title
+    # left blank to be overridden by the controller
+  end
+
   def set_html_variables
     @body_class = @resource_class.name.underscore unless defined?(@body_class)
-    set_meta_tags title: @resource.try(:title) && !@resource.try(:title).empty? ? "#{@resource.try(:title)} | #{t('meta_tags.title')}" : "#{t('meta_tags.title')}",
+
+    title = if defined?(@title)
+              "#{@title}"
+            elsif defined?(@resource) && @resource.try(:title) && !@resource.try(:title).empty?
+              "#{@resource.try(:title)}"
+            elsif defined?(@resource_class_name)
+              @resource_class_name.pluralize
+            else
+              nil
+            end
+    title = title ? "#{title} | #{t('meta_tags.title')}" : "#{t('meta_tags.title')}"
+    set_meta_tags title: title,
                   description: t('meta_tags.description'),
                   keywords: "#{t('meta_tags.keywords')}#{@resource.try(:meta_tags) && !@resource.try(:meta_tags).empty? ? ', ' + @resource.try(:meta_tags) : ''}".squish
   end
