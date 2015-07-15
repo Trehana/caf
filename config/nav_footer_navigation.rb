@@ -12,7 +12,7 @@ SimpleNavigation::Configuration.run do |navigation|
     end
     primary.item :second, '' do |second|
       second.dom_class = 'col'
-      second.item :about_us, t('nav.header_top.about_us'), '#'
+      second.item :about_us, t('nav.header_top.about_us'), page_url(id: 'about-us')
       second.item :calendar, t('nav.header_top.calendar'), calendar_path
       second.item :news, t('nav.header_top.news'), articles_path
       second.item :media, t('nav.header_top.media'), '#'
