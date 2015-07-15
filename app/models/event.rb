@@ -17,15 +17,11 @@ class Event < ActiveRecord::Base
 
   paginates_per 9
 
-  # scope :between, lambda { |start_time, end_time|
-  #                   { conditions: ['? < starts_at < ?', Event.format_date(start_time), Event.format_date(end_time)] }
-  #                 }
+  scope :between, ->(start_time, end_time) { published_content.where('? < starts_at < ?', Event.format_date(start_time), Event.format_date(end_time)) }
 
   def as_json(options = {})
     {
       title: title,
-      # start: DateTime.parse(starts_at.strftime('%Y%m%d') + ' ' + opens_at).utc.rfc822,
-      # end: DateTime.parse(ends_at.strftime('%Y%m%d') + ' ' + closes_at).utc.rfc822,
       start: starts_at.strftime('%Y-%m-%d'),
       end: ends_at.strftime('%Y-%m-%d'),
       url: Rails.application.routes.url_helpers.event_path(slug),

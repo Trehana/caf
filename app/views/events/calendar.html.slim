@@ -2,26 +2,18 @@
   .wrap
     .content-calendar
       h1
-        = t('helpers.label.events.index_title')
+        = t('helpers.label.events.calendar.index_title')
       p
-        = t('helpers.label.events.index_description')
+        = t('helpers.label.events.calendar.index_description')
       hr
-
-    #category-navigation
-      ul
-        li#btn-coffee-related
-          = link_to t('helpers.label.events.category_nav.coffee_related'), events_tags_path(tag: 'coffee')
-        li#btn-art-related
-          = link_to t('helpers.label.events.category_nav.art_related'), events_tags_path(tag: 'art')
-        li#btn-sponsor-events
-          = link_to t('helpers.label.events.category_nav.sponsored'), events_tags_path(tag: 'sponsored')
 
     .calendar-navigation
       .col
-        a.btn-calendar.left-arrow href="#"  January
+        #calendar-prev.btn-calendar.left-arrow href="#"  January
       .col
-        span.active-month February
+        span#active-month.active-month February
       .col
-        a.btn-calendar.right-arrow href="#"  March    
+        #calendar-next.btn-calendar.right-arrow href="#"  March    
+    
     .content
       #calendar_caffa

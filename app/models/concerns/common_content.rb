@@ -31,16 +31,19 @@ module CommonContent
     def validate_model
       validates_presence_of :title, message: I18n.t('common.state.slug_blank')
     end
+
+    scope :published_content, -> { where.not(state: %(deleted draft hidden)) }
+    scope :editors_content, -> { where.not(state: %(deleted hidden)) }
   end
 
   # Class Methods
   module ClassMethods
-    def published_content
-      where.not(state: %w(deleted draft hidden))
-    end
-
-    def editors_content
-      where.not(state: 'deleted')
-    end
+    # def published_content
+    #   where.not(state: %w(deleted draft hidden))
+    # end
+    #
+    # def editors_content
+    #   where.not(state: 'deleted')
+    # end
   end
 end
