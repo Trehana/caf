@@ -71,7 +71,7 @@ module Admin
     def destroy
       @resource.move_to_trash
       respond_to do |format|
-          format.html { redirect_to @resource_index_path, notice: t('common.messages.deleted', resource_class_name: @resource_class_name) }
+        format.html { redirect_to @resource_index_path, notice: t('common.messages.deleted', resource_class_name: @resource_class_name) }
         format.json { head :no_content }
       end
     end

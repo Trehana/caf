@@ -29,7 +29,14 @@ module Common
   end
   # Use callbacks to share common setup or constraints between actions.
   def set_resource
-    @resource = @resource_class.find(params[:id])
+    begin
+      @resource = @resource_class.find(params[:id])
+    rescue Exception
+      respond_to do |format|
+        format.html { render 'shared/catch_all_error' }
+        format.json { head :no_content, status: :unprocessable_entity }
+      end
+    end
   end
 
   def set_html_variables
