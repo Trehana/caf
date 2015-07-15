@@ -390,6 +390,22 @@
 		font-weight:300;
 	}
 }
+
+.content-error {
+	top: 800px;
+	h1 {
+		color:$brownColor;
+	}
+	p {
+		max-width:780px;
+		margin:0 auto 40px;
+		font-weight:300;
+		text-align:center;
+		color:$lightColor;
+	}
+}
+
+
 .content-racingcreatures {
 	text-align:center;
 	img {

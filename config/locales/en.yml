@@ -49,8 +49,8 @@ en:
       deleted: '%{resource_class_name} deleted'
       updated: '%{resource_class_name} was successfully updated.'
     errors:
-      not_found_header: '404 Not Found'
-      not_found_message: 'Content you are looking for cannot be found. Please verify and try again!'
+      not_found_header: '404 / Not Found'
+      not_found_message: 'Content you are looking for cannot be found. Please verify the URL and try again!'
   authorization:
     not_authorized: 'Insufficient permissions to perfom that action'
 
