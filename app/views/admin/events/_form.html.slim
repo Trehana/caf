@@ -14,9 +14,9 @@
   .form-group
     = f.label t('helpers.label.events.event_date')
     .input-daterange.input-group
-      = f.text_field :starts_at, { 'data-provide': "datepicker", 'data-date-format': "dd/mm/yyyy", class: 'input-sm form-control' }
+      = f.text_field :starts_at, { 'data-provide': "datepicker", 'data-date-format': "yyyy-mm-dd", class: 'input-sm form-control' }
       span.input-group-addon
-      = f.text_field :ends_at, { 'data-provide': "datepicker", 'data-date-format': "dd/mm/yyyy", class: 'input-sm form-control' }
+      = f.text_field :ends_at, { 'data-provide': "datepicker", 'data-date-format': "yyyy-mm-dd", class: 'input-sm form-control' }
 
   .form-group
     = f.label t('helpers.label.events.event_time')
