@@ -4,7 +4,7 @@ class Picture < Asset
                     url: '/images/pictures/:hash.:extension',
                     hash_data: ':class/:attachment/:id/:style/:updated_at',
                     hash_secret: 'lppernpidvyywzxuljqvbwcldganplmzythvizrcvkjlquejfdyewgsyowbojvhneeqopaijhnovhxgqnbevryojpqsmibszekwi',
-                    styles: { content: '800>', index_thumb: '540x340#', thumb: '100x100#' }
+                    styles: { content: '800>', gallery_thumb: '540>', gallery_thumb_square: '540x540#', index_thumb: '540x340#', thumb: '100x100#' }
 
   validates_attachment_presence :data
   validates_attachment_size :data, less_than: 2.megabytes
