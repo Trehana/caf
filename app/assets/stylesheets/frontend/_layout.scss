@@ -1090,10 +1090,16 @@ li.post-list {
 	position:relative;
 	h3 {
 		color:$goldColor;
-		width:98%;
-		margin:0 1% 20px;
+		width:100%;
+		margin:0 0 20px;
+		padding-bottom:20px;
+		border-bottom:1px solid #ccc;
 	}
-	.cafe-list-sorting {
+	.btn-filter-toggle {
+		float: right;
+		cursor:pointer;
+	}
+	/*.cafe-list-sorting {
 		position:absolute;
 		right:20px;
 		top:42px;
@@ -1134,8 +1140,7 @@ li.post-list {
 		.sort-by {
 			float:right;
 		}
-	}
-
+	}*/
 }
 .cafe-list-post, .news-post-list {
 	overflow:hidden;
@@ -1330,4 +1335,47 @@ li.post-list {
 			}
 		}
 	}
+}
+.filter-seach-form {
+	width:100%;
+	padding:0 0 20px;
+	border-bottom:1px solid #ccc;
+	margin-bottom:20px;
+	display:none;
+
+	.form-group {
+		display: block;
+		width: 33.33%;
+		float:left;
+		padding:0 20px;
+	}
+	label {
+		display: block;
+		font-size: 14px;
+		line-height: 16px;
+	}
+	input[type="text"], textarea, select {
+		border: 1px solid #ccc;
+		font-family: 'Lato', sans-serif;
+		font-size: 20px;
+		line-height: 22px;
+		display: block;
+		margin: 0;
+	}
+	select {
+		height: 40px;
+	}
+	.btn-holder {
+		padding:0 20px;
+	}
+	.btn {
+		border: 1px solid #999;
+		font-size: 14px;
+		line-height: 16px;
+		padding: 10px 20px;
+	}
+
+}
+.clear {
+	clear:both;
 }

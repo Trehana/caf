@@ -479,7 +479,6 @@
 #cafe-list {
 	h3 {
 		margin:0 0 10px;
-		padding:0;
 	}
 	.cafe-list-sorting {
 		position: relative;
@@ -541,5 +540,12 @@
 		width: 100%;
 		float:none;
 		margin-bottom: 20px;
+	}
+}
+.filter-seach-form {
+
+	.form-group {
+		width: 100%;
+		float:none;
 	}
 }
