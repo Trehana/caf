@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def calendar
     @body_class = 'calendarpage'
     @title = 'Calendar'
-    set_meta_tags title: "#{t('helpers.label.events.calendar.index_title')} | #{t('meta_tags.title')}"
+    set_meta_tags title: "#{t('helpers.label.event.calendar.index_title')} | #{t('meta_tags.title')}"
     @resources = Event.published_content
     @resources = Event.between(params['start'], params['end']) if params['start'] && params['end']
     respond_to do |format|
