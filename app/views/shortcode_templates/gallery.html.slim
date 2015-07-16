@@ -3,4 +3,4 @@
   ul.gallery class="#{gallery.slug}"
     - gallery.pictures.each do |picture|
       li.gallery-thumb id="#{picture.id}"
-        = image_tag picture.url(:index_thumb), "data-large": picture.url(:content)
+        = image_tag picture.url(:gallery_thumb), "data-large": picture.url(:content)
