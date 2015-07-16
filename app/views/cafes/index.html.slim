@@ -8,15 +8,66 @@
       
       #cafe-list
         h3 Café List
-        .cafe-list-sorting
+          <span class="btn btn-filter-toggle">Filter List</span>
+        .filter-seach-form
           = form_for :search, url: { action: "index" }, html: { method: 'get' } do |f|
-            .sort-location
+            .form-group
+              <label>Café Name</label>
+              <input type="text" value="" name="cafe_name" />
+            .form-group
+              <label>Address</label>
+              <input type="text" value="" name="cafe_address" />
+            .form-group
+              <label>Suburb</label>
+              <input type="text" value="" name="cafe_suburb" />
+            .form-group
+              <label>City</label>
+              <input type="text" value="" name="cafe_city" />
+            .form-group
               = f.label :country, t('helpers.label.cafe.location')
               = f.country_select :country, { priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK'], selected: @country_code }, { class: 'submit_on_change' }
-            .sort-by
+            .form-group
+              <label>Type</label>
+              <select>
+                <option value="6am">Micro roaster</option>
+                <option value="7am">Family friendly</option>
+                <option value="8am">Pet friendly</option>
+                <option value="9am">Kiosk</option>
+              </select>
+            .form-group
+              <label>Food</label>
+              <select>
+                <option value="6am">All day breakfast</option>
+                <option value="7am">Western</option>
+                <option value="8am">Fusion</option>
+                <option value="9am">Desserts</option>
+                <option value="9am">Organic</option>
+                <option value="9am">Vegan</option>
+                <option value="9am">Ice Cream</option>
+                <option value="9am">Pancakes</option>
+              </select>
+            .form-group
+              <label>Drinks</label>
+              <select>
+                <option value="6am">Speciality Coffee</option>
+                <option value="7am">Juice</option>
+                <option value="8am">Soy</option>
+              </select>
+            .form-group
+              <label>Opening Hours</label>
+              <select>
+                <option value="6am">6:00 AM</option>
+                <option value="7am">7:00 AM</option>
+                <option value="8am">8:00 AM</option>
+                <option value="9am">9:00 AM</option>
+                <option value="10am">10:00 AM</option>
+              </select>
+            .form-group
               = f.label :ordered, t('helpers.label.cafe.sort_by')
               = f.select :ordered, options_for_select([['Name', 'title'], ['Date', 'updated_at']], selected = @order_by), {}, { class: 'submit_on_change' }
-            
+            .clear
+            .btn-holder
+              <input type="submit" class="btn" value="Submit" />
         .cafe-list-post
           ul
             - @resources.each do |resource|
@@ -25,3 +76,8 @@
 
           
           = paginate @resources
+
+javascript:
+  $('.btn-filter-toggle').click(function() {
+    $('.filter-seach-form').slideToggle();
+  });
