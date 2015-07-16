@@ -5,13 +5,15 @@ module DefaultImage
   included do
     # May nedd to change in the future
     def default_image
-      return unless pictures.count > 0
-      pictures.first.url(:index_thumb)
+      pictures.count > 0 ? pictures.first.url(:content) : ActionController::Base.helpers.asset_path('placeholder.png')
     end
 
     def default_thumb
-      return unless pictures.count > 0
-      pictures.first.url(:thumb)
+      pictures.count > 0 ? pictures.first.url(:thumb) : ActionController::Base.helpers.asset_path('placeholder_thumb.png')
+    end
+
+    def default_index_thumb
+      pictures.count > 0 ? pictures.first.url(:index_thumb) : ActionController::Base.helpers.asset_path('placeholder.png')
     end
   end
 

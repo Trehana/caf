@@ -7,7 +7,7 @@
     .post-meta
       h4.post-title = resource.title
     .post-content
-      p = preview_text(strip_tags(resource.description), 30)
+      p == preview_text(strip_tags(resource.description), 30)
       
     .btn-holder
       = link_to t('helpers.label.events.read_more'), event_url(id: resource), class: 'btn'

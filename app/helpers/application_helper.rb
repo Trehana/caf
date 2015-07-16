@@ -24,7 +24,6 @@ module ApplicationHelper
   end
 
   def default_resource_image(resource)
-    default_resource_image = resource.default_image ? resource.default_image : asset_path('placeholder.png')
-    tag(:img, src: default_resource_image, alt: resource.title)
+    tag(:img, src: resource.default_index_thumb, alt: resource.title)
   end
 end

@@ -10,6 +10,10 @@ class Picture < Asset
   validates_attachment_size :data, less_than: 2.megabytes
   validates_attachment_content_type :data, content_type: /\Aimage/
 
+  belongs_to :assetable, polymorphic: true
+
+  scope :events_gallery, -> { where(assetable_type: 'Event').joins('INNER JOIN events on assetable_id = events.id').where(events: { state: 'published' }).order(updated_at: 'DESC').limit(200).sample(8) }
+
   def url_content
     url(:content)
   end

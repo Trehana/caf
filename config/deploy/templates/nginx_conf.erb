@@ -18,6 +18,8 @@ server {
   server_name _;
   index index.htm index.html;
 
+  client_max_body_size 5m;
+
   location / {
     try_files $uri/index.html $uri.html $uri @puma_<%= fetch(:nginx_config_name) %>;
   }

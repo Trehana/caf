@@ -19,6 +19,7 @@ class Event < ActiveRecord::Base
 
   #
   scope :between, ->(start_time, end_time) { published_content.where('starts_at BETWEEN ? AND ?', Date.parse(start_time), Date.parse(end_time)) }
+  scope :events_gallery, -> { joins(:pictures).order(updated_at: 'DESC').limit(8) }
 
   def as_json(options = {})
     {
@@ -27,7 +28,7 @@ class Event < ActiveRecord::Base
       end: ends_at.strftime('%Y-%m-%d'),
       url: Rails.application.routes.url_helpers.event_path(slug),
       className: tags.to_a.join(' '),
-      image_url: default_thumb ? default_thumb : ActionController::Base.helpers.asset_path('placeholder_thumb.png'),
+      image_url: default_thumb,
       event_date: starts_at.day.ordinalize,
       address: address.to_s
     }

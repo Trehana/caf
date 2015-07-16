@@ -99,6 +99,8 @@ en:
         meta_tags: 'Meta tags'
         cover_photo_select: 'Select cover photo'
         cover_photo_repeat: 'Tile cover photo'
+        home_page:
+          event_gallery: 'Event Gallery'
       cafe:
         nav_name: 'Cafes'
         title: 'Title'
