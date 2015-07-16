@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
       end: ends_at.strftime('%Y-%m-%d'),
       url: Rails.application.routes.url_helpers.event_path(slug),
       className: tags.to_a.join(' '),
-      image_url: default_image ? default_image : ActionController::Base.helpers.asset_path('placeholder_thumb.png'),
+      image_url: default_thumb ? default_thumb : ActionController::Base.helpers.asset_path('placeholder_thumb.png'),
       event_date: starts_at.day.ordinalize,
       address: address.to_s
     }
