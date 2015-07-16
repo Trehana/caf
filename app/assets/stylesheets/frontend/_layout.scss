@@ -852,17 +852,17 @@ li.post-list {
 			@include border-radius(42px);
 		}
 
-		&.blue {
+		&.art {
 			img {
 				border:7px solid $lightBlueColor;
 			}
 		}
-		&.purple {
+		&.coffee {
 			img {
 				border:7px solid $purpleColor;
 			}
 		}
-		&.gold {
+		&.sponsored {
 			img {
 				border:7px solid $goldColor;
 			}
@@ -879,7 +879,7 @@ li.post-list {
 		text-align:center;
 	}
 	.event-title {
-		width:52%;
+		width:49%;
 		display:inline-block;
 		vertical-align:middle;
 		font-size:24px;

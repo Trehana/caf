@@ -40,7 +40,35 @@
 		color:$goldColor;
 	}
 }
+.btn-calendar {
+	border:1px solid #fff;
+	color:#fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size:24px;
+	line-height:24px;
+	text-transform:uppercase;
+	text-align:center;
+	max-width:340px;
+	margin:0 auto;
+	padding:30px 10px;
+	display:block;
+	opacity:0.4;
+	@include transition;
 
+	&:hover {
+		border:1px solid #fff;
+		color:#fff;
+		text-decoration:none;
+		opacity:1;
+	}
+
+	&.left-arrow {
+		background:asset-url("img-left-arrow.png") no-repeat left center;
+	}
+	&.right-arrow {
+		background:asset-url("img-right-arrow.png") no-repeat right center;
+	}
+}
 .calendarpage {
 	.btn-calendar {
 		border:1px solid #fff;

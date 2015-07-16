@@ -549,3 +549,12 @@
 		float:none;
 	}
 }
+.calendar-event {
+	.event-img{
+		&.art, &.coffee, &.sponsored {
+			img {
+				border-width:3px;
+			}
+		}
+	}
+}
