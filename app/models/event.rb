@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
   paginates_per 9
 
   #
-  scope :between, ->(start_time, end_time) { published_content.where('starts_at BETWEEN ? AND ?', Date.parse(start_time), Date.parse(end_time)) }
+  scope :between, ->(start_time, end_time) { published_content.where('starts_at BETWEEN ? AND ?', Date.parse(start_time), Date.parse(end_time)).order(starts_at: 'ASC') }
   scope :events_gallery, -> { joins(:pictures).order(updated_at: 'DESC').limit(8) }
 
   def as_json(options = {})
