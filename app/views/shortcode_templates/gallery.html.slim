@@ -1,6 +1,6 @@
 - gallery = Gallery.find(@attributes[:id].to_s)
 - if gallery && gallery.pictures
-  .gallery class="#{gallery.slug}"
+  ul.gallery class="#{gallery.slug}"
     - gallery.pictures.each do |picture|
-      .gallery-image id="#{picture.id}"
-        = image_tag picture.url(:content)
+      li.gallery-thumb id="#{picture.id}"
+        = image_tag picture.url(:index_thumb), "data-large": picture.url(:content)

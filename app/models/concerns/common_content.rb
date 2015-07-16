@@ -32,7 +32,7 @@ module CommonContent
       validates_presence_of :title, message: I18n.t('common.state.slug_blank')
     end
 
-    scope :published_content, -> { where.not(state: %w(deleted draft hidden)) }
+    scope :published_content, -> { where(state: 'published') }
     scope :editors_content, -> { where.not(state: %w(deleted hidden)) }
   end
 
