@@ -124,7 +124,7 @@ en:
         short_code: 'Short code'
         short_code_instructions: 'Copy and paste the short code to embed the profile'
       gallery:
-        nav_name: 'Galleries'
+        nav_name: 'Image Galleries'
         title: 'Title'
         gallery_photos: 'Gallery photos'
         short_code: 'Short code'

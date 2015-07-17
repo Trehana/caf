@@ -3,6 +3,7 @@ class Article < ActiveRecord::Base
   include CommonContent
   include DefaultImage
   include Taggable
+  include Categories
 
   searchkick callbacks: :async
   def search_data
@@ -19,7 +20,7 @@ class Article < ActiveRecord::Base
   scope :coffee_news, -> { published_content.joins(:tags).where('tags.name = ?', 'coffee') }
   scope :art_news, -> { published_content.joins(:tags).where('tags.name = ?', 'art') }
 
-  def self.allowed_tags
+  def self.allowed_categories
     %w(coffee art)
   end
 end

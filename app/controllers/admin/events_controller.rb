@@ -18,9 +18,10 @@ module Admin
         :opens_at,
         :closes_at,
         :admission,
+        :email,
         :cover_photo_repeat,
-        set_tags: [],
-        address_attributes: [:id, :address, :postal_code, :country_code]
+        attach_categories: [],
+        address_attributes: [:id, :address, :suburb, :city, :postal_code, :country_code]
       )
     end
   end

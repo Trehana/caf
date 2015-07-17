@@ -11,14 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713061057) do
+ActiveRecord::Schema.define(version: 20150717115720) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address",          limit: 255
+    t.string   "suburb",           limit: 255
+    t.string   "city",             limit: 255
     t.string   "country_code",     limit: 2
     t.string   "postal_code",      limit: 10
     t.integer  "addressable_id",   limit: 4
     t.string   "addressable_type", limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "art_galleries", force: :cascade do |t|
+    t.string   "title",          limit: 255
+    t.text     "body",           limit: 65535
+    t.string   "business_hours", limit: 255
+    t.string   "state",          limit: 255
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
@@ -59,6 +70,16 @@ ActiveRecord::Schema.define(version: 20150713061057) do
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.text     "business_hours",     limit: 65535
+    t.string   "food",               limit: 255
+    t.string   "type",               limit: 255
+    t.string   "drinks",             limit: 255
+  end
+
+  create_table "emerging_artists", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "body",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -127,6 +148,7 @@ ActiveRecord::Schema.define(version: 20150713061057) do
   create_table "tags", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "slug",       limit: 255
+    t.string   "type",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

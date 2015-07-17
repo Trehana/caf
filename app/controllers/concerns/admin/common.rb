@@ -46,12 +46,12 @@ module Admin
 
     def update
       respond_to do |format|
-        if params["#{@resource_class_name.downcase}".to_sym][:set_tags]
-          new_params = params[@resource_class_name.downcase.to_sym][:set_tags]
-          @resource.tags.collect { |tag| @resource.tags.delete(tag) unless new_params.index(tag.name) }
-          new_params.collect { |tag_name| @resource.tag(tag_name) }
-        end
-
+        # if params["#{@resource_class_name.downcase}".to_sym][:set_tags]
+        #   new_params = params[@resource_class_name.downcase.to_sym][:set_tags]
+        #   @resource.tags.collect { |tag| @resource.tags.delete(tag) unless new_params.index(tag.name) }
+        #   new_params.collect { |tag_name| @resource.tag(tag_name) }
+        # end
+        #
         if @resource.update(resource_params)
           if params[:button] == 'publish' && @resource.state != 'published'
             @resource.publish

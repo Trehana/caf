@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :pages, only: [:show]
-  resources :cafes, only: [:index, :show]
+  resources :cafes, :art_galleries, only: [:index, :show]
 
-  # resources :news, controller: 'articles'
+  resources :emerging_artists, path: 'emerging-artists', only: [:index, :show]
+  resources :art_galleries, path: 'art-galleries', only: [:index, :show]
+
   resources :articles, path: 'news', only: [:index, :show]
   get '/news/category/:tag' => 'articles#index', as: 'news_tags'
 
@@ -13,9 +15,9 @@ Rails.application.routes.draw do
   get '/events/category/:tag' => 'events#index', as: 'events_tags'
   get '/calendar' => 'events#calendar', as: 'calendar'
 
-  # ADMIN
-  # ==========
-
+  # ===============
+  # ADMIN Namespace
+  # ===============
   concern :has_assets do
     resources :assets, only: [:index, :create, :destroy]
   end
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :pages, :cafes, :events, concerns: [:has_assets, :has_pictures, :has_cover_photo]
+    resources :emerging_artists, path: 'emerging-artists', concerns: [:has_assets, :has_pictures, :has_cover_photo]
+    resources :art_galleries, path: 'art-galleries', concerns: [:has_assets, :has_pictures, :has_cover_photo]
     resources :articles, path: 'news', concerns: [:has_assets, :has_pictures, :has_cover_photo]
     resources :galleries, concerns: [:has_pictures, :has_assets]
     resources :profiles, concerns: [:has_assets] do

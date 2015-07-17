@@ -33,5 +33,9 @@
     br
     = render partial: 'admin/shared/business_hours', locals: {f: f, resource: @resource }
 
+  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'cafe_types', f: f }
+  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'food_types', f: f }
+  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'drink_types', f: f }
+
   br
   = render partial: 'admin/shared/edit_form_footer', locals: {f: f}

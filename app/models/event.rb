@@ -2,8 +2,10 @@
 class Event < ActiveRecord::Base
   include CommonContent
   include DefaultImage
-  include Taggable
   include DefaultAddress
+  include Taggable
+  include Categories
+
 
   has_one :cover_photo, as: :assetable, dependent: :destroy
   has_many :pictures, as: :assetable, dependent: :destroy
@@ -49,7 +51,7 @@ class Event < ActiveRecord::Base
     super.utc.strftime('%I:%M%p')
   end
 
-  def self.allowed_tags
+  def self.allowed_categories
     %w(coffee art sponsored)
   end
 end

@@ -43,7 +43,7 @@
     br
     = f.text_area :description, class: 'ck_editor_textarea'
     
-    = render partial: 'admin/shared/tags', locals: { resource: @resource, f: f }
+  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'categories', f: f }
 
 
   .form-group

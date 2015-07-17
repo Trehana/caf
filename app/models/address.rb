@@ -7,6 +7,6 @@ class Address < ActiveRecord::Base
   end
 
   def to_s
-    "#{address}, #{country} #{postal_code}"
+    "#{address} #{suburb} #{country} #{postal_code}"
   end
 end
