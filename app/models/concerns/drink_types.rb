@@ -3,7 +3,7 @@ module DrinkTypes
   extend ActiveSupport::Concern
 
   included do
-    has_many :drink_types, through: :taggings, source: :tag
+    has_many :drink_types, class_name: 'DrinkType', through: :taggings, source: :tag
   end
 
   attr_writer :attach_drink_types

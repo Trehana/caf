@@ -3,7 +3,7 @@ module FoodTypes
   extend ActiveSupport::Concern
 
   included do
-    has_many :food_types, through: :taggings, source: :tag
+    has_many :food_types, class_name: 'FoodType', through: :taggings, source: :tag
   end
 
   attr_writer :attach_food_types

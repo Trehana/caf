@@ -16,7 +16,7 @@ module Taggable
   end
 
   #
-  private
+  # private
 
   def tag(allowed_tags_hash, tag_param, tag_type_class)
     tag_param.strip!
@@ -33,7 +33,7 @@ module Taggable
         tagging = Tagging.find_by(tag_id: tag.id, taggable_id: id, taggable_type: self.class.name)
         tag.taggings.delete(tagging)
         tagging.destroy
-        tag.destroy if tag.taggings.count == 0
+        # tag.destroy if tag.taggings.count == 0
       end
     end
     #
@@ -45,6 +45,9 @@ module Taggable
     value[:tags].each do |tag_param|
       tag(allowed_tags_hash, tag_param, value[:type])
     end
+    #
+    # Need to reload the associations again to ensure this works better. Otherwise the objects may not get refreshed properly
+    send(value[:type].underscore.pluralize).reload
   end
 
   # Specify which tag types are allowed

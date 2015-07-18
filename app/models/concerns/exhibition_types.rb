@@ -3,7 +3,7 @@ module ExhibitionTypes
   extend ActiveSupport::Concern
 
   included do
-    has_many :exhibition_types, through: :taggings, source: :tag
+    has_many :exhibition_types, class_name: 'ExhibitionType', through: :taggings, source: :tag
   end
 
   attr_writer :attach_exhibition_types
