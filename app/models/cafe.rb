@@ -4,7 +4,8 @@ class Cafe < ActiveRecord::Base
   include AddBusinessHours
   include DefaultImage
   include DefaultAddress
-  include CafeTypes
+  include Taggable
+  include BusinessTypes
   include DrinkTypes
   include FoodTypes
 
@@ -29,7 +30,7 @@ class Cafe < ActiveRecord::Base
     ['Speciality Coffee', 'Juice', 'Soy']
   end
 
-  def self.allowed_cafe_types
+  def self.allowed_business_types
     ['Micro roaster', 'Family friendly', 'Pet friendly', 'Kiosk']
   end
 end

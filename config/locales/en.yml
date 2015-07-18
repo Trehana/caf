@@ -108,6 +108,7 @@ en:
         menu: 'Menu'
         cover_photo_select: 'Select cover photo'
         cover_photo_repeat: 'Tile cover photo'
+        business_types: 'Type'
         location: 'Location'
         sort_by: 'Sort'
         read_more: 'Read More'

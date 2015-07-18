@@ -8,8 +8,4 @@ class Tag < ActiveRecord::Base
   def to_s
     name
   end
-
-  def name=(val)
-    write_attribute(:name, val.downcase)
-  end
 end

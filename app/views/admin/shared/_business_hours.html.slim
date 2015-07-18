@@ -1,12 +1,16 @@
 .business_hours
-  table
+  .form-group
     = f.fields_for :business_hours do |a|
       - BusinessHours::BUSINESS_DAYS.each do |day|
-        tr
-          td = a.label day, class: 'day'
-          td
-            = a.label :start
-            = a.select "#{day}[start]", options_for_select(BusinessHours::TIME_INTERVAL, resource.business_hours.try(day) ? resource.business_hours.try(day)[:start] : nil)
-          td
-            = a.label :end
-            = a.select "#{day}[end]", options_for_select(BusinessHours::TIME_INTERVAL, resource.business_hours.try(day) ? resource.business_hours.try(day)[:end] : nil)
+        .form-inline
+          .form-group.show
+            = a.label day, class: 'day col-sm-1'
+          .form-group
+            = a.label :start do
+              = a.select "#{day}[start]", options_for_select(BusinessHours::TIME_INTERVAL, resource.business_hours.try(day) ? resource.business_hours.try(day)[:start] : nil)
+          .form-group
+            = a.label :end do
+              = a.select "#{day}[end]", options_for_select(BusinessHours::TIME_INTERVAL, resource.business_hours.try(day) ? resource.business_hours.try(day)[:end] : nil)
+          .form-group
+            = a.label "#{day}[closed]", :closed, class: 'checkbox'
+            = a.check_box "#{day}[closed]", checked: resource.business_hours.try(day) && resource.business_hours.try(day)[:closed] ? true : false

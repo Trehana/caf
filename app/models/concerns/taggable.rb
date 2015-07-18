@@ -18,24 +18,37 @@ module Taggable
   #
   private
 
-  def tag(name, tag_type_class)
-    name.strip!
-    tag_type_class.strip!
-    allowed_tags = 'allowed_' + tag_type_class.underscore.pluralize
-    return unless self.class.try(allowed_tags) && self.class.send(allowed_tags).include?(name)
-    tag = Object.const_get(tag_type_class).where(name: name.downcase).first_or_create
-    taggings.where(tag_id: tag.id).first_or_create
+  def tag(allowed_tags_hash, tag_param, tag_type_class)
+    tag_param.strip!
+    return unless allowed_tags_hash.key?(tag_param.parameterize)
+    tag = Object.const_get(tag_type_class).find_or_create_by(name: allowed_tags_hash[tag_param])
+    taggings.find_or_create_by(tag_id: tag.id)
   end
 
   def attach_type_of_tags(value)
     return unless value.is_a?(Hash) && [:tags, :type].all? { |k| value.key? k } && allowed_types.include?(value[:type])
     existing_tags = send(value[:type].underscore.pluralize)
-    existing_tags.collect { |tag| tags.delete(tag) unless value[:tags].include?(tag.name) }
-    value[:tags].collect { |tag_name| tag(tag_name, value[:type]) }
+    existing_tags.each do |tag|
+      unless value[:tags].include?(tag.slug)
+        tagging = Tagging.find_by(tag_id: tag.id, taggable_id: id, taggable_type: self.class.name)
+        tag.taggings.delete(tagging)
+        tagging.destroy
+        tag.destroy if tag.taggings.count == 0
+      end
+    end
+    #
+    allowed_tags = 'allowed_' + value[:type].underscore.pluralize
+    return unless allowed_tags_array = self.class.try(allowed_tags)
+    allowed_tags_hash = {}
+    allowed_tags_array.map { |tag| allowed_tags_hash[tag.parameterize] = tag }
+    #
+    value[:tags].each do |tag_param|
+      tag(allowed_tags_hash, tag_param, value[:type])
+    end
   end
 
   # Specify which tag types are allowed
   def allowed_types
-    %w(CafeType Category DrinkType ExhibitionType FoodType)
+    %w(BusinessType Category DrinkType ExhibitionType FoodType)
   end
 end

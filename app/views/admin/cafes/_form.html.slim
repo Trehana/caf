@@ -33,7 +33,7 @@
     br
     = render partial: 'admin/shared/business_hours', locals: {f: f, resource: @resource }
 
-  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'cafe_types', f: f }
+  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'business_types', f: f }
   = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'food_types', f: f }
   = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'drink_types', f: f }
 

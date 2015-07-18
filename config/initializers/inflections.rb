@@ -6,6 +6,8 @@
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.plural 'cafe', 'cafes'
   inflect.plural 'Cafe', 'Cafes'
+  inflect.plural 'CafeType', 'CafeTypes'
+  inflect.plural 'cafe_type', 'cafe_types'
   inflect.uncountable %w( news )
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'

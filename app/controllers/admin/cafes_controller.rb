@@ -15,7 +15,7 @@ module Admin
         :menu,
         :cover_photo_repeat,
         address_attributes: [:id, :address, :suburb, :city, :postal_code, :country_code],
-        attach_cafe_types: [],
+        attach_business_types: [],
         attach_drink_types: [],
         attach_food_types: [],
         business_hours: {
