@@ -29,7 +29,7 @@ class Event < ActiveRecord::Base
       start: starts_at.strftime('%Y-%m-%d'),
       end: ends_at.strftime('%Y-%m-%d'),
       url: Rails.application.routes.url_helpers.event_path(slug),
-      className: tags.to_a.join(' '),
+      className: category_names,
       image_url: default_thumb,
       event_date: starts_at.day.ordinalize,
       address: address.to_s

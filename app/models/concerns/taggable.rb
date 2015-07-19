@@ -16,7 +16,7 @@ module Taggable
   end
 
   #
-  # private
+  private
 
   def tag(allowed_tags_hash, tag_param, tag_type_class)
     tag_param.strip!
@@ -39,8 +39,7 @@ module Taggable
     #
     allowed_tags = 'allowed_' + value[:type].underscore.pluralize
     return unless allowed_tags_array = self.class.try(allowed_tags)
-    allowed_tags_hash = {}
-    allowed_tags_array.map { |tag| allowed_tags_hash[tag.parameterize] = tag }
+    allowed_tags_hash = array_to_param_hash(allowed_tags_array)
     #
     value[:tags].each do |tag_param|
       tag(allowed_tags_hash, tag_param, value[:type])

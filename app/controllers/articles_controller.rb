@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
     @order_by = 'updated_at'
     @tag = params[:tag]
     desc_or_asc = 'desc'
-    @search_critera =  { where: { tag_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
+    @search_critera =  { where: { category_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
   end
 
   def set_index_title

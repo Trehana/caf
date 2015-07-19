@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
   searchkick callbacks: :async
   def search_data
     attributes.merge(
-      tag_names: tag_names
+      category_names: category_names
     )
   end
 
@@ -17,8 +17,8 @@ class Article < ActiveRecord::Base
   has_one :cover_photo, as: :assetable, dependent: :destroy
   has_many :pictures, as: :assetable, dependent: :destroy
 
-  scope :coffee_news, -> { published_content.joins(:tags).where('tags.name = ?', 'coffee') }
-  scope :art_news, -> { published_content.joins(:tags).where('tags.name = ?', 'art') }
+  scope :coffee_news, -> { published_content.joins(:categories).where(tags: { name: 'coffee' }) }
+  scope :art_news, -> { published_content.joins(:categories).where(tags: { name: 'art' }) }
 
   def self.allowed_categories
     %w(coffee art)

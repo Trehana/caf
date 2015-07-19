@@ -13,3 +13,4 @@
 #= require shared/calendar
 #= require shared/calendar_home
 #= require shared/calendar_home_view
+#= require frontend/custom

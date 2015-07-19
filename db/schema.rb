@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717115720) do
+ActiveRecord::Schema.define(version: 20150719143952) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address",          limit: 255
@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(version: 20150717115720) do
   add_index "assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
+  create_table "awards", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.string   "year",           limit: 255
+    t.string   "awardable_id",   limit: 255
+    t.string   "awardable_type", limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "cafes", force: :cascade do |t|
     t.string   "title",              limit: 255
     t.string   "slug",               limit: 255
@@ -78,6 +87,7 @@ ActiveRecord::Schema.define(version: 20150717115720) do
   create_table "emerging_artists", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "body",       limit: 65535
+    t.string   "state",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

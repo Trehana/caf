@@ -1,4 +1,4 @@
-# PagesController
+# EmergingArtists Controller
 class EmergingArtistsController < ApplicationController
   include Common
   before_action :set_page_variables, only: [:show]
@@ -23,9 +23,20 @@ class EmergingArtistsController < ApplicationController
 
   def set_search_criteria
     return unless params[:search]
+    @name = params[:search][:name]
+    @city = params[:search][:city]
+    @location = params[:search][:location]
+    @awards = params[:search][:awards]
     @order_by = params[:search][:ordered]
-    @country_code = params[:search][:country]
     desc_or_asc = params[:search][:ordered] == 'name' ? 'asc' : 'desc'
-    @search_critera =  { where: { country_code: @country_code }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
+    @search_critera = {
+      where: {
+        name: @name,
+        city: @city,
+        location: @location,
+        awards: @awards
+      },
+      order: { "#{@order_by}": :"#{desc_or_asc}" }
+    }
   end
 end

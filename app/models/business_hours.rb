@@ -43,6 +43,16 @@ class BusinessHours
     days_hash_inverse.invert
   end
 
+  def earlierst_opening_hour_int
+    opening_hours = Array.new
+    self.as_json.to_options.each do |day, times|
+      return if times["cloased"] == "1"
+      opening_hours << Time.parse("1970-01-01 #{times["start"]} UTC").to_i
+    end
+    opening_hours.sort!
+    opening_hours.empty? ? Time.parse('1970-01-01 23:59:59 UTC').to_i : opening_hours.first
+  end
+
   def to_s
     business_hours_string = ''
     simplify.each do |days, times|

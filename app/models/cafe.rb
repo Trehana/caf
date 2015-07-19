@@ -17,9 +17,17 @@ class Cafe < ActiveRecord::Base
   has_many :pictures, as: :assetable, dependent: :destroy
 
   def search_data
-    attributes.merge(
-      address_country_code: address
-    )
+    {
+      name: title,
+      address: (address.address if address),
+      suburb: (address.suburb if address),
+      city: (address.city if address),
+      location: (address.country_code  if address),
+      type: array_to_param_hash(business_type_names, false, true),
+      food: array_to_param_hash(food_type_names, false, true),
+      drinks: array_to_param_hash(drink_type_names, false, true),
+      opening_hours: business_hours.earlierst_opening_hour_int
+    }
   end
 
   def self.allowed_food_types

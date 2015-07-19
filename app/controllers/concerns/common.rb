@@ -47,7 +47,7 @@ module Common
             elsif defined?(@resource) && @resource.try(:title) && !@resource.try(:title).empty?
               "#{@resource.try(:title)}"
             elsif defined?(@resource_class_name)
-              @resource_class_name.pluralize
+              @resource_class_name.titleize.pluralize
             else
               nil
             end

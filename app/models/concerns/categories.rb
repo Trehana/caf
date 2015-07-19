@@ -3,7 +3,7 @@ module Categories
   extend ActiveSupport::Concern
 
   included do
-    has_many :categories, through: :taggings, source: :tag
+    has_many :categories, class_name: 'Category', through: :taggings, source: :tag
   end
 
   attr_writer :attach_categories

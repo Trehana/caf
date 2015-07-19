@@ -2,49 +2,43 @@
   .wrap
       .content-coffee-adventure
       
-      h1 = t('helpers.label.cafe.index_title')
-      p = t('helpers.label.cafe.index_description')
+      h1 = t('helpers.label.art_gallery.index_title')
+      p = t('helpers.label.art_gallery.index_description')
       hr
       
       #cafe-list
         h3
-          = t('helpers.label.cafe.search_form.search_title')
-          span class="btn btn-filter-toggle" = t('helpers.label.cafe.search_form.filter_list')
+          = t('helpers.label.art_gallery.search_form.search_title')
+          span class="btn btn-filter-toggle" = t('helpers.label.art_gallery.search_form.filter_list')
         .filter-seach-form
           = form_for :search, url: { action: "index" }, html: { method: 'get' } do |f|
             .form-group
-              = f.label :name, t('helpers.label.cafe.search_form.name')
+              = f.label :name, t('helpers.label.art_gallery.search_form.name')
               = f.text_field :name
             .form-group
-              = f.label :address, t('helpers.label.cafe.search_form.address')
+              = f.label :address, t('helpers.label.art_gallery.search_form.address')
               = f.text_field :address
             .form-group
-              = f.label :suburb, t('helpers.label.cafe.search_form.suburb')
+              = f.label :suburb, t('helpers.label.art_gallery.search_form.suburb')
               = f.text_field :suburb
             .form-group
-              = f.label :city, t('helpers.label.cafe.search_form.city')
+              = f.label :city, t('helpers.label.art_gallery.search_form.city')
               = f.text_field :city
             .form-group
-              = f.label :location, t('helpers.label.cafe.search_form.location')
+              = f.label :location, t('helpers.label.art_gallery.search_form.location')
               = f.country_select :location, { priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK'], selected: @location }, { class: 'submit_on_change' }
             .form-group
-              = f.label :type, t('helpers.label.cafe.search_form.type')
+              = f.label :type, t('helpers.label.art_gallery.search_form.type')
               = f.select :type, options_for_select(array_to_param_hash(Cafe.allowed_business_types, true), selected = @type), {}
             .form-group
-              = f.label :food, t('helpers.label.cafe.search_form.food')
-              = f.select :food, options_for_select(array_to_param_hash(Cafe.allowed_food_types, true), selected = @food), {}
-            .form-group
-              = f.label :drinks, t('helpers.label.cafe.search_form.drinks')
-              = f.select :drinks, options_for_select(array_to_param_hash(Cafe.allowed_drink_types, true), selected = @drinks), {}
-            .form-group
-              = f.label :ordered, t('helpers.label.cafe.opening_hours')
+              = f.label :ordered, t('helpers.label.art_gallery.opening_hours')
               = f.select :ordered, options_for_select({"6:00 AM": "06:00", "7:00 AM": "07:00", "8:00 AM": "08:00", "9:00AM": "09:00"}, selected = @opening_hours), {}, { class: 'submit_on_change' }
             .form-group
-              = f.label :ordered, t('helpers.label.cafe.sort_by')
+              = f.label :ordered, t('helpers.label.art_gallery.sort_by')
               = f.select :ordered, options_for_select([['Name', 'title'], ['Date', 'updated_at']], selected = @order_by), {}, { class: 'submit_on_change' }
             .clear
             .btn-holder
-              = f.button t('helpers.label.cafe.submit'),value: 'submit', class: "btn"
+              = f.button t('helpers.label.art_gallery.submit'),value: 'submit', class: "btn"
 
         .cafe-list-post
           ul

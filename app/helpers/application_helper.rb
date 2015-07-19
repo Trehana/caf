@@ -26,4 +26,15 @@ module ApplicationHelper
   def default_resource_image(resource)
     tag(:img, src: resource.default_index_thumb, alt: resource.title)
   end
+
+  def array_to_params(array)
+    array.map(&:item.parameterize)
+  end
+
+  def array_to_param_hash(array, invert = false, keys_only = false)
+    hash = {}
+    array.map { |tag| hash[tag.parameterize] = tag }
+    hash = invert ? hash.invert : hash
+    keys_only ? hash.keys : hash
+  end
 end

@@ -36,6 +36,19 @@ module CommonContent
     scope :editors_content, -> { where.not(state: %w(deleted hidden)) }
   end
 
+  private
+
+  def array_to_params(array)
+    array.map(&:parameterize)
+  end
+
+  def array_to_param_hash(array, invert = false, keys_only = false)
+    hash = {}
+    array.map { |tag| hash[tag.parameterize] = tag }
+    hash = invert ? hash.invert : hash
+    keys_only ? hash.keys : hash
+  end
+
   # Class Methods
   module ClassMethods
   end

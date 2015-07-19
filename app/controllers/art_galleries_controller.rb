@@ -23,9 +23,26 @@ class ArtGalleriesController < ApplicationController
 
   def set_search_criteria
     return unless params[:search]
+    @name = params[:search][:name]
+    @address = params[:search][:address]
+    @suburb = params[:search][:suburb]
+    @city = params[:search][:city]
+    @location = params[:search][:location]
+    @type = params[:search][:type]
+    @opening_hours = params[:search][:opening_hours]
     @order_by = params[:search][:ordered]
-    @country_code = params[:search][:country]
     desc_or_asc = params[:search][:ordered] == 'name' ? 'asc' : 'desc'
-    @search_critera =  { where: { country_code: @country_code }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
+    @search_critera = {
+      where: {
+        name: @name,
+        address: @address,
+        suburb: @suburb,
+        city: @city,
+        location: @location,
+        type: @type,
+        opening_hours: { lte: Time.parse("1970-01-01 #{@opening_hours} UTC").to_i }
+      },
+      order: { "#{@order_by}": :"#{desc_or_asc}" }
+    }
   end
 end
