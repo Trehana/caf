@@ -36,6 +36,22 @@ class Event < ActiveRecord::Base
     }
   end
 
+  def simplify
+    {
+      title: title,
+      date: (starts_at == ends_at ? starts_at.strftime('%Y-%m-%d') : "#{starts_at.strftime('%Y-%m-%d')} - #{ends_at.strftime('%Y-%m-%d')}"),
+      time: "#{opens_at} - #{closes_at}",
+      address: address.to_s,
+      email: email,
+      facebook: facebook,
+      twitter: twitter,
+      instagram: instagram,
+      pinterest: pinterest,
+      organizer: organizer,
+      description: description
+    }
+  end
+
   def validate_model
     validates_presence_of :title, message: I18n.t('common.state.slug_blank')
     validates_presence_of :starts_at, :ends_at

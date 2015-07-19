@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719143952) do
+ActiveRecord::Schema.define(version: 20150719212728) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address",          limit: 255
@@ -102,6 +102,11 @@ ActiveRecord::Schema.define(version: 20150719143952) do
     t.string   "admission",          limit: 255
     t.string   "email",              limit: 255
     t.text     "description",        limit: 65535
+    t.string   "organizer",          limit: 255
+    t.string   "pinterest",          limit: 255
+    t.string   "instagram",          limit: 255
+    t.string   "twitter",            limit: 255
+    t.string   "facebook",           limit: 255
     t.integer  "cover_photo_repeat", limit: 1,     default: 0
     t.string   "state",              limit: 255
     t.datetime "created_at",                                   null: false

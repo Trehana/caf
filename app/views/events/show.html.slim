@@ -1,5 +1,36 @@
 .section
   .wrap
-    .content
-      h1 = @resource.title
-      == content @resource.description
+    .content-event
+      h1 = @resource.simplify[:title]
+      hr
+      .col-1
+        .event-info
+          span.date
+            strong Date:
+            = @resource.simplify[:date]
+          span.time
+            strong Time:
+            = @resource.simplify[:time]
+          span.address
+            strong Address:
+            = @resource.simplify[:address]
+          span.email
+            = link_to @resource.simplify[:email], @resource.simplify[:email]
+          .social-links
+            ul
+              li
+                a href="#{@resource.simplify[:facebook]}"
+                  = image_tag 'icon-facebook-purple.png', alt: 'facebook'
+              li
+                a href="#{@resource.simplify[:twitter]}"
+                  = image_tag 'icon-twitter-purple.png', alt: 'twitter'
+              li
+                a href="#{@resource.simplify[:instagram]}"
+                  = image_tag 'icon-instagram-purple.png', alt: 'instagram'
+              li
+                a href="#{@resource.simplify[:pinterest]}"
+                  = image_tag 'icon-pinterest-purple.png', alt: 'pinterest'
+          span.organizer Organised by: #{@resource.simplify[:organizer]}
+
+      .col-2
+        == content @resource.simplify[:description]

@@ -35,6 +35,28 @@
     br
     = f.text_field :email, class: 'form-control'
 
+  .form-group
+    = f.label :facebook
+    br
+    = f.text_field :facebook, class: 'form-control'
+  .form-group
+    = f.label :twitter
+    br
+    = f.text_field :twitter, class: 'form-control'
+  .form-group
+    = f.label :pinterest
+    br
+    = f.text_field :pinterest, class: 'form-control'
+  .form-group
+    = f.label :instagram
+    br
+    = f.text_field :instagram, class: 'form-control'
+
+  .form-group
+    = f.label :organizer
+    br
+    = f.text_field :organizer, class: 'form-control'
+
   br
   = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
 
