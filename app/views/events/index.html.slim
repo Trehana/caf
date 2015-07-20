@@ -2,19 +2,19 @@
   .wrap
     .content-events      
       h1
-        = t('helpers.label.events.index_title')
+        = t('helpers.label.event.index_title')
       p
-        = t('helpers.label.events.index_description')
+        = t('helpers.label.event.index_description')
       hr
       
     #category-navigation
       ul
         li#btn-coffee-related
-          = link_to t('helpers.label.events.category_nav.coffee_related'), events_tags_path(tag: 'coffee')
+          = link_to t('helpers.label.event.category_nav.coffee_related'), events_tags_path(tag: 'coffee')
         li#btn-art-related
-          = link_to t('helpers.label.events.category_nav.art_related'), events_tags_path(tag: 'art')
+          = link_to t('helpers.label.event.category_nav.art_related'), events_tags_path(tag: 'art')
         li#btn-sponsor-events
-          = link_to t('helpers.label.events.category_nav.sponsored'), events_tags_path(tag: 'sponsored')
+          = link_to t('helpers.label.event.category_nav.sponsored'), events_tags_path(tag: 'sponsored')
 
               
     .events-post-list
