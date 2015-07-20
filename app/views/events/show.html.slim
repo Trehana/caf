@@ -14,8 +14,9 @@
           span.address
             strong Address:
             = @resource.simplify[:address]
-          span.email
-            = link_to @resource.simplify[:email], @resource.simplify[:email]
+          - unless @resource.simplify[:email] || @resource.simplify[:email].empty?
+            span.email
+              = link_to @resource.simplify[:email], @resource.simplify[:email]
           .social-links
             ul
               li
