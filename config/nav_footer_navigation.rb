@@ -5,7 +5,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.dom_class = 'footer_nav'
     primary.item :first, '' do |first|
       first.dom_class = 'col'
-      first.item :coffee_adventure, t('nav.header.the_caffa_store.the_caffa_store') , cafes_path
+      first.item :coffee_adventure, t('nav.header.the_caffa_store.the_caffa_store'), page_url(id: 'the-caffa-store')
       first.item :art_spot, t('nav.header.art_spot.art_spot'), art_galleries_path
       first.item :coffee_adventure, t('nav.header.coffee_adventure.coffee_adventure'), cafes_path
       first.item :coffee_event, t('nav.header.coffee_event.coffee_event'), events_path
