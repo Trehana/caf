@@ -4,7 +4,6 @@ class Cafe < ActiveRecord::Base
   include AddBusinessHours
   include DefaultImage
   include DefaultAddress
-  include Taggable
   include BusinessTypes
   include DrinkTypes
   include FoodTypes

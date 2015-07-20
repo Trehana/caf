@@ -9,21 +9,14 @@ module Admin
     end
 
     def resource_params
-      params.require(:cafe).permit(
+      params.require(:emerging_artist).permit(
         :title,
         :body,
         :cover_photo_repeat,
         :exhibition_type,
         address_attributes: [:id, :city, :country_code],
-        business_hours: {
-          sun: [:start, :end, :closed],
-          mon: [:start, :end, :closed],
-          tue: [:start, :end, :closed],
-          wed: [:start, :end, :closed],
-          thu: [:start, :end, :closed],
-          fri: [:start, :end, :closed],
-          sat: [:start, :end, :closed]
-         })
+        awards_attributes: [:name, :year],
+        )
     end
   end
 end

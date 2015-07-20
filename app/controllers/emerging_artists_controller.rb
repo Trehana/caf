@@ -26,7 +26,7 @@ class EmergingArtistsController < ApplicationController
     @name = params[:search][:name]
     @city = params[:search][:city]
     @location = params[:search][:location]
-    @awards = params[:search][:awards]
+    # @awards = params[:search][:awards]
     @order_by = params[:search][:ordered]
     desc_or_asc = params[:search][:ordered] == 'name' ? 'asc' : 'desc'
     @search_critera = {

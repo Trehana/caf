@@ -1,6 +1,7 @@
-# Add Taggable to models
+# Add ExhibitionTypes to models
 module ExhibitionTypes
   extend ActiveSupport::Concern
+  include Taggable
 
   included do
     has_many :exhibition_types, class_name: 'ExhibitionType', through: :taggings, source: :tag
@@ -12,7 +13,7 @@ module ExhibitionTypes
     attach_type_of_tags({ tags: tags, type: 'ExhibitionType' })
   end
 
-  def drink_type_names
+  def exhibition_type_names
     exhibition_types.collect(&:name)
   end
 end

@@ -106,6 +106,7 @@ en:
         title: 'Title'
         body: 'Content'
         menu: 'Menu'
+        menu_url: 'Menu URL'
         cover_photo_select: 'Select cover photo'
         cover_photo_repeat: 'Tile cover photo'
         business_types: 'Type'
@@ -130,7 +131,7 @@ en:
           sort: 'Sort'
           submit: 'Submit'
       art_gallery:
-        nav_name: 'Art Gallery'
+        nav_name: 'Art Galleries'
         title: 'Title'
         body: 'Content'
         menu: 'Menu'

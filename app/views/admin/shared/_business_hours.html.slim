@@ -13,4 +13,4 @@
               = a.select "#{day}[end]", options_for_select(BusinessHours::TIME_INTERVAL, resource.business_hours.try(day) ? resource.business_hours.try(day)[:end] : nil)
           .form-group
             = a.label "#{day}[closed]", :closed, class: 'checkbox'
-            = a.check_box "#{day}[closed]", checked: resource.business_hours.try(day) && resource.business_hours.try(day)[:closed] ? true : false
+            = a.check_box "#{day}[closed]", checked: resource.business_hours.try(day) && resource.business_hours.try(day)[:closed] == '0' ? false : true

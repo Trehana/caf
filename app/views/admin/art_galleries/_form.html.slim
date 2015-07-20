@@ -15,10 +15,6 @@
     br
     = f.text_area :body, class: 'ck_editor_textarea'
   .form-group
-    = f.label :menu, t('helpers.label.cafe.menu_url')
-    br
-    = f.text_field :menu
-  .form-group
     = f.label :cover_photo_select
     = render partial: 'admin/shared/dropzone_single_photo_upload', locals: {photo_class: 'cover_photo', resource: @resource}
 
@@ -33,9 +29,7 @@
     br
     = render partial: 'admin/shared/business_hours', locals: {f: f, resource: @resource }
 
-  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'business_types', f: f }
-  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'food_types', f: f }
-  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'drink_types', f: f }
+  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'exhibition_types', f: f }
 
   br
   = render partial: 'admin/shared/edit_form_footer', locals: {f: f}

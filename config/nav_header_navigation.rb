@@ -20,8 +20,8 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :art_spot, "#{image_tag 'img-art-spot.png', alt: t('nav.header.art_spot.art_spot')}".html_safe + "#{t('nav.header.art_spot.art_spot')}", '#' do |art_spot|
       art_spot.dom_id = 'art_spot_sub'
       art_spot.dom_class = 'sub'
-      art_spot.item :program, t('nav.header.art_spot.emerging_artists'), '#'
-      art_spot.item :sponsors, t('nav.header.art_spot.the_galleries'), '#'
+      art_spot.item :program, t('nav.header.art_spot.emerging_artists'), emerging_artists_path
+      art_spot.item :sponsors, t('nav.header.art_spot.the_galleries'), art_galleries_path
       art_spot.item :photo_log, t('nav.header.art_spot.in_the_studio'), '#'
     end
     primary.item :the_caffa_store, "#{image_tag 'img-the-caffa-store.png', alt: t('nav.header.the_caffa_store.the_caffa_store')}".html_safe + "#{t('nav.header.the_caffa_store.the_caffa_store')}", '#'

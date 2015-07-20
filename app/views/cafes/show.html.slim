@@ -1,5 +1,24 @@
 .section
   .wrap
-    .content
+    .content-event
       h1 = @resource.title
-      == content @resource.body
+      hr
+      .col-1
+        .event-info
+          span.address
+            strong Location:
+            = @resource.address
+          span.time
+            strong Opening Hours:
+            == @resource.business_hours.to_html
+          - unless @resource.menu.empty?
+            span.menu
+              strong Menu:
+              = link_to t('helpers.label.cafe.view_menu'), @resource.menu, class: 'btn', target: "_blank"
+          - unless @resource.menu.empty?
+            span.menu
+              strong Menu:
+              = link_to t('helpers.label.cafe.view_menu'), @resource.menu, target: "_blank"
+
+      .col-2
+        == content @resource.body

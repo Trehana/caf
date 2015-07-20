@@ -11,16 +11,15 @@ class EmergingArtist < ActiveRecord::Base
   has_one :cover_photo, as: :assetable, dependent: :destroy
   has_many :pictures, as: :assetable, dependent: :destroy
 
-  has_many :awards, as: :awardable, dependent: :destroy
-  accepts_nested_attributes_for :awards
+  # has_many :awards, as: :awardable, dependent: :destroy
+  # accepts_nested_attributes_for :awards
 
   def search_data
     {
       name: title,
       city: (address.city if address),
-      location: (address.country_code  if address),
-      awards: awards.name_year,
-      opening_hours: business_hours.earlierst_opening_hour_int
+      # awards: awards.name_year,
+      location: (address.country_code  if address)
     }
   end
 end

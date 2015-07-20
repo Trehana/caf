@@ -9,11 +9,10 @@ module Admin
     end
 
     def resource_params
-      params.require(:cafe).permit(
+      params.require(:art_gallery).permit(
         :title,
         :body,
         :cover_photo_repeat,
-        :exhibition_type,
         address_attributes: [:id, :address, :suburb, :city, :postal_code, :country_code],
         attach_exhibition_types: [],
         business_hours: {

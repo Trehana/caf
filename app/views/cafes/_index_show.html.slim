@@ -10,4 +10,5 @@
     
   .btn-holder
     = link_to t('helpers.label.cafe.read_more'), cafe_path(resource), class: 'btn'
-    = link_to t('helpers.label.cafe.view_menu'), cafe_path(resource, anchor: 'menu'), class: 'btn'
+    - unless resource.menu.empty?
+      = link_to t('helpers.label.cafe.view_menu'), resource.menu, class: 'btn', target: "_blank"

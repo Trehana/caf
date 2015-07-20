@@ -34,6 +34,7 @@ class BusinessHours
     end
     days_hash_inverse = {}
     days_hash.each do |day, times|
+      times =  times[-1,1] == '1' ? 'Closed' : times[0...-2]
       if days_hash_inverse.has_key?(times)
         days_hash_inverse[times] = "#{days_hash_inverse[times]}, #{day.capitalize}"
       else
@@ -56,7 +57,15 @@ class BusinessHours
   def to_s
     business_hours_string = ''
     simplify.each do |days, times|
-      business_hours_string.insert(-1, "#{days}: #{times}; \n")
+      business_hours_string.insert(-1, "#{days}: #{times}, ")
+    end
+    business_hours_string.empty? ? I18n.t('business_hours.not_defined') : business_hours_string.chomp(';')
+  end
+
+  def to_html
+    business_hours_string = ''
+    simplify.each do |days, times|
+      business_hours_string.insert(-1, "<b>#{days}</b>: #{times}, <br>")
     end
     business_hours_string.empty? ? I18n.t('business_hours.not_defined') : business_hours_string.chomp(';')
   end
