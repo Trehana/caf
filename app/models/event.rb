@@ -43,10 +43,10 @@ class Event < ActiveRecord::Base
       time: "#{opens_at} - #{closes_at}",
       address: address.to_s,
       email: email,
-      facebook: facebook,
-      twitter: twitter,
-      instagram: instagram,
-      pinterest: pinterest,
+      facebook: (facebook unless facebook.nil? && facebook.strip.empty?),
+      twitter: (twitter unless twitter.nil? && twitter.strip.empty?),
+      instagram: (instagram unless instagram.nil? && instagram.strip.empty?),
+      pinterest: (pinterest unless pinterest.nil? && pinterest.strip.empty?),
       organizer: organizer,
       description: description
     }
@@ -69,5 +69,9 @@ class Event < ActiveRecord::Base
 
   def self.allowed_categories
     %w(coffee art sponsored)
+  end
+
+  def self.allowed_social_media_names
+    %w(facebook twitter instagram pinterest)
   end
 end

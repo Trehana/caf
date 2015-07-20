@@ -19,6 +19,11 @@ module Admin
         :closes_at,
         :admission,
         :email,
+        :facebook,
+        :instagram,
+        :pinterest,
+        :twitter,
+        :organizer,
         :cover_photo_repeat,
         attach_categories: [],
         address_attributes: [:id, :address, :suburb, :city, :postal_code, :country_code]
