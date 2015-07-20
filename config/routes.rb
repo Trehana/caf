@@ -48,5 +48,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # Catch all error
-  # match "*path", to: "errors#catch_404", via: :all
+  match "*path", to: "errors#catch_404", via: :all
 end
