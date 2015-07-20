@@ -15,11 +15,11 @@ SimpleNavigation::Configuration.run do |navigation|
       second.item :about_us, t('nav.header_top.about_us'), page_url(id: 'about-us')
       second.item :calendar, t('nav.header_top.calendar'), calendar_path
       second.item :news, t('nav.header_top.news'), articles_path
-      second.item :media, t('nav.header_top.media'), '#'
+      second.item :media, t('nav.header_top.media'), page_url(id: 'media')
     end
     primary.item :third, '' do |third|
       third.dom_class = 'col'
-      third.item :partners, t('nav.header_top.partners'), '#'
+      third.item :partners, t('nav.header_top.partners'), page_url(id: 'partners')
       third.item :contact, t('nav.header_top.contact'), page_url(id: 'contact')
     end
   end

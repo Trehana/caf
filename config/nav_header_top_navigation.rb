@@ -5,8 +5,8 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :about_us, t('nav.header_top.about_us'), page_url(id: 'about-us')
     primary.item :calendar, t('nav.header_top.calendar'), calendar_path
     primary.item :news, t('nav.header_top.news'), articles_path
-    primary.item :media, t('nav.header_top.media'), '#'
-    primary.item :partners, t('nav.header_top.partners'), '#'
+    primary.item :media, t('nav.header_top.media'), page_url(id: 'media')
+    primary.item :partners, t('nav.header_top.partners'), page_url(id: 'partners')
     primary.item :contact, t('nav.header_top.contact'), page_url(id: 'contact')
   end
 end
