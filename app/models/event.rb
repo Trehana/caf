@@ -43,10 +43,10 @@ class Event < ActiveRecord::Base
       time: "#{opens_at} - #{closes_at}",
       address: address.to_s,
       email: email,
-      facebook: (facebook unless facebook.nil? && facebook.strip.empty?),
-      twitter: (twitter unless twitter.nil? && twitter.strip.empty?),
-      instagram: (instagram unless instagram.nil? && instagram.strip.empty?),
-      pinterest: (pinterest unless pinterest.nil? && pinterest.strip.empty?),
+      facebook: (facebook unless facebook.blank?),
+      twitter: (twitter unless twitter.blank?),
+      instagram: (instagram unless instagram.blank?),
+      pinterest: (pinterest unless pinterest.blank?),
       organizer: organizer,
       description: description
     }

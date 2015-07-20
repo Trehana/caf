@@ -14,17 +14,17 @@
           span.address
             strong Address:
             = @resource.simplify[:address]
-          - unless @resource.simplify[:email] && @resource.simplify[:email].empty?
+          - unless @resource.simplify[:email] && @resource.simplify[:email].blank?
             span.email
               = link_to @resource.simplify[:email], @resource.simplify[:email]
           .social-links
             ul
               - Event.allowed_social_media_names.each do |sm_name|
-                - unless @resource.simplify[sm_name.to_sym].empty?
+                - unless @resource.simplify[sm_name.to_sym].blank?
                   li
                     = link_to image_tag( "icon-#{sm_name}-purple.png", alt: "#{sm_name.titleize}"), "#{@resource.simplify[sm_name.to_sym]} "
 
-          - unless @resource.simplify[:organizer] && @resource.simplify[:organizer].empty?
+          - unless @resource.simplify[:organizer] && @resource.simplify[:organizer].blank?
             span.organizer
               = @resource.simplify[:organizer]
 
