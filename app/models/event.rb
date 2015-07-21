@@ -13,7 +13,7 @@ class Event < ActiveRecord::Base
   searchkick callbacks: :async
   def search_data
     attributes.merge(
-      tag_names: tag_names
+      categories: category_names
     )
   end
 

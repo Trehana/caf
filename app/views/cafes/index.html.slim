@@ -26,7 +26,7 @@
               = f.text_field :city
             .form-group
               = f.label :location, t('helpers.label.cafe.search_form.location')
-              = f.country_select :location, { priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK'], selected: @location }, { class: 'submit_on_change' }
+              = f.country_select :location, { priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK'], selected: @cafe_search.location }, { class: 'submit_on_change' }
             .form-group
               = f.label :type, t('helpers.label.cafe.search_form.type')
               = f.select :type, options_for_select(array_to_param_hash(Cafe.allowed_business_types.unshift(""), true), @cafe_search.type), {}

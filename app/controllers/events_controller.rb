@@ -39,6 +39,8 @@ class EventsController < ApplicationController
     @order_by = 'starts_at'
     @tag = params[:tag]
     desc_or_asc = 'desc'
-    @search_critera =  { where: { tag_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
+
+    @search_fields = { categories: @tag }
+    @search_order = { "#{@order_by}": :"#{desc_or_asc}" }
   end
 end
