@@ -34,14 +34,14 @@ class CafesController < ApplicationController
       type: @cafe_search.type,
       food: @cafe_search.food,
       drinks: @cafe_search.drinks,
-      opening_hours: { gte: Time.parse("1970-01-01 #{@cafe_search.opening_hours} UTC").to_i },
-      date: @cafe_search.date
+      opening_hours: { gte: Time.parse("1970-01-01 #{@cafe_search.opening_hours} UTC").to_i }
     }
     # Not feeding searchkick any blanks since it'll look for blanks
     @search_fields.delete_if { |k, v| v.blank? }
 
     @search_critera = {
       where: @search_fields,
+      fields: [{ name: :word_start }],
       order: { "#{@cafe_search.order_by}": :"#{ @cafe_search.order_by == 'name' ? 'asc' : 'desc' }" }
     }
     @search_critera

@@ -3,7 +3,7 @@ class CafeSearch
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :name, :address, :suburb, :city, :location, :type, :food, :drinks, :opening_hours, :order_by, :date
+  attr_accessor :name, :address, :suburb, :city, :location, :type, :food, :drinks, :opening_hours, :order_by
 
 
   def initialize(attributes = {})
@@ -21,7 +21,6 @@ class CafeSearch
     @drinks = attributes[:drinks]
     @opening_hours = attributes[:opening_hours]
     @order_by = attributes[:order_by]
-    @date = attributes[:date]
   end
 
   def persisted?
