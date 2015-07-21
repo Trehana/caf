@@ -16,6 +16,7 @@ group :development, :test do
 
   gem 'pry'
   gem 'pry-rails'
+  gem 'activerecord-colored_log_subscriber'
 end
 
 gem 'rails', '4.2.1'

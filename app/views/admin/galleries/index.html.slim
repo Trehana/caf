@@ -4,6 +4,7 @@ table.table
     tr
       th = t('helpers.label.gallery.title')
       th = t('helpers.label.gallery.preview')
+      th = t('helpers.label.gallery.short_code')
       th colspan="2"
   tbody
     - @resources.each do |resource|
@@ -12,6 +13,8 @@ table.table
           = resource.title
         td
           = render partial: 'admin/galleries/preview', locals: { resource: resource }
+        td
+          = "[#{@resource_class_name.underscore} id='#{resource.slug}']"
         td
           = render partial: 'admin/shared/index_edit_resource', locals: { resource: resource }
         td
