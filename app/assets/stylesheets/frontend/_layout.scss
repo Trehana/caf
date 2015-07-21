@@ -1283,7 +1283,7 @@ li.post-list {
 		float: right;
 		padding:20px 0;
 	}
-	.date, .time, .address, .email, .social-links, .poster {
+	.date, .time, .address, .email, .social-links, .poster, .type, .food, .drinks {
 		display: block;
 		font-size: 14px;
 		line-height: 16px;
@@ -1321,6 +1321,15 @@ li.post-list {
 	.email {
 		background-image: asset-url("icon-email.png");
 	}
+	.type {
+		background-image: asset-url("icon-type.png");
+	}
+	.food {
+		background-image: asset-url("icon-food.png");
+	}
+	.drinks {
+		background-image: asset-url("icon-drinks.png");
+	}
 	.social-links {
 		padding:0;
 		padding-bottom: 10px;
@@ -1334,6 +1343,9 @@ li.post-list {
 				margin-right: 15px;
 			}
 		}
+	}
+	img {
+		margin-bottom: 20px;
 	}
 }
 .filter-seach-form {
@@ -1378,4 +1390,21 @@ li.post-list {
 }
 .clear {
 	clear:both;
+}
+#tvc_video {
+	width:100%;
+	height:100%;
+}
+.content-artist {
+	padding-top:50px;
+	overflow:hidden;
+
+	img {
+		  margin: 0 20px 20px;
+  /*max-width: 50%;
+  max-height: 100%;
+  width: auto !important;
+  height: auto !important;*/
+  display: block;
+	}
 }

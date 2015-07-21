@@ -12,7 +12,7 @@
             strong Opening hours:
             == @resource.business_hours.to_html
           - unless @resource.business_type_names.empty?
-          span.time
+          span.type
             strong Type:
             = @resource.business_type_names.join(', ')
           - unless @resource.food_type_names.empty?
@@ -25,7 +25,6 @@
             = @resource.drink_type_names.join(', ')
           - unless @resource.menu.empty?
           span.menu
-              strong Menu:
               .btn-holder
                 = link_to t('helpers.label.cafe.view_menu'), @resource.menu, class: 'btn', target: "_blank"
 
