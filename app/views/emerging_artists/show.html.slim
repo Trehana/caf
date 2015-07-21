@@ -1,5 +1,7 @@
-.section
+.section#section-one
   .wrap
     .content
       h1 = @resource.title
-      == content @resource.body
+      hr
+      .content-artist
+      	== content @resource.body

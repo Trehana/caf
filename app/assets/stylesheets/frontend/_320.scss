@@ -37,7 +37,7 @@
 }
 #banner-navigation {
 	ul {
-		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+		#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 			height:120px;
 			a {
 				font-size:9px;
@@ -51,7 +51,7 @@
 		}
 	}
 	&.active {
-		#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+		#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 			height:110px !important;
 
 			img {
@@ -69,7 +69,7 @@
 .homepage {
 	#banner-navigation {
 		ul {
-			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 				height:120px !important;
 				a {
 					font-size:9px;
@@ -84,7 +84,7 @@
 		}
 
 		&.active {
-			#btn-coffee-event, #btn-coffee-adventure, #btn-art-spot, #btn-the-caffa-store {
+			#coffee_event, #coffee_adventure, #art_spot, #the_caffa_store {
 				height:110px !important;
 
 				img {
@@ -117,8 +117,11 @@
 }
 .homepage, .aboutuspage, .calendarpage, .newspage, .contactpage, .coffeeadventurepage, .partnerspage {
 	#header-wrapper {
-		min-height: 500px;
+		min-height: 530px;
 	}
+}
+#header-wrapper {
+	min-height: 520px;
 }
 .footer-navitaion-wrapper {
 	.footer-navigation {
