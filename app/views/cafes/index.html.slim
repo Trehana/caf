@@ -11,7 +11,7 @@
           = t('helpers.label.cafe.search_form.search_title')
           span class="btn btn-filter-toggle" = t('helpers.label.cafe.search_form.filter_list')
         .filter-seach-form
-          = form_for :search, url: { action: "index" }, html: { method: 'get' } do |f|
+          = form_for @cafe_search, url: { action: "index" }, html: { method: 'get' } do |f|
             .form-group
               = f.label :name, t('helpers.label.cafe.search_form.name')
               = f.text_field :name
@@ -29,19 +29,19 @@
               = f.country_select :location, { priority_countries: ['MY', 'SG', 'TH', 'ID', 'HK'], selected: @location }, { class: 'submit_on_change' }
             .form-group
               = f.label :type, t('helpers.label.cafe.search_form.type')
-              = f.select :type, options_for_select(array_to_param_hash(Cafe.allowed_business_types, true), selected = @type), {}
+              = f.select :type, options_for_select(array_to_param_hash(Cafe.allowed_business_types.unshift(""), true), @cafe_search.type), {}
             .form-group
               = f.label :food, t('helpers.label.cafe.search_form.food')
-              = f.select :food, options_for_select(array_to_param_hash(Cafe.allowed_food_types, true), selected = @food), {}
+              = f.select :food, options_for_select(array_to_param_hash(Cafe.allowed_food_types.unshift(""), true), selected = @cafe_search.food), {}
             .form-group
               = f.label :drinks, t('helpers.label.cafe.search_form.drinks')
-              = f.select :drinks, options_for_select(array_to_param_hash(Cafe.allowed_drink_types, true), selected = @drinks), {}
+              = f.select :drinks, options_for_select(array_to_param_hash(Cafe.allowed_drink_types.unshift(""), true), selected = @cafe_search.drinks), {}
             .form-group
-              = f.label :ordered, t('helpers.label.cafe.opening_hours')
-              = f.select :ordered, options_for_select({"6:00 AM": "06:00", "7:00 AM": "07:00", "8:00 AM": "08:00", "9:00AM": "09:00"}, selected = @opening_hours), {}, { class: 'submit_on_change' }
+              = f.label :opening_hours, t('helpers.label.cafe.opening_hours')
+              = f.select :opening_hours, options_for_select({"": "", "6:00 AM": "06:00", "7:00 AM": "07:00", "8:00 AM": "08:00", "9:00AM": "09:00"}, selected = @cafe_search.opening_hours), {}, { class: 'submit_on_change' }
             .form-group
-              = f.label :ordered, t('helpers.label.cafe.sort_by')
-              = f.select :ordered, options_for_select([['Name', 'title'], ['Date', 'updated_at']], selected = @order_by), {}, { class: 'submit_on_change' }
+              = f.label :order_by, t('helpers.label.cafe.sort_by')
+              = f.select :order_by, options_for_select([['Name', 'name'], ['Date', 'date']], selected = @cafe_search.order_by), {}, { class: 'submit_on_change' }
             .clear
             .btn-holder
               = f.button t('helpers.label.cafe.submit'),value: 'submit', class: "btn"

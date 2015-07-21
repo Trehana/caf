@@ -1,6 +1,10 @@
 module Admin
   # Pages Add/Edit/Delete
   class EventsController < BaseController
+    def index
+      @resources = @resource_class.editors_content.order(starts_at: :desc).page params[:page]
+    end
+
     private
 
     # Set classname for concerns to set the other parameters
