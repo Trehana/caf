@@ -17,9 +17,12 @@ class EmergingArtist < ActiveRecord::Base
   def search_data
     {
       name: title,
+      address: (address.address if address),
+      suburb: (address.suburb if address),
       city: (address.city if address),
-      # awards: awards.name_year,
-      location: (address.country_code  if address)
+      location: (address.country_code  if address),
+      # awards: awards.to_list,
+      date: updated_at
     }
   end
 end

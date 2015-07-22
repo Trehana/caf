@@ -1,4 +1,4 @@
-# EmergingArtists Controller
+# EmergingArtistsController
 class EmergingArtistsController < ApplicationController
   include Common
   before_action :set_page_variables, only: [:show]
@@ -22,21 +22,17 @@ class EmergingArtistsController < ApplicationController
   end
 
   def set_search_criteria
-    return unless params[:search]
-    @name = params[:search][:name]
-    @city = params[:search][:city]
-    @location = params[:search][:location]
-    # @awards = params[:search][:awards]
-    @order_by = params[:search][:ordered]
-    desc_or_asc = params[:search][:ordered] == 'name' ? 'asc' : 'desc'
-    @search_critera = {
-      where: {
-        name: @name,
-        city: @city,
-        location: @location,
-        awards: @awards
-      },
-      order: { "#{@order_by}": :"#{desc_or_asc}" }
+    @emerging_artist_search = params[:emerging_artist_search] ? EmergingArtistSearch.new(params[:emerging_artist_search]) : EmergingArtistSearch.new
+
+    return unless params[:emerging_artist_search]
+    @search_fields = {
+      name: @emerging_artist_search.name,
+      address: @emerging_artist_search.address,
+      suburb: @emerging_artist_search.suburb,
+      city: @emerging_artist_search.city,
+      location: @emerging_artist_search.location,
+      awards: @emerging_artist_search.awards
     }
+    @search_order = { "#{@emerging_artist_search.order_by}": :"#{ @emerging_artist_search.order_by == 'name' ? 'asc' : 'desc' }" }
   end
 end
