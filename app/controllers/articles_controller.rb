@@ -24,10 +24,12 @@ class ArticlesController < ApplicationController
 
   def set_search_criteria
     return unless params[:tag]
-    @order_by = 'updated_at'
+    @order_by = 'starts_at'
     @tag = params[:tag]
     desc_or_asc = 'desc'
-    @search_critera =  { where: { category_names: @tag }, order: { "#{@order_by}": :"#{desc_or_asc}" } }
+
+    @search_fields = { categories: @tag }
+    @search_order = { "#{@order_by}": :"#{desc_or_asc}" }
   end
 
   def set_index_title
