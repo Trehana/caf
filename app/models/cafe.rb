@@ -25,7 +25,8 @@ class Cafe < ActiveRecord::Base
       type: array_to_param_hash(business_type_names, false, true),
       food: array_to_param_hash(food_type_names, false, true),
       drinks: array_to_param_hash(drink_type_names, false, true),
-      opening_hours: business_hours.earlierst_opening_hour_int
+      opening_hours: business_hours.earlierst_opening_hour_int,
+      date: updated_at
     }
   end
 

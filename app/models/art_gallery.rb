@@ -21,7 +21,8 @@ class ArtGallery < ActiveRecord::Base
       city: (address.city if address),
       location: (address.country_code  if address),
       type: array_to_param_hash(exhibition_type_names, false, true),
-      opening_hours: business_hours.earlierst_opening_hour_int
+      opening_hours: business_hours.earlierst_opening_hour_int,
+      date: updated_at
     }
   end
 

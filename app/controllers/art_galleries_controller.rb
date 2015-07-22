@@ -31,7 +31,7 @@ class ArtGalleriesController < ApplicationController
       suburb: @art_gallery_search.suburb,
       city: @art_gallery_search.city,
       location: @art_gallery_search.location,
-      type: @art_gallery_search.type,
+      awards: @art_gallery_search.awards,
       opening_hours: @art_gallery_search.opening_hours.blank? ? nil : { gte: Time.parse("1970-01-01 #{@art_gallery_search.opening_hours} UTC").to_i }
     }
     @search_order = { "#{@art_gallery_search.order_by}": :"#{ @art_gallery_search.order_by == 'name' ? 'asc' : 'desc' }" }
