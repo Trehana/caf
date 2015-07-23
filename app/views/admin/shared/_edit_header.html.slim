@@ -2,3 +2,14 @@ h1
   | Edit
   span.resource_class_name
     = " #{@resource_class_name.titleize}"
+
+    - if @resource.errors.any?
+      / - logger.debug "---------------------------------------------------------------- Errors full: #{@resource.address.errors.inspect} ------------------------------------------------------------"
+      - logger.debug "---------------------------------------------------------------- Errors full: #{@resource.errors.inspect} ------------------------------------------------------------"
+      #error_explanation
+        h2 Following error(s) prevented this #{@resource_class_name} from being saved:
+        ul
+          - @resource.errors[:base].each do |msg|
+            li = msg
+
+      - @resource.errors.clear

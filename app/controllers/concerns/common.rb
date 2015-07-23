@@ -10,7 +10,7 @@ module Common
   end
 
   def index
-    if @search_fields
+    if defined?(@search_fields)
       # Not feeding searchkick any blanks since it'll look for blanks
       # hence the performance penalty + invalid search results
       @search_fields.delete_if { |k, v| v.blank? }
@@ -19,8 +19,6 @@ module Common
         search_fields: @search_fields,
         order: defined?(@search_order) ? @search_order : {}
       }
-
-      logger.debug "------------------------------------------------------- @search_critera: #{@search_critera} -------------------------------------------------------"
 
       search_result = @search_critera[:search_fields].collect { |field, value| @resource_class.published_content.search(value, fields: [field], order: @search_critera[:order]).results }.reduce(:&)
       @resources = Kaminari.paginate_array(search_result).page(params[:page])

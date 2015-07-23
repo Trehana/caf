@@ -35,7 +35,7 @@ module Admin
       @resource = @resource_class.new(resource_params)
       respond_to do |format|
         if @resource.save
-          format.html { redirect_to @resource, notice: t('common.messages.created', resource_class_name: @resource_class_name) }
+          format.html { render :edit }
           format.json { render :show, status: :created, location: @resource }
         else
           format.html { render :new }
@@ -46,12 +46,6 @@ module Admin
 
     def update
       respond_to do |format|
-        # if params["#{@resource_class_name.downcase}".to_sym][:set_tags]
-        #   new_params = params[@resource_class_name.downcase.to_sym][:set_tags]
-        #   @resource.tags.collect { |tag| @resource.tags.delete(tag) unless new_params.index(tag.name) }
-        #   new_params.collect { |tag_name| @resource.tag(tag_name) }
-        # end
-        #
         if @resource.update(resource_params)
           if params[:button] == 'publish' && @resource.state != 'published'
             @resource.publish
@@ -59,10 +53,11 @@ module Admin
             @resource.save_draft
           end
           #
-          format.html { redirect_to url_for([:admin, @resource, action: 'edit']), notice: t('common.messages.updated', resource_class_name: @resource_class_name) }
+          format.html { render :edit, notice: t('common.messages.updated', resource_class_name: @resource_class_name) }
           format.json { render :show, status: :ok, location: @resource }
         else
-          format.html { redirect_to url_for([:admin, @resource, action: 'edit']) }
+          @errors = @resource.errors
+          format.html { render :edit }
           format.json { render json: @resource.errors, status: :unprocessable_entity }
         end
       end
