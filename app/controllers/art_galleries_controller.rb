@@ -34,6 +34,7 @@ class ArtGalleriesController < ApplicationController
       type: @art_gallery_search.type,
       opening_hours: @art_gallery_search.opening_hours.blank? ? nil : { gte: Time.parse("1970-01-01 #{@art_gallery_search.opening_hours} UTC").to_i }
     }
+    
     @search_order = { "#{@art_gallery_search.order_by}": :"#{ @art_gallery_search.order_by == 'name' ? 'asc' : 'desc' }" }
   end
 end
