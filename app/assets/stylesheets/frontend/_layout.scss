@@ -1408,3 +1408,19 @@ li.post-list {
   display: block;
 	}
 }
+.gallery {
+	margin:0 0 20px;
+	padding:0;
+	max-width:100%;
+	list-style:none;
+	position:relative;
+
+	img {
+		margin:0;
+	}
+}
+.gallery-thumb { 
+	float: left;
+  width: 50%;
+}
+.grid-item--width2 { width: 400px; }

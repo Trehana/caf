@@ -27,4 +27,17 @@ $(document).ready(function(){
 
 	});
 
+	// init Masonry
+	var $grid = $('.gallery').masonry({
+	  // options...
+	  itemSelector: '.gallery-thumb',
+	  percentPosition: true
+	});
+
+	// layout Masonry after each image loads
+	$grid.imagesLoaded().progress( function() {
+	  $grid.masonry();
+	});
+	  
+
 });
