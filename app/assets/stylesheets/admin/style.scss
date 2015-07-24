@@ -183,3 +183,12 @@ body {
     }
   }
 }
+
+a.delete_dropzone_thumb {
+  margin: 0;
+  padding: 0;
+  img {
+    @include border-radius(10px);
+    margin:3px 0px 3px 3px;
+  }
+}

@@ -3,4 +3,4 @@
         .dropzone_thumb
             = link_to (image_tag resource.send(photo_class).url(:thumb), title: t('common.delete')),
                 url_for([:admin, resource, resource.send(photo_class), format: :json]),
-                remote: :true, method: :delete, data: { confirm: t('common.delete_confirm') }, class: "delete_dropzone_thumb"
+                 class: "delete_dropzone_thumb"
