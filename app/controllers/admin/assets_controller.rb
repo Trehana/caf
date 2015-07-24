@@ -36,10 +36,11 @@ module Admin
       @resource.assetable = @nested_resource
       authorize! :new, @resource
 
-      # If the association is has_one automatically deletes the previous file and,
+      # If the type is CoverPhoto automatically deletes the previous file and,
       # replace with newly uploaded file if the new file is valid
-      if check_association[:association] == 'has_one' && @resource.valid? && @nested_resource.send(@resource_class_name.underscore)
-        @nested_resource.send(@resource_class_name.underscore).destroy
+      if %w( CoverPhoto ).include?(@resource.class.name)
+        assets_array = Asset.where(assetable_type: @nested_resource.class.name, assetable_id: @nested_resource.id, type: @resource.class.name).where.not(id: @resource.id)
+        assets_array.destroy_all
       end
 
 
