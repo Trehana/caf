@@ -48,24 +48,31 @@ initialise_edit_tools = ->
     photo.on 'success', (file, responseText) ->
       responseText = responseText
       $('.dz-preview').remove()
-      $( "#photo_select" ).empty();
-      $('#photo_select').append '<div class=\'dropzone_thumb\'><a class=\'delete_dropzone_thumb\' id=\'my_link\' href=\'\' data-method=\'delete\' rel=\'nofollow\' data-remote=\'true\' data-confirm=\'Are you sure, you want to delete?\'><img id=\'my_img\' alt=\'\' src=\'\' title=\'Delete\'></a></div>'
+      $( ".single dropzone dz-clickable" ).empty();
+      $('.single').append '<div class=\'dropzone_thumb\'><a class=\'delete_dropzone_thumb\' id=\'my_link\' href=\'\' data-method=\'delete\' rel=\'nofollow\' data-remote=\'true\' data-confirm=\'Are you sure, you want to delete?\'><img id=\'my_img\' alt=\'\' src=\'\' title=\'Delete\'></a></div>'
+      $('.multiple').append '<div class=\'dropzone_thumb\'><a class=\'delete_dropzone_thumb\' id=\'my_link\' href=\'\' data-method=\'delete\' rel=\'nofollow\' data-remote=\'true\' data-confirm=\'Are you sure, you want to delete?\'><img id=\'my_img\' alt=\'\' src=\'\' title=\'Delete\'></a></div>'
       $('#my_img').attr 'src', responseText.asset.url_thumb
       $('#my_img').attr 'alt', responseText.asset.filename
       address = window.location.toString()
       arr = address.split('/')
-      new_address = '/' + arr[3] + '/' + arr[4] + '/' + arr[5] + '/cover_photo/' + responseText.asset.id + '.json'
+      if $('#photo_select').hasClass('multiple')
+        new_address = '/' + arr[3] + '/' + arr[4] + '/' + arr[5] + '/pictures/' + responseText.asset.id + '.json'
+
+      else
+        new_address = '/' + arr[3] + '/' + arr[4] + '/' + arr[5] + '/cover_photo/' + responseText.asset.id + '.json'
       $('#my_link').attr 'href', new_address
 
     $('.delete_dropzone_thumb').click (event) ->
       event.preventDefault()
       a_href = $(this).attr('href')
       if confirm('Are you sure, you want to delete?')
+        if $('#photo_select').hasClass('multiple')
+          $(this).hide()
         $.ajax
           url: a_href
           type: 'DELETE'
           success: (result) ->
-            $('.dropzone_thumb').hide()
+            $(this).hide()
             return
       else
         return false
@@ -73,8 +80,8 @@ initialise_edit_tools = ->
     $(document).ajaxStart ->
       $('.dz-default dz-message').show()
       $('#my_img').hide()
-      $( "#photo_select" ).empty();
-      $('#photo_select').append '<div class=\'dz-default dz-clickable\' style=\'margin: 2em 0; text-align: center;\'><span>Drop files here to upload</span></div>'
+      $( ".single" ).empty()
+      $('.single').append '<div class=\'dz-default dz-clickable\' style=\'margin: 2em 0; text-align: center;\'><span>Drop files here to upload</span></div>'
       $('.dz-default dz-message').show()
 
       
