@@ -29,7 +29,7 @@ module CommonContent
     end
 
     def validate_model
-      validates_presence_of :title, message: I18n.t('common.state.slug_blank')
+      errors[:base] << I18n.t('common.state.slug_blank', attribute: I18n.t("helpers.label.#{self.class.name.parameterize}.title")) if title.blank?
     end
 
     scope :published_content, -> { where(state: 'published') }

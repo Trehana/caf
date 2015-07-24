@@ -2,8 +2,10 @@
 class Address < ActiveRecord::Base
   belongs_to :addressable, polymorphic: true
 
+  validates_presence_of :address, :city, :country
+
   def country
-    Country.new(country_code).name
+    Country.new(country_code).name if country_code
   end
 
   def to_s
