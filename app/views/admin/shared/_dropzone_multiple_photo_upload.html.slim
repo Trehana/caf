@@ -4,4 +4,4 @@
           - resource.send(photo_class.pluralize).each do |photo|
             = link_to (image_tag photo.url(:thumb), title: t('common.delete')),
                 url_for([:admin, resource, photo, format: :json]),
-                remote: :true, method: :delete, data: { confirm: t('common.delete_confirm') }, class: "delete_dropzone_thumb"
+                 class: "delete_dropzone_thumb"
