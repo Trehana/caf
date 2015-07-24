@@ -1,4 +1,4 @@
-- if defined?(cover_photo_url)
+- if defined?(cover_photo_url) && !cover_photo_url.blank?
   css:
     #header-wrapper {
       background:url(#{image_url('banner-bottom-effect.png')}) bottom center no-repeat, url(#{cover_photo_url}) #{repeat_style} bottom center;

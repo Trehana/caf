@@ -1,0 +1,7 @@
+.award.form-group
+  - resource.awards.build if resource.awards.blank?
+  = f.fields_for :awards do |award|
+    = render 'admin/shared/award_fields', f: award, resource: resource
+
+  .links
+    = link_to_add_association t("helpers.label.#{resource.class.name.underscore}.add_association"), f, :awards, partial: 'admin/shared/award_fields', render_options: {locals: { resource: resource }}

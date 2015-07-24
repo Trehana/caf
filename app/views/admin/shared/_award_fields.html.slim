@@ -1,0 +1,7 @@
+.nested-fields
+  .field
+    = f.label :name, class: 'control-label font-normal'
+    = f.text_field :name, class: 'form-control'
+    = f.label :year, class: 'control-label font-normal'
+    = f.select :year, ((Time.now.year - 15)..Time.now.year).to_a, {include_blank: true}, {class: 'form-control'}
+    = link_to_remove_association t("helpers.label.#{resource.class.name.underscore}.remove_association"), f

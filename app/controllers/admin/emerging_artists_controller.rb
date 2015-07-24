@@ -14,8 +14,8 @@ module Admin
         :body,
         :cover_photo_repeat,
         :exhibition_type,
-        address_attributes: [:id, :city, :country_code],
-        awards_attributes: [:name, :year],
+        address_attributes: [:id, :address, :city, :suburb, :postal_code, :country_code],
+        awards_attributes: [:id, :name, :year, :_destroy]
         )
     end
   end

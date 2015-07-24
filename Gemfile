@@ -36,6 +36,7 @@ gem 'kaminari'
 gem 'searchkick'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'countries'
+gem 'cocoon'
 gem 'simple-navigation' # Navigation gem
 gem 'simple-navigation-bootstrap' # Bootstrap support for simple-navigation
 

@@ -29,7 +29,8 @@ module CommonContent
     end
 
     def validate_model
-      errors[:base] << I18n.t('common.state.slug_blank', attribute: I18n.t("helpers.label.#{self.class.name.parameterize}.title")) if title.blank?
+      errors.add :title, I18n.t('common.state.slug_blank', attribute: I18n.t("helpers.label.#{self.class.name.underscore}.title")) if title.blank?
+      errors[:base] << I18n.t('common.state.slug_blank', attribute: I18n.t("helpers.label.#{self.class.name.underscore}.title")) if title.blank?
     end
 
     scope :published_content, -> { where(state: 'published') }

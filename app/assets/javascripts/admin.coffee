@@ -12,3 +12,4 @@
 #= require shared/bootstrap-datepicker
 #= require shared/bootstrap-datepicker.en-GB.min
 #= require shared/bootstrap-timepicker
+#= require cocoon

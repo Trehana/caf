@@ -8,7 +8,6 @@ module DefaultAddress
 
     # validates_associated :address
     validate do |record|
-      return if address.valid?
       address.errors.full_messages.each do |msg|
         errors[:base] << msg
       end

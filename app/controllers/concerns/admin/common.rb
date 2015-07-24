@@ -56,7 +56,6 @@ module Admin
           format.html { render :edit, notice: t('common.messages.updated', resource_class_name: @resource_class_name) }
           format.json { render :show, status: :ok, location: @resource }
         else
-          @errors = @resource.errors
           format.html { render :edit }
           format.json { render json: @resource.errors, status: :unprocessable_entity }
         end

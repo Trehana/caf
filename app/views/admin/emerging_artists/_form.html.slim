@@ -23,8 +23,8 @@
       = f.check_box :cover_photo_repeat
   br    
   = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
-    
-  = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'exhibition_types', f: f }
+
+  = render partial: 'admin/shared/award', locals: {f: f, resource: @resource }
 
   br
   = render partial: 'admin/shared/edit_form_footer', locals: {f: f}

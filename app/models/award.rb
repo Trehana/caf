@@ -8,7 +8,7 @@ class Award < ActiveRecord::Base
 
   def to_json
     {
-      address: name,
+      name: name,
       year: year
     }
   end

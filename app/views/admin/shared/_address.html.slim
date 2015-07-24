@@ -2,7 +2,6 @@
   = f.label :address
   br
   - resource.build_address unless resource.address
-  - logger.debug "---------------- Cafe Errors: #{@errors.inspect} ------------------------"
   = f.fields_for :address do |a|
     = a.label :address, class: 'control-label font-normal'
     = a.text_field :address, class: 'form-control'
