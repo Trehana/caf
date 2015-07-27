@@ -20,4 +20,4 @@ table.table
         td
           = render partial: 'admin/shared/index_delete_resource', locals: { resource: resource }
 
-= render partial: 'admin/shared/index_footer'
+= render partial: 'admin/shared/index_footer', locals: { resources: @resources}
