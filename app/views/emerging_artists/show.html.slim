@@ -2,11 +2,11 @@
   .wrap
     .content-artist-info
       h1 = @resource.title
-      hr
+      
       .col-1
         .event-info
           - unless @resource.artist_address.empty?
-            span.location
+            span.address
               strong Location:
               = @resource.artist_address
           - unless @resource.awards.empty?

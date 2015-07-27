@@ -351,13 +351,14 @@ input[type="text"] {
 				width:98%;
 				left:1%;
 				border: 1px solid #FFF;
-				padding-top:17px;
+				padding-top:0;
 				text-align:center;
 				@include transition;
 
 				 li {
 				 	display:inline-block;
 				 	width:24%;
+				 	padding:16px 10px;
 
 				 	a {
 				 		display:inline-block;
@@ -414,12 +415,33 @@ input[type="text"] {
 				}
 			}
 		}
+		#coffee_event {
+			&.show-sub {
+				.sub {
+					opacity:1;
+					height: 106px;
+				}
+			}
+		}
 	}
 }
 .section {
 	padding:100px 0;
 	h1 {
 		text-align:center;
+	}
+}
+.page, .newspage, .coffeeadventurepage, .events, .calendarpage, .emerging-artists {
+	.section {
+		padding:100px 0;
+		h1 {
+			text-align:center;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			border-top: 1px solid #ccc;
+			max-width: 520px;
+			margin: 0 auto;
+		}
 	}
 }
 #section-one {
@@ -1278,7 +1300,7 @@ li.post-list {
 .modal-title {
 	font-weight:300;
 }
-.content-event, .content-cafe-info {
+.content-event, .content-cafe-info, .content-gallery-info, .content-artist-info {
 	width:100%;
 	overflow:hidden;
 
@@ -1297,9 +1319,10 @@ li.post-list {
 			max-height: 100%;
 			display: block;
 			height: auto !important;
+			margin: 0 20px 20px;
 		}
 	}
-	.date, .time, .address, .email, .social-links, .poster, .type, .food, .drinks {
+	.date, .time, .address, .email, .social-links, .poster, .type, .food, .drinks, .organizer, .menu, .awards {
 		display: block;
 		font-size: 14px;
 		line-height: 16px;
@@ -1315,15 +1338,19 @@ li.post-list {
 			display: none;
 		}
 	}
-	.time, .address, .email, .social-links, .poster, .type, .food, .drinks {
+	.date, .time, .address, .email, .social-links, .poster, .type, .food, .drinks, .organizer, .menu, .awards {
 		border-top: 1px solid #eee;
+	}
+
+	.menu {
+		padding-left:0;
 	}
 	.poster {
 		padding:0;
 	}
 	.organizer {
 		display: block;
-		padding:10px 0;
+		padding-left:0;
 		font-size: 14px;
 		line-height: 16px;
 	}
@@ -1348,9 +1375,11 @@ li.post-list {
 	.drinks {
 		background-image: asset-url("icon-drinks.png");
 	}
+	.awards {
+		background-image: asset-url("icon-awards.png");
+	}
 	.social-links {
-		padding:0;
-		padding-bottom: 10px;
+		padding-left:0;
 		ul {
 			display: block;
 			margin:0;

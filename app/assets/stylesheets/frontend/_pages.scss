@@ -136,6 +136,17 @@
 			}
 		}*/
 	}
+	.content {
+		overflow: hidden;
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+			height: auto !important;
+			margin: 0 20px 20px;
+		}
+	}
+	
 }
 .contactpage {
 	#header-wrapper {
