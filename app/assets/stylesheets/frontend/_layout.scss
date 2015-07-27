@@ -351,13 +351,14 @@ input[type="text"] {
 				width:98%;
 				left:1%;
 				border: 1px solid #FFF;
-				padding-top:17px;
+				padding-top:0;
 				text-align:center;
 				@include transition;
 
 				 li {
 				 	display:inline-block;
 				 	width:24%;
+				 	padding:16px 10px;
 
 				 	a {
 				 		display:inline-block;
@@ -411,6 +412,14 @@ input[type="text"] {
 				.sub {
 					opacity:1;
 					height: 50px;
+				}
+			}
+		}
+		#coffee_event {
+			&.show-sub {
+				.sub {
+					opacity:1;
+					height: 106px;
 				}
 			}
 		}
