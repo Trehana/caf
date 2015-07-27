@@ -146,6 +146,8 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     fullcalendar-rails (2.3.1.0)
@@ -337,6 +339,7 @@ DEPENDENCIES
   country_select!
   devise
   dropzonejs-rails
+  font-awesome-rails
   friendly_id (~> 5.1.0)
   fullcalendar-rails
   gon

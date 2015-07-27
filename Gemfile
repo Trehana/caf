@@ -42,6 +42,7 @@ gem 'simple-navigation-bootstrap' # Bootstrap support for simple-navigation
 
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'font-awesome-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
