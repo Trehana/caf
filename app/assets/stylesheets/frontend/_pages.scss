@@ -31,9 +31,14 @@
 					height: 180px !important;
 	  				margin-top: -20px;
 
+	  				& > a {
+	  					padding-top:20px;
+	  				}
+
 	  				a {
 	  					border-bottom-color:rgba(255,255,255,0);
 	  					margin-bottom:-1px;
+
 	  				}
 
 					.sub {

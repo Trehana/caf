@@ -3,6 +3,9 @@
     #header-wrapper {
       background:url("#{image_url('banner-bottom-effect.png')}") bottom center no-repeat, url("#{cover_photo_url}") bottom center;
     }
+    .homepage #header-wrapper {
+      background:url("#{cover_photo_url}") bottom center;
+    }
 
 #header-wrapper
   #header
@@ -12,7 +15,7 @@
       i &nbsp;
     .wrap
       #logo
-        a href=""
+        a href="/"
           = image_tag "caffa-logo.png", alt: 'Caffaasia'
       nav#navigation
         .menu-title

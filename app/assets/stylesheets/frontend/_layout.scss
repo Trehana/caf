@@ -395,6 +395,10 @@ input[type="text"] {
 				height: 170px !important;
   				margin-top: -20px;
 
+  				& > a {
+  					padding-top:20px;
+  				}
+
   				.banner-nav-link {
   					padding-top:30px;
   				}
@@ -694,7 +698,11 @@ input[type="text"] {
 			}
 
 			a {
-				text-decoration:underline;
+				//text-decoration:underline;
+				text-decoration:none;
+				display: inline-block;
+				border-bottom:1px solid $linkColor;
+				padding-bottom:2px;
 				span {
 					color:$brownColor;
 					border-bottom:1px solid $brownColor;
@@ -712,6 +720,7 @@ input[type="text"] {
 			&.active {
 		        a {
 		          text-decoration: none;
+		          border-bottom:1px solid $greenDarkColor;
 		        }
 		    }
 		}
@@ -1282,23 +1291,32 @@ li.post-list {
 		width: 57%;
 		float: right;
 		padding:20px 0;
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+			height: auto !important;
+		}
 	}
 	.date, .time, .address, .email, .social-links, .poster, .type, .food, .drinks {
 		display: block;
 		font-size: 14px;
 		line-height: 16px;
-		margin-bottom: 10px;
+		margin-bottom: 0;
 		padding-left:40px;
 		background-repeat:no-repeat;
-		background-position:top left;
+		background-position:left center;
 		min-height: 30px;
-		padding-top:6px;
-		border-bottom: 1px solid #eee;
-		padding-bottom: 18px;
+		padding-bottom:20px;
+		padding-top: 20px;
 
 		strong {
 			display: none;
 		}
+	}
+	.time, .address, .email, .social-links, .poster, .type, .food, .drinks {
+		border-top: 1px solid #eee;
 	}
 	.poster {
 		padding:0;
@@ -1341,6 +1359,10 @@ li.post-list {
 			li {
 				display: inline-block;
 				margin-right: 15px;
+
+				img {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
