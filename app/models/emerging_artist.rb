@@ -26,6 +26,11 @@ class EmergingArtist < ActiveRecord::Base
     }
   end
 
+  def artist_address
+    return "" if address.blank?
+    "#{address.city}, #{address.country}"
+  end
+
   def award_list
     awards.map(&:to_s)
   end

@@ -1,0 +1,5 @@
+.field
+  = f.label :cover_photo_select
+  = render partial: 'admin/shared/dropzone_single_photo_upload', locals: { photo_class: 'cover_photo', resource: resource }
+  = f.label :cover_photo_repeat
+  = f.check_box :cover_photo_repeat

@@ -9,7 +9,11 @@ class Address < ActiveRecord::Base
   end
 
   def to_s
-    "#{address} #{suburb} #{country} #{postal_code}"
+    address_string = Array.new
+    %w(address suburb country city postal_code).each do |field|
+      address_string << send(field).strip unless send(field).to_s.strip.blank?
+    end
+    address_string.join(' ')
   end
 
   def to_json

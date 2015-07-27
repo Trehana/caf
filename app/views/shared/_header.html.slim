@@ -1,7 +1,7 @@
 - if defined?(cover_photo_url) && !cover_photo_url.blank?
   css:
     #header-wrapper {
-      background:url(#{image_url('banner-bottom-effect.png')}) bottom center no-repeat, url(#{cover_photo_url}) #{repeat_style} bottom center;
+      background:url("#{image_url('banner-bottom-effect.png')}") bottom center no-repeat, url("#{cover_photo_url}") bottom center;
     }
 
 #header-wrapper
@@ -12,7 +12,7 @@
       i &nbsp;
     .wrap
       #logo
-        a href="/"
+        a href=""
           = image_tag "caffa-logo.png", alt: 'Caffaasia'
       nav#navigation
         .menu-title
@@ -22,14 +22,14 @@
 
   #tagline
     .wrap
-      span Coffee &amp; Art Fringe Festival Asia
+      span == t('header_banner.tag_line')
   #banner
     .wrap
       .home
         .title
-          span.text1 COFFEE &amp; ART
-          span.text2 FRINGE FESTIVAL ASIA
-          span.text3 2015
-          p.text4 Aenean nisi odio, porta vel, tristique vel, semper mollis, mi. Donec gravida, ipsum vitae convallis sodales, urna justo commodo nunc, non venenatis nisl urna non purus.
+          span.text1 == t('header_banner.line_1')
+          span.text2 == t('header_banner.line_2')
+          span.text3 == t('header_banner.line_3') 
+          p.text4 == t('header_banner.text')
       #banner-navigation
         = render_navigation context: :nav_header, expand_all: true

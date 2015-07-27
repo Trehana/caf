@@ -1,7 +1,18 @@
-.section#section-one
+.section
   .wrap
-    .content
+    .content-artist-info
       h1 = @resource.title
       hr
-      .content-artist
-      	== content @resource.body
+      .col-1
+        .event-info
+          - unless @resource.artist_address.empty?
+            span.location
+              strong Location:
+              = @resource.artist_address
+          - unless @resource.awards.empty?
+            span.awards
+              strong Awards:
+              == @resource.awards(&:to_html).join(', ')
+
+      .col-2
+        == content @resource.body

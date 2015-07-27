@@ -6,6 +6,11 @@ class Award < ActiveRecord::Base
     "#{name} - #{year}"
   end
 
+  def to_html
+    "<span class='award_name'>#{name}</span> - <span class='award_year'>#{year}</p>"
+  end
+
+
   def to_json
     {
       name: name,

@@ -1,5 +1,22 @@
 .section
   .wrap
-    .content
+    .content-gallery-info
       h1 = @resource.title
-      == content @resource.body
+      hr
+      .col-1
+        .event-info
+          - unless @resource.address.blank?
+            span.time
+              strong Location:
+              == @resource.address
+          - unless @resource.business_hours.blank?
+            span.type
+              strong Exhibition type:
+              == @resource.business_hours.to_html
+          - unless @resource.exhibition_type_names.blank?
+            span.type
+              strong Type:
+              = @resource.exhibition_type_names.join(', ')
+
+      .col-2
+        == content @resource.body

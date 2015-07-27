@@ -53,6 +53,13 @@ en:
       not_found_message: 'Content you are looking for cannot be found. Please verify the URL and try again!'
   authorization:
     not_authorized: 'Insufficient permissions to perfom that action'
+  header_banner:
+    tag_line: Coffee &amp; Art Fringe Festival Asia
+    line_1: "COFFEE &amp; ART"
+    line_2: "FRINGE FESTIVAL ASIA"
+    line_3: "2015"
+    text: Aenean nisi odio, porta vel, tristique vel, semper mollis, mi. Donec gravida, ipsum vitae convallis sodales, urna justo commodo nunc, non venenatis nisl urna non purus.
+
 
   business_hours:
     not_defined: 'No business hours being set'

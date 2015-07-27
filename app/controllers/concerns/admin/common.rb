@@ -70,6 +70,15 @@ module Admin
       end
     end
 
+    def show
+      respond_to do |format|
+        if @resource
+          format.html { redirect_to @resource }
+          format.json { render :show, status: :created, location: @resource }
+        end
+      end
+    end
+
     private
 
     def set_resource_class
