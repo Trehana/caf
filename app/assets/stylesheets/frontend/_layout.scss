@@ -422,6 +422,19 @@ input[type="text"] {
 		text-align:center;
 	}
 }
+.page, .newspage, .coffeeadventurepage {
+	.section {
+		padding:100px 0;
+		h1 {
+			text-align:center;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			border-top: 1px solid #ccc;
+			max-width: 520px;
+			margin: 0 auto;
+		}
+	}
+}
 #section-one {
 	hr {
 		max-width:520px;
@@ -1315,7 +1328,7 @@ li.post-list {
 			display: none;
 		}
 	}
-	.time, .address, .email, .social-links, .poster, .type, .food, .drinks {
+	.time, .address, .email, .social-links, .poster, .type, .food, .drinks, .menu {
 		border-top: 1px solid #eee;
 	}
 	.poster {
