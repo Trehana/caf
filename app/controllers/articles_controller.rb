@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 
   def set_search_criteria
     return unless params[:tag]
-    @order_by = 'starts_at'
+    @order_by = 'date'
     @tag = params[:tag]
     desc_or_asc = 'desc'
 

@@ -7,9 +7,11 @@ class Article < ActiveRecord::Base
 
   searchkick callbacks: :async
   def search_data
-    attributes.merge(
-      category_names: category_names
-    )
+    {
+      title: title,
+      categories: category_names,
+      date: updated_at
+    }
   end
 
   paginates_per 9
