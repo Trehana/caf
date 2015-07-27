@@ -14,9 +14,12 @@
 	@include transition;
 
 	&:hover {
-		border:1px solid $linkHover;
-		color:$linkHover;
-		background:none;
+		//border:1px solid $linkHover;
+		//color:$linkHover;
+		//background:none;
+		background: $greenDarkColor;
+			border: 1px solid $greenDarkColor;
+			color:#fff;
 	}
 
 	&.big {

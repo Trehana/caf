@@ -6,7 +6,13 @@
       p
         = t('helpers.label.event.calendar.index_description')
       hr
-
+    .month-select
+      - months = %w(January February March April May June July August September October November December)
+      - this_year = Date.today.year
+      select#month-select
+        option selected="" value=""  Monthly View
+        - months.each do |month|
+          option value="#{Date.parse("#{this_year}-#{month}-01").strftime("%Y-%m-%d")}"  = month
     .calendar-navigation
       .col
         #calendar-prev.btn-calendar.left-arrow href="#"  January
@@ -18,10 +24,4 @@
     #calendar-view
       #calendar_caffa
 
-      .month-select
-        - months = %w(January February March April May June July August September October November December)
-        - this_year = Date.today.year
-        select#month-select
-          option selected="" value=""  Monthly View
-          - months.each do |month|
-            option value="#{Date.parse("#{this_year}-#{month}-01").strftime("%Y-%m-%d")}"  = month
+      

@@ -379,7 +379,13 @@ input[type="text"] {
 				 }
 			}
 		}
-
+		#coffee_event {
+			.sub {
+				li {
+					width: 33%;
+				}
+			}
+		}
 
 
 
@@ -819,7 +825,7 @@ li.post-list {
 	width:100%;
 	position:relative;
 	overflow:hidden;
-	margin-bottom:40px;
+	margin-bottom:0px;
 	.col {
 		width:33.33%;
 		text-align:center;
@@ -1041,10 +1047,10 @@ li.post-list {
 	}
 }
 
-#calendar-view {
+.calendarpage {
 	.month-select {
 		width:270px;
-		margin:40px auto 0 auto;
+		margin:20px auto 10px auto;
 
 		select {
 			width:100%;
@@ -1127,8 +1133,9 @@ li.post-list {
 		border-bottom:1px solid #ccc;
 	}
 	.btn-filter-toggle {
-		float: right;
-		cursor:pointer;
+		//float: right;
+		//cursor:pointer;
+		display: none;
 	}
 	/*.cafe-list-sorting {
 		position:absolute;
@@ -1404,7 +1411,7 @@ li.post-list {
 	padding:0 0 20px;
 	border-bottom:1px solid #ccc;
 	margin-bottom:20px;
-	display:none;
+	display:block;
 
 	.form-group {
 		display: block;
@@ -1432,10 +1439,18 @@ li.post-list {
 		padding:0 20px;
 	}
 	.btn {
-		border: 1px solid #999;
+		border: 1px solid $greenColor;
+		color:#fff;
 		font-size: 14px;
 		line-height: 16px;
 		padding: 10px 20px;
+		background:$greenColor;
+
+		&:hover {
+			background: $greenDarkColor;
+			border: 1px solid $greenDarkColor;
+			color:#fff;
+		}
 	}
 
 }
