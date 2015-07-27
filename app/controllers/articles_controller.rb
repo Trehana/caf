@@ -28,6 +28,8 @@ class ArticlesController < ApplicationController
     @tag = params[:tag]
     desc_or_asc = 'desc'
 
+    @body_class = "#{@body_class} #{@tag}-related"
+
     @search_fields = { categories: @tag }
     @search_order = { "#{@order_by}": :"#{desc_or_asc}" }
   end
