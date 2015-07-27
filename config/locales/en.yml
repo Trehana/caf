@@ -2,10 +2,14 @@ en:
   nav:
     header:
       coffee_event:
-        coffee_event:  'Coffee Event'
+        coffee_event:  'CAFFA 2015'
         program: 'Program'
         sponsors: 'Sponsors'
         photo_log: 'Photo log'
+        location_and_floorplan: Location and Floorplan
+        visitors_info: Visitors Info
+        vendors_info: Vendors info
+
       coffee_adventure:
         coffee_adventure: 'Coffee Adventure'
         cafe_list: 'Café List'
