@@ -2,7 +2,7 @@ en:
   nav:
     header:
       coffee_event:
-        coffee_event:  'Coffe Event'
+        coffee_event:  'Coffee Event'
         program: 'Program'
         sponsors: 'Sponsors'
         photo_log: 'Photo log'
