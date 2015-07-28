@@ -63,6 +63,10 @@ en:
     line_2: "FRINGE FESTIVAL ASIA"
     line_3: "2015"
     text: Aenean nisi odio, porta vel, tristique vel, semper mollis, mi. Donec gravida, ipsum vitae convallis sodales, urna justo commodo nunc, non venenatis nisl urna non purus.
+  subscribe:
+    text: Sign up if you would like to receive receive occasional updates from CAFFASIA.
+    your_email: Your email...
+    subscribe: Subscribe
 
 
   business_hours:

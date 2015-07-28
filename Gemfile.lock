@@ -80,6 +80,8 @@ GEM
     autoprefixer-rails (5.2.1.1)
       execjs
       json
+    awesome_nested_set (3.0.2)
+      activerecord (>= 4.0.0, < 5)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -153,6 +155,9 @@ GEM
     fullcalendar-rails (2.3.1.0)
       jquery-rails (>= 3.1.1, < 5.0.0)
       momentjs-rails (~> 2.8, >= 2.8.4)
+    gibbon (1.2.0)
+      httparty
+      multi_json (>= 1.9.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     gon (5.2.3)
@@ -161,6 +166,9 @@ GEM
       multi_json
       request_store (>= 1.0.5)
     hashie (3.4.2)
+    httparty (0.13.5)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     i18n_data (0.7.0)
     jbuilder (2.3.1)
@@ -195,6 +203,7 @@ GEM
     momentjs-rails (2.10.3)
       railties (>= 3.1)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.3.18)
     net-scp (1.2.1)
@@ -240,6 +249,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails_config (0.4.2)
+      activesupport (>= 3.0)
     railties (4.2.1)
       actionpack (= 4.2.1)
       activesupport (= 4.2.1)
@@ -324,6 +335,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-colored_log_subscriber
+  awesome_nested_set
   better_errors
   bootstrap-sass (~> 3.3.4)
   bower-rails!
@@ -342,6 +354,7 @@ DEPENDENCIES
   font-awesome-rails
   friendly_id (~> 5.1.0)
   fullcalendar-rails
+  gibbon
   gon
   jbuilder (~> 2.0)
   jquery-rails
@@ -357,6 +370,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 4.2.1)
+  rails_config
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   searchkick

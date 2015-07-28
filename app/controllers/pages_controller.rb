@@ -10,6 +10,11 @@ class PagesController < ApplicationController
     set_page_variables
   end
 
+  def subscribe
+    Subscriber.subscribe(params[:email]) if params[:email].present?
+    redirect_to root_path
+  end
+
   private
 
   def set_page_variables
