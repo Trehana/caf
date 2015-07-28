@@ -55,6 +55,7 @@ en:
     errors:
       not_found_header: '404 / Not Found'
       not_found_message: 'Content you are looking for cannot be found. Please verify the URL and try again!'
+      no_content_found: Sorry, no %{model_name} found!
   authorization:
     not_authorized: 'Insufficient permissions to perfom that action'
   header_banner:
