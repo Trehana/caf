@@ -1490,3 +1490,38 @@ li.post-list {
   width: 50%;
 }
 .grid-item--width2 { width: 400px; }
+.coffee-related {
+	#category-navigation {
+		ul {
+
+			#btn-coffee-related {
+				a {
+					color:$blueColor;
+					opacity:1;
+				}
+			}
+			#btn-coffee-related {
+				a {
+					background:asset-url("icon-coffee-related-blue.png") top center no-repeat;
+				}
+			}
+		}
+	}
+}
+.art-related {
+	#category-navigation {
+		ul {
+			#btn-art-related {
+				a {
+					color:$blueColor;
+					opacity:1;
+				}
+			}
+			#btn-art-related {
+				a {
+					background:asset-url("icon-art-related-blue.png") top center no-repeat;
+				}
+			}
+		}
+	}
+}

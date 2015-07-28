@@ -78,7 +78,7 @@ en:
         cover_photo_select: 'Select cover photo'
         cover_photo_repeat: 'Tile cover photo'
         index_title: 'News'
-        index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
+        index_description: 'Stay updated with all the news related to the coffee and art industry within ASIA that happened today or in the past.'
         category_nav:
           coffee_related: 'Coffee related'
           art_related: 'Art related'
@@ -96,10 +96,10 @@ en:
         cover_photo_select: 'Select cover photo'
         cover_photo_repeat: 'Tile cover photo'
         index_title: 'Events'
-        index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
+        index_description: 'We are still brewing'
         calendar:
           index_title: 'Calendar'
-          index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
+          index_description: 'Find events on coffee, art and our partners’ events with our simple, easy and convenient calendar. Never miss out on the latest happenings on coffee and art again.'
         category_nav:
           coffee_related: 'Coffee related'
           art_related: 'Art related'
@@ -126,7 +126,7 @@ en:
         read_more: 'Read More'
         view_menu: 'View Menu'
         index_title: 'Coffee Adventure'
-        index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
+        index_description: 'We are still brewing'
         search_form:
           search_title: 'Café List'
           filter_list: 'Filter List'
@@ -154,7 +154,7 @@ en:
         read_more: 'Read More'
         view_menu: 'View Menu'
         index_title: 'Art Galleries'
-        index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
+        index_description: 'We are still brewing'
         search_form:
           search_title: 'Gallery List'
           filter_list: 'Filter List'
@@ -177,7 +177,7 @@ en:
         remove_association: 'Remove award'
         read_more: 'Read More'
         index_title: 'Emerging Artists'
-        index_description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse hendrerit ligula quis velit pharetra egestas. Ut molestie elit non massa. Vivamus tincidunt bibendum velit. Quisque nisl diam, nonummy eu, lobortis consequat, mollis ut, tellus. In iaculis. Integer iaculis justo. Duis velit enim, tristique sed, elementum'
+        index_description: 'We are still brewing'
         search_form:
           search_title: 'Artists List'
           filter_list: 'Filter List'
