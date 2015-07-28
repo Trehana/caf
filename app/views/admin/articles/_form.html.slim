@@ -21,9 +21,5 @@
     = f.label :cover_photo_select
     = render partial: 'admin/shared/dropzone_single_photo_upload', locals: { photo_class: 'cover_photo', resource: @resource }
 
-    .checkbox
-      = f.check_box :cover_photo_repeat
-      = f.label :cover_photo_repeat
-
     br
   = render partial: 'admin/shared/edit_form_footer', locals: { f: f }

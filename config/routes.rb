@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :pages, only: [:show]
+  post '/subscribe' => 'pages#subscribe', as: 'subscribe'
+
   resources :cafes, :art_galleries, only: [:index, :show]
 
   resources :emerging_artists, path: 'emerging-artists', only: [:index, :show]

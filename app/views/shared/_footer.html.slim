@@ -3,12 +3,13 @@
     .wrap
       .mailing-wrapper
         .mailing
-          form
+          = form_tag subscribe_path
             h5 Mailing List
-            p Sign up if you would like to receive receive occasional updates from CAFFASIA.
-            input type="text"
+            p = t('subscribe.text')
+            = text_field_tag 'email', '', id: "subscribe-email", placeholder: t('subscribe.your_email')
             .btn-holder
-              input.btn.btn-subscribe type="submit" value="Subscribe"
+              input.btn.btn-subscribe type="submit" value='#{t('subscribe.subscribe')}'
+                
       .footer-navitaion-wrapper
         .footer-navigation
           = render_navigation context: :nav_footer, expand_all: true
@@ -20,15 +21,7 @@
           .social-links
             span.social-title Follow Us:
             ul
-              li
-                a href="#"
-                  = image_tag "icon-facebook.png", alt: "facebook"
-              li
-                a href="#"
-                  = image_tag "icon-twitter.png", alt: "twitter"
-              li
-                a href="#"
-                  = image_tag "icon-instagram.png", alt: "instagram"
-              li
-                a href="#"
-                  = image_tag "icon-pinterest.png", alt: "pinterest"
+              li = link_to image_tag('icon-facebook.png', alt: 'facebook'), 'https://www.facebook.com/CoffeeArtFringeFestival'
+              li = link_to image_tag('icon-twitter.png', alt: 'twitter'), 'https://twitter.com/caffaasia'
+              li = link_to image_tag('icon-instagram.png', alt: 'instagram'), 'http://instagram.com/caffaasia/'
+              li = link_to image_tag('icon-pinterest.png', alt: 'pinterest'), 'http://pinterest.com/caffaasia/'

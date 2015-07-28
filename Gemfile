@@ -39,6 +39,9 @@ gem 'countries'
 gem 'cocoon'
 gem 'simple-navigation' # Navigation gem
 gem 'simple-navigation-bootstrap' # Bootstrap support for simple-navigation
+gem 'awesome_nested_set'
+gem 'gibbon'
+gem 'rails_config'
 
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.4'

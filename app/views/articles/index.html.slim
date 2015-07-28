@@ -16,10 +16,7 @@
 
               
     .news-post-list
-      ul
-        - @resources.each do |resource|
-          li
-            = render partial: 'index_show', locals: {resource: resource}
+      == render partial: 'shared/common_index_listing', locals: { resources: @resources, resource_class_name: @resource_class_name }
 
         
     = paginate @resources

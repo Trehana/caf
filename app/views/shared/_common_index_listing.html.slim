@@ -1,0 +1,8 @@
+- unless resources.blank?
+  ul
+    - resources.each do |resource|
+      li
+        = render partial: 'index_show', locals: { resource: resource }
+- else
+  h3
+    = t('common.errors.no_content_found', model_name: resource_class_name.titleize.pluralize)
