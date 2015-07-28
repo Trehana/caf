@@ -18,11 +18,8 @@
     = f.label :meta_tags
     br
     = f.text_field :meta_tags, 'data-role': "tagsinput"
-  .field
-    = f.label :cover_photo_select
-    = render partial: 'admin/shared/dropzone_single_photo_upload', locals: { photo_class: 'cover_photo', resource: @resource }
+    
+  = render partial: 'admin/shared/cover_photo', locals: {f: f, resource: @resource}
 
-    = f.label :cover_photo_repeat
-    = f.check_box :cover_photo_repeat
   br
   = render partial: 'admin/shared/edit_form_footer', locals: {f: f}

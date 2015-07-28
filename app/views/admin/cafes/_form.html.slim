@@ -18,13 +18,9 @@
     = f.label :menu, t('helpers.label.cafe.menu_url')
     br
     = f.text_field :menu
-  .form-group
-    = f.label :cover_photo_select
-    = render partial: 'admin/shared/dropzone_single_photo_upload', locals: {photo_class: 'cover_photo', resource: @resource}
-
-    .checkbox
-      = f.label :cover_photo_repeat, class: 'control-label col-sm-2'
-      = f.check_box :cover_photo_repeat
+  
+  = render partial: 'admin/shared/cover_photo', locals: { f: f, resource: @resource }  
+  
   br    
   = render partial: 'admin/shared/address', locals: {f: f, resource: @resource }
     
