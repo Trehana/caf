@@ -19,7 +19,6 @@ class PagesController < ApplicationController
 
   def set_page_variables
     @cover_photo_url = @resource.cover_photo ? @resource.cover_photo.url : '/assets/bg-home-banner-pattern.jpg'
-    @cover_photo_repeat = @resource.cover_photo_repeat == 1 ? 'repeat-x' : 'no-repeat'
   end
 
   # Set classname for concerns to set the other parameters

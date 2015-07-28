@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
 
-  resources :pages, only: [:show]
+  # Pages are handled by taxons to give hierachical navigation
+  resources :taxons, only: [:show]
+  get '/*permalink.html', to: 'taxons#show'
+  # resources :pages, only: [:show]
   post '/subscribe' => 'pages#subscribe', as: 'subscribe'
 
-  resources :cafes, :art_galleries, only: [:index, :show]
-
-  resources :emerging_artists, path: 'emerging-artists', only: [:index, :show]
-  resources :art_galleries, path: 'art-galleries', only: [:index, :show]
+  resources :cafes, path: 'coffee-adventure/cafes', only: [:index, :show]
+  resources :emerging_artists, path: 'art-spot/emerging-artists', only: [:index, :show]
+  resources :art_galleries, path: 'art-spot/art-galleries', only: [:index, :show]
 
   resources :articles, path: 'news', only: [:index, :show]
   get '/news/category/:tag' => 'articles#index', as: 'news_tags'
@@ -56,5 +58,5 @@ Rails.application.routes.draw do
   end
 
   # Catch all error
-  match "*path", to: "errors#catch_404", via: :all
+  # match "*path", to: "errors#catch_404", via: :all
 end
