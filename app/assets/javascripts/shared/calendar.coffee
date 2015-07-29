@@ -1,4 +1,9 @@
 $(document).ready ->
+  if typeof gon != 'undefined' && typeof gon.calendar_tag != 'undefined'
+    tag = gon.calendar_tag
+  else
+    tag = ''
+
   currentDate = new Date()
   monthNames = [
                   "January", "February", "March", "April",
@@ -31,7 +36,7 @@ $(document).ready ->
                     {
                       url: '/calendar'
                       data:
-                        tag: gon.calendar_tag
+                        tag: tag
                     }
                   ]
 
