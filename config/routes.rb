@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Pages are handled by taxons to give hierachical navigation
   resources :taxons, only: [:show]
   get '/*permalink.html', to: 'taxons#show'
-  # resources :pages, only: [:show]
+  resources :pages, only: [:show]
   post '/subscribe' => 'pages#subscribe', as: 'subscribe'
 
   resources :cafes, path: 'coffee-adventure/cafes', only: [:index, :show]
