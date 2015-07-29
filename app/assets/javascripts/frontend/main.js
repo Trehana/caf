@@ -1,7 +1,6 @@
 $(document).ready(function(){
-
+	
 	$("#banner-navigation > ul > li > a").click(function() {
-		
 		if($(this).parent().hasClass('show-sub')){
 			$("#banner-navigation > ul > li").removeClass('show-sub');
 			$("#banner-navigation").removeClass('active')
@@ -11,6 +10,16 @@ $(document).ready(function(){
 			$("#banner-navigation").addClass('active')
 			$(this).parent().addClass('show-sub');
 		}
+
+		var parent_cat = parent_category.toString();
+		if($.trim(parent_cat) !=""){
+				if(!$("#banner-navigation > ul > li").hasClass('show-sub') && $("#banner-navigation > ul > li > ul").hasClass('sub')){
+					$("#banner-navigation").addClass('active')
+					$("#banner-navigation > ul > li").addClass('show-sub');
+				}
+			}
+
+		
 
 	});
 
