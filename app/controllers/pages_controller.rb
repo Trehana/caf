@@ -11,8 +11,22 @@ class PagesController < ApplicationController
   end
 
   def subscribe
-    Subscriber.subscribe(params[:email]) if params[:email].present?
-    redirect_to root_path
+    # Subscriber.subscribe(params[:email]) if params[:email].present?
+    # if params[:email].present?
+    #   @notification = '<strong>Thank you!</strong> Your subscription received.'
+    # else
+    #   @notification = 'Please enter a valid email address'
+    # end
+    begin
+      gb = Gibbon::API.new(Settings.gibbon[:api_key])
+      gb.lists.subscribe({id: Settings.gibbon[:list_id], email: {email: params[:email]}, double_optin: false})
+    rescue Gibbon::MailChimpError => e
+      @notification = "<strong>ERROR:</strong> #{e}"
+      @alert_class = 'alert-danger'
+    else
+      @notification = '<strong>Thank you!</strong> Your subscription received.'
+      @alert_class = 'alert-success'
+    end
   end
 
   private
