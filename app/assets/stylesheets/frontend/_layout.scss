@@ -359,6 +359,7 @@ input[type="text"] {
 				 	display:inline-block;
 				 	width:24%;
 				 	padding:16px 10px;
+				 	vertical-align: middle;
 
 				 	a {
 				 		display:inline-block;
@@ -382,7 +383,12 @@ input[type="text"] {
 		#coffee_event {
 			.sub {
 				li {
-					width: 33%;
+					width: 16.66%;
+
+					a {
+						font-size:12px;
+						line-height: 20px;
+					}
 				}
 			}
 		}
@@ -425,7 +431,7 @@ input[type="text"] {
 			&.show-sub {
 				.sub {
 					opacity:1;
-					height: 106px;
+					height: 52px;
 				}
 			}
 		}
@@ -1180,7 +1186,7 @@ li.post-list {
 		}
 	}*/
 }
-.cafe-list-post, .news-post-list {
+.cafe-list-post, .news-post-list, .events-post-list {
 	overflow:hidden;
 
 	> .btn-holder {
