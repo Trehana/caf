@@ -27,9 +27,13 @@ $(document).ready ->
       day:      'day',
       prev: 'Previous'
 
-    eventSources: [{
-      url: '/calendar'
-    }],
+    eventSources: [
+                    {
+                      url: '/calendar'
+                      data:
+                        tag: gon.calendar_tag
+                    }
+                  ]
 
     timeFormat: '',
     dragOpacity: "0.5"
@@ -62,7 +66,6 @@ $(document).ready ->
 
 
   $('#month-select').change ->
-    console.log this.value
     if this.value != ''
       $('#calendar_caffa').fullCalendar( 'gotoDate', this.value )
     else
