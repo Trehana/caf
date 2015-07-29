@@ -10,8 +10,20 @@ class EventsController < ApplicationController
     @body_class = 'calendarpage'
     @title = 'Calendar'
     set_meta_tags title: "#{t('helpers.label.event.calendar.index_title')} | #{t('meta_tags.title')}"
-    @resources = Event.published_content
-    @resources = Event.between(params['start'], params['end']) if params['start'] && params['end']
+
+    @tag = params[:tag] if Event.allowed_categories.include?(params[:tag])
+    #
+    unless params['start'] && params['end']
+      gon.push calendar_tag: @tag
+      return
+    end
+    #
+    unless @tag
+      @resources = Event.between(params['start'], params['end']) if params['start'] && params['end']
+    else
+      @resources = Event.joins(:tags).where(tags: {slug: @tag}).between(params['start'], params['end']) if params['start'] && params['end']
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resources }

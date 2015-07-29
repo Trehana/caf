@@ -1,4 +1,5 @@
 $(document).ready ->
+  console.log "gon.calendar_tag:" + gon.calendar_tag
   currentDate = new Date()
   monthNames = [
                   "January", "February", "March", "April",
@@ -27,9 +28,13 @@ $(document).ready ->
       day:      'day',
       prev: 'Previous'
 
-    eventSources: [{
-      url: '/calendar'
-    }],
+    eventSources: [
+                    {
+                      url: '/calendar'
+                      data:
+                        tag: gon.calendar_tag
+                    }
+                  ]
 
     timeFormat: '',
     dragOpacity: "0.5"

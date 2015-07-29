@@ -6,6 +6,16 @@
       p
         = t('helpers.label.event.calendar.index_description')
       hr
+    
+    #category-navigation
+      ul
+        li#btn-coffee-related
+          = link_to t('helpers.label.event.category_nav.coffee_related'), calendar_tags_path(tag: 'coffee')
+        li#btn-art-related
+          = link_to t('helpers.label.event.category_nav.art_related'), calendar_tags_path(tag: 'art')
+        li#btn-sponsor-events
+          = link_to t('helpers.label.event.category_nav.sponsored'), calendar_tags_path(tag: 'sponsored')
+      
     .month-select
       - months = %w(January February March April May June July August September October November December)
       - this_year = Date.today.year
