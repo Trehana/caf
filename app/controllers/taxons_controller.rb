@@ -13,6 +13,7 @@ class TaxonsController < ApplicationController
     @resource_class = Object.const_get(@resource_class_name)
     @resource = @resource = @resource_class.find(taxon.taxonable_id)
     @cover_photo_url = @resource.cover_photo ? @resource.cover_photo.url : '/assets/bg-home-banner-pattern.jpg'
+    @body_class = @resource_class_name.underscore
     @parent_category = taxon.parent ? taxon.parent.permalink.split('/').last : nil
   end
 end

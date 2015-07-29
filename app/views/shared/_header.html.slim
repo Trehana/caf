@@ -35,3 +35,6 @@
           p.text4 == t('header_banner.text')
       #banner-navigation
         = render_navigation context: :nav_header, expand_all: true
+        
+        javascript:
+          var parent_category = "#{@parent_category}";
