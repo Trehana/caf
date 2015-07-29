@@ -1,5 +1,4 @@
 $(document).ready ->
-  console.log "gon.calendar_tag:" + gon.calendar_tag
   currentDate = new Date()
   monthNames = [
                   "January", "February", "March", "April",
@@ -67,7 +66,6 @@ $(document).ready ->
 
 
   $('#month-select').change ->
-    console.log this.value
     if this.value != ''
       $('#calendar_caffa').fullCalendar( 'gotoDate', this.value )
     else

@@ -7,6 +7,7 @@ class PagesController < ApplicationController
     set_meta_tags title: "#{t('meta_tags.title')}"
     @resource = Page.find('home')
     @body_class = 'homepage'
+    gon.push calendar_tag: ''
     set_page_variables
   end
 
