@@ -3,7 +3,7 @@
     .wrap
       .mailing-wrapper
         .mailing
-          = form_tag subscribe_path
+          = form_tag subscribe_path, remote: true, id: 'subscribe-newsletter'
             h5 Mailing List
             p = t('subscribe.text')
             = text_field_tag 'email', '', id: "subscribe-email", placeholder: t('subscribe.your_email')

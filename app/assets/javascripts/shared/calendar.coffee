@@ -1,4 +1,9 @@
 $(document).ready ->
+  if typeof gon != 'undefined' && typeof gon.calendar_tag != 'undefined'
+    tag = gon.calendar_tag
+  else
+    tag = ''
+
   currentDate = new Date()
   monthNames = [
                   "January", "February", "March", "April",
@@ -27,9 +32,13 @@ $(document).ready ->
       day:      'day',
       prev: 'Previous'
 
-    eventSources: [{
-      url: '/calendar'
-    }],
+    eventSources: [
+                    {
+                      url: '/calendar'
+                      data:
+                        tag: tag
+                    }
+                  ]
 
     timeFormat: '',
     dragOpacity: "0.5"
@@ -62,7 +71,6 @@ $(document).ready ->
 
 
   $('#month-select').change ->
-    console.log this.value
     if this.value != ''
       $('#calendar_caffa').fullCalendar( 'gotoDate', this.value )
     else

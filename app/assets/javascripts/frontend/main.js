@@ -1,7 +1,6 @@
 $(document).ready(function(){
-
+	
 	$("#banner-navigation > ul > li > a").click(function() {
-		
 		if($(this).parent().hasClass('show-sub')){
 			$("#banner-navigation > ul > li").removeClass('show-sub');
 			$("#banner-navigation").removeClass('active')

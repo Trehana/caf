@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719233652) do
+ActiveRecord::Schema.define(version: 20150728045307) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address",          limit: 255
@@ -150,7 +150,7 @@ ActiveRecord::Schema.define(version: 20150719233652) do
   create_table "profiles", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.string   "designation", limit: 255
-    t.string   "bio_short",   limit: 255
+    t.text     "bio_short",   limit: 65535
     t.text     "bio",         limit: 65535
     t.string   "state",       limit: 255
     t.string   "slug",        limit: 255
@@ -173,6 +173,29 @@ ActiveRecord::Schema.define(version: 20150719233652) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
+
+  create_table "taxonomies", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "taxons", force: :cascade do |t|
+    t.integer  "taxonomy_id",    limit: 4
+    t.integer  "parent_id",      limit: 4
+    t.integer  "postion",        limit: 4
+    t.string   "permalink",      limit: 255
+    t.integer  "lft",            limit: 4,   null: false
+    t.integer  "rgt",            limit: 4,   null: false
+    t.integer  "taxonable_id",   limit: 4
+    t.string   "taxonable_type", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "taxons", ["lft"], name: "index_taxons_on_lft", using: :btree
+  add_index "taxons", ["parent_id"], name: "index_taxons_on_parant_id", using: :btree
+  add_index "taxons", ["rgt"], name: "index_taxons_on_rgt", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

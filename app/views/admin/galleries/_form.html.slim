@@ -8,14 +8,11 @@
         
   = render partial: 'admin/shared/shortcode', locals: { resource: @resource, f: f }
 
-  .field
+  .form-group
     = f.label :title
-    br
     = f.text_field :title
-    br
-    br
 
-    .field
+  .form-group
     = f.label :gallery_photos
     = render partial: 'admin/shared/dropzone_multiple_photo_upload', locals: {photo_class: 'picture', resource: @resource}
 

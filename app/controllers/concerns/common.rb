@@ -50,6 +50,7 @@ module Common
   end
 
   def set_html_variables
+    @parent_category = request.original_fullpath.split('/')[-2]
     @body_class = @resource_class.name.underscore unless defined?(@body_class)
 
     title = if defined?(@title)
