@@ -58,5 +58,5 @@ Rails.application.routes.draw do
   end
 
   # Catch all error
-  # match "*path", to: "errors#catch_404", via: :all
+  match "*path", to: "errors#catch_404", via: :all
 end
