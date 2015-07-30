@@ -75,6 +75,10 @@ en:
 
   helpers:
     label:
+      common:
+        forms:
+          select_page_template: Select page template
+          select_page_template_info: Select a different template if you want to change the layout of the page
       news:
         nav_name: 'News'
         title: 'Title'
