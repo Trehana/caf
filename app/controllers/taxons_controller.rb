@@ -7,6 +7,7 @@ class TaxonsController < ApplicationController
   before_action :set_resource_class
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
   before_action :set_html_variables
+  before_action :set_page_variables
 
   def show
     render "#{@resource_class_name.underscore.pluralize}/show"
