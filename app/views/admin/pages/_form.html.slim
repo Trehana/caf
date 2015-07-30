@@ -19,5 +19,7 @@
     = f.text_field :meta_tags, 'data-role': "tagsinput"
     
   = render partial: 'admin/shared/cover_photo', locals: {f: f, resource: @resource}
+  
+  = render partial: 'admin/shared/select_template', locals: { resource: @resource, f: f }
 
   = render partial: 'admin/shared/edit_form_footer', locals: {f: f}

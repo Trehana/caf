@@ -1,0 +1,4 @@
+- if resource.class.try('allowed_templates')
+  .form-group
+    = f.label :template_name, t('helpers.label.common.form.select_page_template')
+    = f.select :template_name, options_for_select(array_to_param_hash(@resource.class.allowed_templates, true), @resource.template_name), {}

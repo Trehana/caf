@@ -5,6 +5,3 @@
       - resource.class.send("allowed_#{tags}").each do |tag_name|
           = f.check_box("attach_#{tags}", { multiple: true, checked: resource.send("#{tags.singularize}_names").include?(tag_name) }, tag_name.parameterize, nil)
           = f.label tag_name, class: 'control-label col-sm-2', for: "#{@resource_class_name.downcase}_attach_#{tags}_#{tag_name.parameterize}"
-
-  br
-  br

@@ -12,12 +12,6 @@ class PagesController < ApplicationController
   end
 
   def subscribe
-    # Subscriber.subscribe(params[:email]) if params[:email].present?
-    # if params[:email].present?
-    #   @notification = '<strong>Thank you!</strong> Your subscription received.'
-    # else
-    #   @notification = 'Please enter a valid email address'
-    # end
     begin
       gb = Gibbon::API.new(Settings.gibbon[:api_key])
       gb.lists.subscribe({id: Settings.gibbon[:list_id], email: {email: params[:email]}, double_optin: false})

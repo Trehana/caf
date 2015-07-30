@@ -1,5 +1,9 @@
-.section
-  .wrap
-    .content
-      h1 = @resource.title
-      == content @resource.body
+- if @resource.template_name == 'no-wrapper'
+  == content @resource.body
+
+- else
+  .section
+    .wrap
+      .content
+        h1 = @resource.title
+        == content @resource.body

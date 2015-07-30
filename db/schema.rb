@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728045307) do
+ActiveRecord::Schema.define(version: 20150730042458) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address",          limit: 255
@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 20150728045307) do
     t.string   "state",              limit: 255
     t.string   "slug",               limit: 255
     t.integer  "cover_photo_repeat", limit: 1,     default: 0
+    t.string   "template_name",      limit: 255
   end
 
   create_table "profiles", force: :cascade do |t|
