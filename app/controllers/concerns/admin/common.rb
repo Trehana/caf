@@ -118,6 +118,7 @@ module Admin
           # * Replace single qoute occurences with double qoutes
           #   since short code doesnt work for single qoutes
           content.gsub! CGI.escapeHTML(short_code_chunk), short_code_chunk.tr("'", '"')
+          content.gsub! CGI.escapeHTML(short_code_chunk), short_code_chunk.tr("&#39;", '&quot;')
         end
 
         params[@resource.class.model_name.singular.to_sym][content_attribute] = content
