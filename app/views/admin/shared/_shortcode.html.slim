@@ -3,4 +3,4 @@
     = t("helpers.label.#{@resource_class_name.underscore}.short_code")
     span
       | (#{t('helpers.label.' + @resource_class_name.underscore + '.short_code_instructions')})
-  = f.text_field :short_code, value: "[#{@resource_class_name.underscore} id='#{resource.slug}']", readonly: "readonly"
+  = f.text_field :short_code, value: "[#{@resource_class_name.underscore} id=\"#{resource.slug}\"]", readonly: "readonly"
