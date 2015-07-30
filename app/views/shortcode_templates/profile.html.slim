@@ -5,7 +5,26 @@
     span.name = profile.title
     span.position = profile.designation
     p = profile.bio_short
+    .btn-holder
+		<a href="#" class="btn" data-toggle="modal" data-target="##{profile.slug}-modal">Read More</a>
 
-    .hidden.full_bio
-      = image_tag (profile.profile_photo ? profile.profile_photo.url(:thumb) : 'img-temp-team'), alt: profile.title
-      p = profile.bio
+    <div class="modal fade" id="#{profile.slug}-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title green" id="myModalLabel">Our Team</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="modal-info-content">
+	      		.col-img
+	      			= image_tag (profile.profile_photo ? profile.profile_photo.url(:thumb) : 'img-temp-team'), alt: profile.title
+		      	.col-info
+		      		span.name = profile.title
+    				span.position = profile.designation
+					p == profile.bio
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>

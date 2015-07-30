@@ -454,7 +454,12 @@ input[type="text"] {
 			max-width: 520px;
 			margin: 0 auto;
 		}
+
+		&.no-wrapper {
+			padding-bottom:0;
+		}
 	}
+
 }
 #section-one {
 	hr {

@@ -379,12 +379,17 @@
 		font-weight:300;
 	}
 }
+.modal-open .modal {
+	text-align:left;
+}
 .modal-info-content {
+	text-align:left;
 	overflow:hidden;
 	img {
 		max-width:90%;
 		@include border-radius(100px);
 		margin-bottom:30px;
+		height:auto;
 	}
 	.col-img {
 		width:20%;
