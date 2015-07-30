@@ -1,0 +1,5 @@
+.form-group
+  .btn-group aria-label="Actions" role="group"
+    = f.button t("#{@resource}.publish"),value: 'publish', class: "btn btn-success"
+    = f.button t("#{@resource}.save_draft"),value: 'save_draft', class: "btn btn-primary"
+    = link_to 'Back', @resource_index_path, class: 'btn btn-default'
