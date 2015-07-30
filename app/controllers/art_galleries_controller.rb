@@ -7,11 +7,6 @@ class ArtGalleriesController < ApplicationController
 
   private
 
-  def set_page_variables
-    @cover_photo_url = @resource.cover_photo ? @resource.cover_photo.url : '/assets/bg-home-banner-pattern.jpg'
-    @cover_photo_repeat = @resource.cover_photo_repeat == 1 ? 'repeat-x' : 'no-repeat'
-  end
-
   # Set classname for concerns to set the other parameters
   def set_resource_class_name
     @resource_class_name = 'ArtGallery'
@@ -34,7 +29,7 @@ class ArtGalleriesController < ApplicationController
       type: @art_gallery_search.type,
       opening_hours: @art_gallery_search.opening_hours.blank? ? nil : { gte: Time.parse("1970-01-01 #{@art_gallery_search.opening_hours} UTC").to_i }
     }
-    
+
     @search_order = { "#{@art_gallery_search.order_by}": :"#{ @art_gallery_search.order_by == 'name' ? 'asc' : 'desc' }" }
   end
 end
