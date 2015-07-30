@@ -5,7 +5,7 @@ table.table
       th = t('helpers.label.profile.title')
       th = t('helpers.label.profile.designation')
       th = t('helpers.label.profile.short_code')
-      th colspan="2"
+      th.action-holder colspan="2" Actions
   tbody
     - @resources.each do |profile|
       tr class="#{profile.state}"

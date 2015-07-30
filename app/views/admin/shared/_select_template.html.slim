@@ -2,5 +2,5 @@
   .form-group
     = f.label :template_name do
       = t('helpers.label.common.forms.select_page_template')
-      span = t('helpers.label.common.forms.select_page_template_info')
-    = f.select :template_name, options_for_select(array_to_param_hash(@resource.class.allowed_templates, true), @resource.template_name), {}
+    div = t('helpers.label.common.forms.select_page_template_info')
+    = f.select :template_name, options_for_select(array_to_param_hash(@resource.class.allowed_templates, true), @resource.template_name), {}, class: 'form-control'
