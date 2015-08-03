@@ -20,7 +20,7 @@ div class="content-#{category}-news"
                   span.post-date
                     = resource.updated_at.strftime('%d %b %y')
                 .post-content
-                  p = preview_text(strip_tags(resource.body), 30)
+                  p == preview_text(strip_tags(resource.body), 30)
                 .btn-holder
                   = link_to t('helpers.label.news.read_more'), article_url(id: resource), class: 'btn'
 
