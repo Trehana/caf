@@ -47,16 +47,17 @@ Rails.application.routes.draw do
     #
     resources :users
     #
-    root to: 'pages#index'
+    root to: 'articles#index'
   end
 
   root to: 'pages#home'
 
-  # devise_for :users, :skip => [:sessions]
+  devise_for :users, skip: [:sessions]
   as :user do
-    get 'signin' => 'devise/sessions#new', :as => :signin
-    delete 'signout' => 'devise/sessions#destroy', :as => :signout
+    get 'signin' => 'devise/sessions#new', as: :signin
+    delete 'signout' => 'devise/sessions#destroy', as: :signout
   end
+
 
   # Catch all error
   match "*path", to: "errors#catch_404", via: :all

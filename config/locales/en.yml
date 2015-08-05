@@ -79,7 +79,10 @@ en:
         forms:
           select_page_template: Select page template
           select_page_template_info: Select a different template if you want to change the layout of the page
-      news:
+        users:
+          sign_in: Sign in
+          sign_out: Sign out
+      article:
         nav_name: 'News'
         title: 'Title'
         body: 'Content'

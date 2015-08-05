@@ -10,5 +10,6 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :profiles, t('helpers.label.profile.nav_name'), admin_profiles_path
     primary.item :galleries, t('helpers.label.gallery.nav_name'), admin_galleries_path
     primary.item :users, t('helpers.label.user.nav_name'), admin_users_path, if: proc { current_user.can? :manage, User }
+    primary.item :galleries, t('helpers.label.common.users.sign_out'), signout_path, method: :delete
   end
 end

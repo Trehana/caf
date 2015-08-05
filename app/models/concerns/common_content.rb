@@ -13,6 +13,7 @@ module CommonContent
       end
 
       event :save_draft do
+        transition draft: :draft
         transition hidden: :draft
         transition published: :draft
       end
@@ -35,6 +36,10 @@ module CommonContent
 
     scope :published_content, -> { where(state: 'published') }
     scope :editors_content, -> { where.not(state: %w(deleted hidden)) }
+
+    def should_generate_new_friendly_id?
+      title_changed?
+    end
   end
 
   private
