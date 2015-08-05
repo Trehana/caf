@@ -1,7 +1,7 @@
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     primary.dom_class = 'nav navbar-nav'
-    primary.item :news, t('helpers.label.news.nav_name'), admin_articles_path
+    primary.item :news, t('helpers.label.article.nav_name'), admin_articles_path
     primary.item :pages, t('helpers.label.page.nav_name'), admin_pages_path
     primary.item :cafes, t('helpers.label.event.nav_name'), admin_events_path
     primary.item :cafes, t('helpers.label.cafe.nav_name'), admin_cafes_path
