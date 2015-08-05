@@ -1546,3 +1546,58 @@ li.post-list {
   padding: 0.5em;
   width: 100%;
 }
+.login-section, .password-section {
+	padding: 40px 0 100px;
+}
+.login-form, .password-form {
+	max-width: 320px;
+    margin: 0 auto;
+    background: #fafafa;
+    border-radius: 3px;
+    border:1px solid #eee;
+
+    h2 {
+		padding: 10px;
+		margin: 0;
+		background-color: #fff;
+		border-radius: 3px 3px 0 0;
+		font-size: 16px;
+		line-height: 18px;
+    	text-align: center;
+    }
+
+    input {
+		box-sizing: border-box;
+    }
+
+    .new_user {
+    	padding:15px 20px;
+    }
+
+    label {
+		font-size: 14px;
+		line-height: 18px;
+    }
+
+    .btn {
+		border: 1px solid $greenColor;
+		color:#fff;
+		font-size: 12px;
+		line-height: 16px;
+		padding: 10px;
+		background:$greenColor;
+		width: 100%;
+
+		&:hover {
+			background: $greenDarkColor;
+			border: 1px solid $greenDarkColor;
+			color:#fff;
+		}
+	}
+}
+.forgot-password-holder, .back-login-holder {
+	text-align:center;
+	padding:10px 0;
+	font-size:14px;
+	line-height:18px;
+}
