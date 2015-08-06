@@ -14,7 +14,7 @@
     = f.text_area :body, class: 'ck_editor_textarea'
     
   = render partial: 'admin/shared/tags', locals: { resource: @resource, tags: 'categories', f: f }
-
+  
   .form-group
     = f.label :cover_photo_select
     = render partial: 'admin/shared/dropzone_single_photo_upload', locals: { photo_class: 'cover_photo', resource: @resource }

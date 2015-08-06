@@ -214,7 +214,7 @@ input[type="text"] {
 #header-wrapper {
 	background:asset-url("banner-default.jpg") no-repeat bottom center;
 	background:asset-url("banner-bottom-effect.png") no-repeat bottom center, asset-url("banner-default.jpg") no-repeat bottom center;
-	min-height:420px;
+	min-height:480px;
 }
 #banner {
 	.title {
@@ -225,7 +225,7 @@ input[type="text"] {
 		font-family: 'Lato', sans-serif;
 		overflow:hidden;
 		padding-top:20px;
-		margin-bottom: 30px;
+		//margin-bottom: 30px;
 		@include box-sizing;
 
 		.text1 {
@@ -252,11 +252,11 @@ input[type="text"] {
 			right:0;
 		}
 		.text4 {
-			font-size:16px;
-			line-height:20px;
-			text-align:center;
+			font-size: 36px;
+			line-height: 40px;
+			text-align: center;
 			font-family: 'Roboto Slab', serif;
-			padding-top:30px;
+			padding-top: 30px;
 		}
 	}
 }
