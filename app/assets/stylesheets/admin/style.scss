@@ -192,4 +192,15 @@ a.delete_dropzone_thumb {
     @include border-radius(10px);
     margin:3px 0px 3px 3px;
   }
+  span {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    height: 100px;
+    width: 100px;
+    left: 0;
+    margin: -50px 0 -47px -100px;
+    padding-left: 40px;
+    position: relative;
+  }
 }

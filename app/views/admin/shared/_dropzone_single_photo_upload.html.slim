@@ -1,6 +1,6 @@
 #photo_select class="single dropzone dz-clickable" rel="#{photo_class}"
       - if resource.send(photo_class)
         .dropzone_thumb
-            = link_to (image_tag resource.send(photo_class).url(:thumb), title: t('common.delete')),
+            = link_to "#{image_tag resource.send(photo_class).url(:thumb), title: t('common.delete')}<span class='glyphicon glyphicon-trash'></span>".html_safe,
                 url_for([:admin, resource, resource.send(photo_class), format: :json]),
                  class: "delete_dropzone_thumb"
