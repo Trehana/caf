@@ -6,6 +6,8 @@ table.table
       th Role
       th Action
   tbody
-    - @users.each do |user|
+    - @resources.each do |resource|
       tr
-        = render user
+        = render partial: 'user', locals: { resource: resource}
+
+= render partial: 'admin/shared/index_footer', locals: { resources: @resources}

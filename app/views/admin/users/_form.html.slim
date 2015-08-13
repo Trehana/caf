@@ -1,0 +1,25 @@
+= form_for [:admin, @resource] do |f|
+  - if @resource.errors.any?
+    h2
+      | #{pluralize(@resource.errors.count, "error")} prohibited this page from being saved:
+    ul
+      - @resource.errors.full_messages.each do |message|
+        li #{message}
+
+  .form-group
+    = f.label :email
+    br
+    = f.text_field :email, class: 'form-control'
+  .form-group
+    = f.label :password
+    br
+    = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.label :role
+    br
+    = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}, {}, class: 'form-control') 
+
+  .form-group
+    .btn-group aria-label="Actions" role="group"
+      = f.button "Create user",value: 'create', class: "btn btn-success"
+      = link_to 'Back', @resource_index_path, class: 'btn btn-default'

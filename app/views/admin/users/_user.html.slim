@@ -1,8 +1,8 @@
 td
-  = link_to user.email, [:admin, user]
+  = link_to resource.email, [:admin, resource]
 td
-  = form_for([:admin, user]) do |f|
+  = form_for([:admin, resource]) do |f|
     = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})
     = f.submit 'Change Role', class: 'button-xs'
 td
-  = link_to("Delete user", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: 'button-xs') unless user == current_user
+  = link_to("Delete user", admin_user_path(resource), data: { confirm: "Are you sure?" }, method: :delete, class: 'button-xs') unless resource == current_user

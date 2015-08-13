@@ -2,16 +2,29 @@ module Admin
   # Users Add/Edit/Delete/Assign role
   class UsersController < BaseController
     def index
-      @users = User.all
+      @resources = User.all.page params[:page]
+    end
+
+    def new
+      @resource = User.new
+    end
+
+    def create
+      @resource = User.new(resource_params)
+      if @resource.save
+        redirect_to admin_users_path, notice: "User created."
+      else
+        render :new
+      end
     end
 
     def show
-      @user = User.find(params[:id])
+      @resource = User.find(params[:id])
     end
 
     def update
-      @user = User.find(params[:id])
-      if @user.update_attributes(resource_params)
+      @resource = User.find(params[:id])
+      if @resource.update_attributes(resource_params)
         redirect_to admin_users_path, notice: "User updated."
       else
         redirect_to admin_users_path, alert: "Unable to update user."
@@ -33,7 +46,7 @@ module Admin
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:user).permit(:role)
+      params.require(:user).permit(:role, :email, :password)
     end
 
     def set_js_vars
