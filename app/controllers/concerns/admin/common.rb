@@ -63,9 +63,14 @@ module Admin
     end
 
     def destroy
-      @resource.move_to_trash
+      if @resource.destroy
+        message = t('common.messages.deleted', resource_class_name: @resource_class_name)
+      else
+        message = @resource.errors.full_messages.to_sentence
+      end
+
       respond_to do |format|
-        format.html { redirect_to @resource_index_path, notice: t('common.messages.deleted', resource_class_name: @resource_class_name) }
+        format.html { redirect_to @resource_index_path, notice: message }
         format.json { head :no_content }
       end
     end
@@ -136,5 +141,6 @@ module Admin
     def filter_allowed_tags
       @allowed_tags = @resource_class.try('allowed_tags')
     end
+    #
   end
 end

@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814005420) do
+ActiveRecord::Schema.define(version: 20150814042910) do
 
   create_table "ad_areas", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "ad_text",    limit: 65535
-    t.string   "css_class",  limit: 255
-    t.string   "state",      limit: 255
-    t.string   "slug",       limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",             limit: 255
+    t.text     "ad_text",           limit: 65535
+    t.string   "css_class",         limit: 255
+    t.string   "state",             limit: 255
+    t.integer  "delete_protection", limit: 1,     default: 0
+    t.string   "slug",              limit: 255
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   create_table "addresses", force: :cascade do |t|
@@ -153,6 +154,7 @@ ActiveRecord::Schema.define(version: 20150814005420) do
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.string   "state",              limit: 255
+    t.integer  "delete_protection",  limit: 1,     default: 0
     t.string   "slug",               limit: 255
     t.integer  "cover_photo_repeat", limit: 1,     default: 0
     t.string   "template_name",      limit: 255

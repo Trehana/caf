@@ -58,6 +58,7 @@ en:
       no_content_found: Sorry, no %{model_name} found!
   authorization:
     not_authorized: 'Insufficient permissions to perfom that action'
+    protected_record: 'Cannot delete a protected record'
   header_banner:
     tag_line: Coffee &amp; Art Fringe Festival Asia
     line_1: "COFFEE &amp; ART"
