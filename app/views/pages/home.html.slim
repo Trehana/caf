@@ -13,10 +13,14 @@
  .wrap
     = render partial: 'home_news', locals: { category: 'coffee', news: Article.coffee_news.limit(4) }
     = render partial: 'home_news', locals: { category: 'art', news: Article.art_news.limit(4) }
+ .ads-728x90
+    = image_tag 'ads-728x90.png', alt: '728x90', class: 'ads'
 
 #section-three.section
   = render partial: 'home_event_gallery'
 
 #section-four.section
   = render partial: 'home_calendar'
+  .ads-728x90
+    = image_tag 'ads-728x90.png', alt: '728x90', class: 'ads'
   
