@@ -64,13 +64,13 @@ module Admin
 
     def destroy
       if @resource.destroy
-        message = t('common.messages.deleted', resource_class_name: @resource_class_name)
+        flash[:info] = t('common.messages.deleted', resource_class_name: @resource_class_name)
       else
-        message = @resource.errors.full_messages.to_sentence
+        flash[:danger] = @resource.errors.full_messages.to_sentence
       end
 
       respond_to do |format|
-        format.html { redirect_to @resource_index_path, notice: message }
+        format.html { redirect_to @resource_index_path }
         format.json { head :no_content }
       end
     end
