@@ -15,7 +15,7 @@
 			position: relative;
 			min-height: 600px;
 
-			
+
 		}
 	}
 	#banner-navigation {
@@ -70,7 +70,7 @@
 	#section-two {
 		background:asset-url("bg-grey.jpg");
 		background:asset-url("home-latest-news-top-bg.jpg") top center no-repeat, asset-url("home-latest-news-bottom-bg.jpg") bottom center no-repeat, asset-url("bg-grey.jpg");
-		
+
 
 	}
 	#section-four {
@@ -157,7 +157,7 @@
 			margin: 0 20px 20px;
 		}
 	}
-	
+
 }
 .contactpage {
 	#header-wrapper {
@@ -569,6 +569,14 @@
 		.active-month {
 			color:#fff;
 			background:$blueColor;
+		}
+	}
+
+	#calendar-view-select {
+		li {
+			a.active {
+				pointer-events: none;
+			}
 		}
 	}
 

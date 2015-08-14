@@ -81,9 +81,13 @@ $(document).ready ->
       prev: 'Previous'
 
 
-    eventSources: [{
-      url: '/calendar'
-    }]
+    eventSources: [
+                    {
+                      url: '/calendar'
+                      data:
+                        tag: tag
+                    }
+                  ]
 
     timeFormat: '',
     dragOpacity: "0.5"
@@ -118,10 +122,8 @@ $(document).ready ->
     $('#calendar_caffa, #calendar_home_caffa').fullCalendar 'next'
     return
 
-
-  $('#month-select').change ->
-    if this.value != ''
-      $('#calendar_caffa').fullCalendar( 'gotoDate', this.value )
-    else
-      $('#calendar_caffa').fullCalendar('today')
-    return
+  monthly_view_default = true
+  $('#calendar-view-select li a').click (e)->
+    e.preventDefault()
+    $('#calendar-view-select li a').toggleClass('active')
+    $('.calendar_views').toggleClass('hidden')
