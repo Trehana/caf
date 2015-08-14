@@ -585,6 +585,96 @@
 		width: 0;
 		overflow: hidden;
 	}
+
+	#calendar-list {
+		ul {
+			border-top:1px solid #eee;
+
+			li {
+				border-bottom:1px solid #eee;
+
+				a {
+					color:#000;
+					.calendar-event {
+						background:#fff;
+						@include transition;
+					}
+					&:hover {
+						.calendar-event {
+							background:#eee;
+						}
+					}
+				}
+			}
+		}
+	}
+	.calendar-event {
+
+		
+		.event-date, .event-title, .event-address {
+			color:#505050;
+		}
+		
+	}
+
+}
+#calendar-view-select {
+	text-align:right;
+	margin-bottom:10px;
+	position: relative;
+	ul {
+		
+		display: inline-block;
+		margin: 0;
+		padding:0;
+		list-style:none;
+		width: 138px;
+		height: 58px;
+		overflow: hidden;
+
+		li {
+			display: block;
+			float: left;
+			width: 68px;
+			height: 54px;
+		}
+	}
+	#month_view, #list_view {
+		width: 100%;
+		height: 58px;
+		display: block;
+		text-indent: -9999px;
+		text-align: left;
+		border:1px solid $blueColor;
+		opacity: 0.4;
+
+		&.active {
+			background-color:$blueColor;
+			opacity: 1;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+	#month_view {
+		background-image:asset-url("icon-month-view-blue.png");
+
+		&.active {
+			background-image:asset-url("icon-month-view-white.png");
+		}
+	}
+	#list_view {
+		background-image:asset-url("icon-list-view-blue.png");
+
+		&.active {
+			background-image:asset-url("icon-list-view-white.png");
+		}
+	}
 }
 .partnerspage {
 	#header-wrapper {
