@@ -1,20 +1,32 @@
 #section-one.section
   .ads-728x90
-    = image_tag 'ads-728x90.png', alt: '728x90', class: 'ads'
+    - ad_area = AdArea.find_by_slug("homepage-728x90-content-area") 
+    - if ad_area
+      .advertisement 
+        == ad_area.ad_text
   .wrap
     .content
     	== content @resource.body
     	.ads-160x600
-			= image_tag 'ads-160x600.png', alt: '160x600', class: 'ads'
+          - ad_area = AdArea.find_by_slug("homepage-160x600-content-area") 
+          - if ad_area
+            .advertisement 
+              == ad_area.ad_text
   .widget
-	<iframe class="iframe-widget" frameborder="0" width="100%" height="100%" src="http://peatix.com/event/107623/share/widget?a=1&t=1" frameborder="0" scrolling="no" ALLOWTRANSPARENCY="true"></iframe>
+    - ad_area = AdArea.find_by_slug("homepage-widget") 
+    - if ad_area
+      .advertisement 
+        == ad_area.ad_text
 	  		
 #section-two.section
  .wrap
     = render partial: 'home_news', locals: { category: 'coffee', news: Article.coffee_news.limit(4) }
     = render partial: 'home_news', locals: { category: 'art', news: Article.art_news.limit(4) }
  .ads-728x90
-    = image_tag 'ads-728x90.png', alt: '728x90', class: 'ads'
+    - ad_area = AdArea.find_by_slug("homepage-728x90-news-area") 
+    - if ad_area
+      .advertisement 
+        == ad_area.ad_text
 
 #section-three.section
   = render partial: 'home_event_gallery'
@@ -22,5 +34,8 @@
 #section-four.section
   = render partial: 'home_calendar'
   .ads-728x90
-    = image_tag 'ads-728x90.png', alt: '728x90', class: 'ads'
+    - ad_area = AdArea.find_by_slug("homepage-728x90-calendar-area") 
+    - if ad_area
+      .advertisement 
+        == ad_area.ad_text
   
