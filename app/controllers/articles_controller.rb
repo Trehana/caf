@@ -30,6 +30,6 @@ class ArticlesController < ApplicationController
   end
 
   def set_index_title
-    set_meta_tags title: "#{t('helpers.label.news.index_title')} | #{t('meta_tags.title')}"
+    set_meta_tags title: "#{t('helpers.label.article.index_title')} | #{t('meta_tags.title')}"
   end
 end
