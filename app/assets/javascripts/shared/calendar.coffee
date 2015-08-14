@@ -109,6 +109,8 @@ $(document).ready ->
       if event.start.getMonth() != view.start.getMonth()
         return false
 
+
+
   $('#calendar-prev').click ->
     $('#calendar_caffa, #calendar_home_caffa').fullCalendar 'prev'
     return
