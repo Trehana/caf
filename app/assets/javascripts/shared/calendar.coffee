@@ -126,4 +126,8 @@ $(document).ready ->
   $('#calendar-view-select li a').click (e)->
     e.preventDefault()
     $('#calendar-view-select li a').toggleClass('active')
-    $('.calendar_views').toggleClass('hidden')
+    $('.calendar_views').toggleClass('hidden', ()->
+      $('.calendar_views').toggleClass('active_view', ()->
+        $('active_view').fullCalendar( 'render' )
+        )
+      )
