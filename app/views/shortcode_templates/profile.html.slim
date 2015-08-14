@@ -1,4 +1,4 @@
-- profile = Profile.find(@attributes[:id].to_s) 
+- profile = Profile.find_by_slug(@attributes[:id].to_s) 
 - if profile
   .col id="profile-#{profile.slug}"
     = image_tag (profile.profile_photo ? profile.profile_photo.url(:standard) : 'img-temp-team'), alt: profile.title

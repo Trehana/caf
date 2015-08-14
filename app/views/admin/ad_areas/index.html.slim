@@ -1,0 +1,19 @@
+= render partial: 'admin/shared/index_header'
+table.table
+  thead
+    tr
+      th = t('helpers.label.ad_area.title')
+      th = t('helpers.label.ad_area.short_code')
+      th.action-holder colspan="2" Actions
+  tbody
+    - @resources.each do |ad_area|
+      tr class="#{ad_area.state}"
+        td = ad_area.title
+        td
+          = "[#{@resource_class_name.underscore} id=\"#{ad_area.slug}\" class=\"#{ad_area.css_class}\"]"
+        td
+          = render partial: 'admin/shared/index_edit_resource', locals: {resource: ad_area}
+        td
+          = render partial: 'admin/shared/index_delete_resource', locals: {resource: ad_area}
+
+= render partial: 'admin/shared/index_footer', locals: { resources: @resources}

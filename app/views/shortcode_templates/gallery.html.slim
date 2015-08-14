@@ -1,4 +1,4 @@
-- gallery = Gallery.find(@attributes[:id].to_s)
+- gallery = Gallery.find_by_slug(@attributes[:id].to_s)
 - if gallery && gallery.pictures
   ul.gallery class="#{gallery.slug}"
     - gallery.pictures.each do |picture|

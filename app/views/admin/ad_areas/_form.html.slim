@@ -1,0 +1,27 @@
+= form_for [:admin, @resource] do |f|
+  - if @resource.errors.any?
+    h2
+      | #{pluralize(@resource.errors.count, "error")} prohibited this page from being saved:
+    ul
+      - @resource.errors.full_messages.each do |message|
+        li #{message}
+  
+  = render partial: 'ad_shortcode', locals: { resource: @resource, f: f }
+  
+  .form-group
+    = f.label :title
+    br
+    = f.text_field :title
+
+  .form-group
+    = f.label :css_class
+    br
+    = f.text_field :css_class
+
+  .form-group
+    = f.label :ad_text
+    br
+    = f.text_area :ad_text
+
+  br
+  = render partial: 'admin/shared/edit_form_footer_no_view_button', locals: {f: f}

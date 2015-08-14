@@ -208,6 +208,12 @@ en:
         bio: 'Biography'
         short_code: 'Short code'
         short_code_instructions: 'Copy and paste the short code to embed the profile'
+      ad_area:
+        nav_name: 'Advertisments'
+        title: 'Name'
+        ad_text: 'Ad code'
+        short_code: 'Short code'
+        short_code_instructions: 'Copy and paste the short code to embed the ads'
       gallery:
         nav_name: 'Image Galleries'
         title: 'Title'

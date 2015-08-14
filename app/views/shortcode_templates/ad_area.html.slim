@@ -1,0 +1,5 @@
+- ad_area = AdArea.find_by_slug(@attributes[:id].to_s) 
+- ad_class = @attributes[:class]
+- if ad_area
+  .advertisement class="#{ad_class}"
+		== ad_area.ad_text
