@@ -1,17 +1,26 @@
 #section-one.section
   .ads-728x90
-    = image_tag 'ads-728x90.png', alt: '728x90'
+    = image_tag 'ads-728x90.png', alt: '728x90', class: 'ads'
   .wrap
     .content
-      == content @resource.body
-
+    	== content @resource.body
+    	.ads-160x600
+			= image_tag 'ads-160x600.png', alt: '160x600', class: 'ads'
+  .widget
+	<iframe class="iframe-widget" frameborder="0" width="100%" height="100%" src="http://peatix.com/event/107623/share/widget?a=1&t=1" frameborder="0" scrolling="no" ALLOWTRANSPARENCY="true"></iframe>
+	  		
 #section-two.section
-  .wrap
+ .wrap
     = render partial: 'home_news', locals: { category: 'coffee', news: Article.coffee_news.limit(4) }
     = render partial: 'home_news', locals: { category: 'art', news: Article.art_news.limit(4) }
+ .ads-728x90
+    = image_tag 'ads-728x90.png', alt: '728x90', class: 'ads'
 
 #section-three.section
   = render partial: 'home_event_gallery'
 
 #section-four.section
-    = render partial: 'home_calendar'
+  = render partial: 'home_calendar'
+  .ads-728x90
+    = image_tag 'ads-728x90.png', alt: '728x90', class: 'ads'
+  

@@ -5,8 +5,17 @@
 
 	}
 	#section-one {
+		padding-top:50px;
 		h1 {
 			display: none;
+		}
+
+		.content {
+			padding-right: 180px;
+			position: relative;
+			min-height: 600px;
+
+			
 		}
 	}
 	#banner-navigation {
@@ -61,6 +70,8 @@
 	#section-two {
 		background:asset-url("bg-grey.jpg");
 		background:asset-url("home-latest-news-top-bg.jpg") top center no-repeat, asset-url("home-latest-news-bottom-bg.jpg") bottom center no-repeat, asset-url("bg-grey.jpg");
+		
+
 	}
 	#section-four {
 		background:asset-url("bg-blue.jpg");
@@ -217,7 +228,7 @@
 
 	.col-1 {
 		float:left;
-		width:34%;
+		width:44%;
 		margin-right:2%;
 
 		img {
@@ -226,7 +237,7 @@
 	}
 	.col-2 {
 		float:left;
-		width:64%;
+		width:54%;
 	}
 }
 .content-what-we-do {
@@ -578,5 +589,11 @@
 			text-align:center;
 			color:$lightColor;
 		}
+	}
+}
+.media-page {
+	img {
+		margin: 0 5px 5px 0;
+		vertical-align: top;
 	}
 }

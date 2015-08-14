@@ -6,13 +6,13 @@ div class="content-#{category}-news"
     ul
       - news.each_with_index do |resource, index|
         - if index == 0
-          li
-            .col
+          
+          li.col
               .post-image
                 = default_resource_image(resource)
                   span.category = category.capitalize
-          li
-            .col
+          
+          li.col
               .post
                 .post-meta
                   h4.post-title
