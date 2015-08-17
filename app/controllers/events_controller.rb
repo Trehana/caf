@@ -11,7 +11,10 @@ class EventsController < ApplicationController
     @title = 'Calendar'
     set_meta_tags title: "#{t('helpers.label.event.calendar.index_title')} | #{t('meta_tags.title')}"
 
-    @tag = params[:tag] if Event.allowed_categories.include?(params[:tag])
+    if Event.allowed_categories.include?(params[:tag])
+      @tag = params[:tag]
+      @body_class << " #{@tag}-related"
+    end
     #
     unless params['start'] && params['end']
       gon.push calendar_tag: @tag
