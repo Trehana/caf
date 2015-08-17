@@ -2,17 +2,17 @@
   .wrap
     .content-news      
       h1
-        = t('helpers.label.news.index_title')
+        = t('helpers.label.article.index_title')
       p
-        = t('helpers.label.news.index_description')
+        = t('helpers.label.article.index_description')
       hr
       
     #category-navigation
       ul
         li#btn-coffee-related
-          = link_to t('helpers.label.news.category_nav.coffee_related'), news_tags_path(tag: 'coffee')
+          = link_to t('helpers.label.article.category_nav.coffee_related'), news_tags_path(tag: 'coffee')
         li#btn-art-related
-          = link_to t('helpers.label.news.category_nav.art_related'), news_tags_path(tag: 'art')
+          = link_to t('helpers.label.article.category_nav.art_related'), news_tags_path(tag: 'art')
 
               
     .news-post-list
