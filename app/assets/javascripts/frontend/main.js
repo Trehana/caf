@@ -1,8 +1,13 @@
 $(document).ready(function(){
 	
 	function startBannerNav() {
-		$("#banner-navigation #coffee_event").addClass('show-sub');
-		$("#banner-navigation").addClass('active')
+
+		if($("#banner-navigation > ul > li").hasClass("selected")){
+			//alert('was triggered');
+		}else {
+			$("#banner-navigation #coffee_event").addClass('show-sub');
+			$("#banner-navigation").addClass('active');
+		}
 	}
 
 	startBannerNav();
@@ -12,7 +17,7 @@ $(document).ready(function(){
 
 	   	if (mWidth < 749) {
 			$("#banner-navigation > ul > li").removeClass('show-sub');
-			$("#banner-navigation").removeClass('active')
+			$("#banner-navigation").removeClass('active');
 		}
 	}
 
@@ -21,11 +26,11 @@ $(document).ready(function(){
 	$("#banner-navigation > ul > li > a").click(function() {
 		if($(this).parent().hasClass('show-sub')){
 			$("#banner-navigation > ul > li").removeClass('show-sub');
-			$("#banner-navigation").removeClass('active')
+			$("#banner-navigation").removeClass('active');
 		}
 		else{
 			$("#banner-navigation > ul > li").removeClass('show-sub');
-			$("#banner-navigation").addClass('active')
+			$("#banner-navigation").addClass('active');
 			$(this).parent().addClass('show-sub');
 		}
 	});

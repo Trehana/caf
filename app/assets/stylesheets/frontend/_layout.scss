@@ -421,6 +421,11 @@ input[type="text"] {
   				a {
   					border-bottom-color:rgba(255,255,255,0);
   					margin-bottom:-1px;
+
+  					&.selected {
+  						opacity: 1;
+  						font-weight: bold;
+  					}
   				}
 
 				.sub {
