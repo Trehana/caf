@@ -22,9 +22,6 @@
           a.menu-exit &times;
         = render_navigation context: :nav_header_top
 
-  #tagline
-    .wrap
-      span == t('header_banner.tag_line')
   #banner
     .wrap
       .home
@@ -32,7 +29,7 @@
           span.text1 == t('header_banner.line_1')
           span.text2 == t('header_banner.line_2')
           span.text3 == t('header_banner.line_3') 
-          p.text4 == t('header_banner.text')
+          //p.text4 == t('header_banner.text')
       #banner-navigation
         = render_navigation context: :nav_header, expand_all: true
         
