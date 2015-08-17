@@ -1,41 +1,31 @@
 #section-one.section
+  .widget
+    - ad_area = AdArea.find_by_slug("homepage-widget") 
+    - if ad_area
+      .advertisement 
+        == ad_area.ad_text
   .ads-728x90
     - ad_area = AdArea.find_by_slug("homepage-728x90-content-area") 
+    - if ad_area
+      .advertisement 
+        == ad_area.ad_text
+  .ads-300x250
+    - ad_area = AdArea.find_by_slug("homepage-300x250-content-area") 
     - if ad_area
       .advertisement 
         == ad_area.ad_text
   .wrap
     .content
     	== content @resource.body
-    	.ads-160x600
-          - ad_area = AdArea.find_by_slug("homepage-160x600-content-area") 
-          - if ad_area
-            .advertisement 
-              == ad_area.ad_text
-  .widget
-    - ad_area = AdArea.find_by_slug("homepage-widget") 
-    - if ad_area
-      .advertisement 
-        == ad_area.ad_text
 	  		
 #section-two.section
  .wrap
     = render partial: 'home_news', locals: { category: 'coffee', news: Article.coffee_news.limit(4) }
     = render partial: 'home_news', locals: { category: 'art', news: Article.art_news.limit(4) }
- .ads-728x90
-    - ad_area = AdArea.find_by_slug("homepage-728x90-news-area") 
-    - if ad_area
-      .advertisement 
-        == ad_area.ad_text
 
 #section-three.section
   = render partial: 'home_event_gallery'
 
 #section-four.section
   = render partial: 'home_calendar'
-  .ads-728x90
-    - ad_area = AdArea.find_by_slug("homepage-728x90-calendar-area") 
-    - if ad_area
-      .advertisement 
-        == ad_area.ad_text
   

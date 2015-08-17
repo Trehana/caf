@@ -11,11 +11,14 @@
 		}
 
 		.content {
-			padding-right: 180px;
+			//padding-right: 180px;
 			position: relative;
-			min-height: 600px;
+			//min-height: 600px;
+		}
 
-
+		
+		.ads-300x250 {
+			display: none;
 		}
 	}
 	#banner-navigation {
@@ -228,16 +231,17 @@
 
 	.col-1 {
 		float:left;
-		width:44%;
+		width:34%;
 		margin-right:2%;
 
 		img {
 			max-width:100%;
+			width: 100%;
 		}
 	}
 	.col-2 {
 		float:left;
-		width:54%;
+		width:64%;
 	}
 }
 .content-what-we-do {

@@ -190,7 +190,13 @@
 	#section-one {
 		.content {
 			padding-right:0;
-		}	
+		}
+		.ads-728x90 {
+			display: none;
+		}
+		.ads-300x250 {
+			display: block;
+		}
 	}
 	
 }
@@ -394,6 +400,10 @@
 			padding-top: 20px;
 			text-align: center;
 			padding-bottom: 20px;
+		}
+		.designby {
+			padding:0 0 20px;
+			text-align: center;
 		}
 	}
 }

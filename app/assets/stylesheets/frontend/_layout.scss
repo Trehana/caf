@@ -450,9 +450,9 @@ input[type="text"] {
 		padding:100px 0;
 		h1 {
 			text-align:center;
-			padding-top: 30px;
+			//padding-top: 30px;
 			padding-bottom: 30px;
-			border-top: 1px solid #ccc;
+			//border-top: 1px solid #ccc;
 			max-width: 520px;
 			margin: 0 auto;
 		}
@@ -1620,7 +1620,7 @@ li.post-list {
 	line-height:18px;
 }
 .ads-728x90 {
-	padding:20px 20px 40px;
+	padding:20px 0;
 	text-align:center;
 	img {
 		max-width: 100%;
@@ -1646,7 +1646,7 @@ li.post-list {
 	}
 }
 .widget {
-	padding:50px 0 0;
+	padding:0 20px;
 	margin:0 auto;
 	min-height:250px;
 	line-height:1px;
