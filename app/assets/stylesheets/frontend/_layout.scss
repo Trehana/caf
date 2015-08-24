@@ -1561,6 +1561,23 @@ li.post-list {
 		}
 	}
 }
+.sponsored-related {
+	#category-navigation {
+		ul {
+			#btn-sponsor-events {
+				a {
+					color:$blueColor;
+					opacity:1;
+				}
+			}
+			#btn-sponsor-events {
+				a {
+					background:asset-url("icon-sponsor-events-blue.png") top center no-repeat;
+				}
+			}
+		}
+	}
+}
 
 .subscription-success {
   font-family: sans-serif;
