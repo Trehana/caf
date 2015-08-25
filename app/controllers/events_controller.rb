@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     if Event.allowed_categories.include?(params[:tag])
       @tag = params[:tag]
       @body_class << " #{@tag}-related"
+      gon.push anchor_location: "category-navigation"
     end
     #
     unless params['start'] && params['end']
