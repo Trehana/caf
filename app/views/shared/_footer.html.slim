@@ -22,10 +22,10 @@
           .social-links
             span.social-title Follow Us:
             ul
-              li = link_to image_tag('icon-facebook.png', alt: 'facebook'), 'https://www.facebook.com/CoffeeArtFringeFestival'
-              li = link_to image_tag('icon-twitter.png', alt: 'twitter'), 'https://twitter.com/caffaasia'
-              li = link_to image_tag('icon-instagram.png', alt: 'instagram'), 'http://instagram.com/caffaasia/'
-              li = link_to image_tag('icon-pinterest.png', alt: 'pinterest'), 'http://pinterest.com/caffaasia/'
+              li = link_to image_tag('icon-facebook.png', alt: 'facebook'), 'https://www.facebook.com/CoffeeArtFringeFestival', target: '_blank'
+              li = link_to image_tag('icon-twitter.png', alt: 'twitter'), 'https://twitter.com/caffaasia', target: '_blank'
+              li = link_to image_tag('icon-instagram.png', alt: 'instagram'), 'http://instagram.com/caffaasia/', target: '_blank'
+              li = link_to image_tag('icon-pinterest.png', alt: 'pinterest'), 'http://pinterest.com/caffaasia/', target: '_blank'
 
           .designby
-            a target="_blank" href="http://zpixel.com" zpixel design
+            = link_to 'zpixel design', 'http://zpixel.com', target: '_blank'
