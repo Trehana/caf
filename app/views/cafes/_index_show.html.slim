@@ -12,5 +12,5 @@
     = link_to t('helpers.label.cafe.read_more'), cafe_path(resource), class: 'btn'
     - unless resource && resource.menu && resource.menu.to_s.strip.blank?
       - menu_url = resource.menu
-      - menu_url.insert(0, "http://") unless menu_url.include?("http://") || menu_url.include?("http://")
+      - menu_url.insert(0, "http://") unless menu_url.include?("http://") || menu_url.include?("https://")
       = link_to t('helpers.label.cafe.view_menu'), menu_url, class: 'btn', target: "_blank"
