@@ -12,21 +12,23 @@
             strong Opening hours:
             == @resource.business_hours.to_html
           - unless @resource.business_type_names.empty?
-          span.type
-            strong Type:
-            = @resource.business_type_names.join(', ')
+            span.type
+              strong Type:
+              = @resource.business_type_names.join(', ')
           - unless @resource.food_type_names.empty?
-          span.food
-            strong Food:
-            = @resource.food_type_names.join(', ')
+            span.food
+              strong Food:
+              = @resource.food_type_names.join(', ')
           - unless @resource.drink_type_names.empty?
-          span.drinks
-            strong Drinks:
-            = @resource.drink_type_names.join(', ')
-          - unless @resource.menu.empty?
-          span.menu
-              .btn-holder
-                = link_to t('helpers.label.cafe.view_menu'), @resource.menu, class: 'btn', target: "_blank"
+            span.drinks
+              strong Drinks:
+              = @resource.drink_type_names.join(', ')
+          - unless @resource && @resource.menu && @resource.menu.to_s.strip.blank?
+            span.menu
+                .btn-holder
+                  - menu_url = @resource.menu
+                  - menu_url.insert(0, "http://") unless menu_url.include?("http://") || menu_url.include?("https://")
+                  = link_to t('helpers.label.cafe.view_menu'), menu_url, class: 'btn', target: "_blank"
 
       .col-2
         == content @resource.body
