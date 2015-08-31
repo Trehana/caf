@@ -7,6 +7,7 @@
 #= require frontend/html5
 #= require frontend/masonry
 #= require frontend/imagesloaded
+#= require frontend/instagramLite
 #= require frontend/main
 #= require moment
 #= require fullcalendar

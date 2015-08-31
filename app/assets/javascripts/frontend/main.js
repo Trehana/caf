@@ -60,6 +60,35 @@ $(document).ready(function(){
 	$grid.imagesLoaded().progress( function() {
 	  $grid.masonry();
 	});
-	  
+	 
+
+	// instagram
+	$('.instagram-caffaasia').instagramLite({
+		username: 'caffaasia',
+		clientID: '199554eb34504658a4770d2859b5a583',
+		urls: true,
+		limit: 16,
+		load_more: '.instagram-load-more',
+		success: function() {			
+		},
+		error: function(errorCode, errorMessage) {
+			console.log('There was an error showing the instagram feed..');
+			if(errorCode && errorMessage) {
+				alert(errorCode +': '+ errorMessage);
+		
+			}
+		
+		}
+	});
+	var $gridInstagram = $('.instagram-caffaasia').masonry({
+	  // options...
+	  itemSelector: '.il-item',
+	  percentPosition: true
+	});
+
+	// layout Masonry after each image loads
+	$gridInstagram.imagesLoaded().progress( function() {
+	  $gridInstagram.masonry();
+	});
 
 });
