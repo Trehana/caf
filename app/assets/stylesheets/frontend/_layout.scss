@@ -476,9 +476,9 @@ input[type="text"] {
 		border-top:1px solid #ccc;
 	}
 	h1 {
-		padding-top:30px;
+		//padding-top:30px;
 		padding-bottom:30px;
-		border-top:1px solid #ccc;
+		//border-top:1px solid #ccc;
 		max-width:520px;
 		margin:0 auto;
 	}
@@ -636,7 +636,7 @@ input[type="text"] {
 				padding:0;
 				li {
 					display:inline-block;
-					margin-left:15px;
+					margin-left:5px;
 
 					a {
 						img {
@@ -1237,8 +1237,8 @@ li.post-list {
 
 			.post-content {
 				display: inline-block;
-				max-height: 110px;
-				min-height:110px;
+				max-height: 100px;
+				min-height:100px;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				vertical-align: top;
@@ -1510,20 +1510,37 @@ li.post-list {
   display: block;
 	}
 }
-.gallery {
+.gallery, .instagram-caffaasia {
 	margin:0 0 20px;
 	padding:0;
 	max-width:100%;
 	list-style:none;
 	position:relative;
 
-	img {
+	img, video {
 		margin:0;
+		max-width: 100%;
 	}
 }
-.gallery-thumb {
+.gallery-thumb, .il-item {
 	float: left;
-  width: 50%;
+  width: 25%;
+  padding: 3px;
+  background:asset-url('loading.gif') no-repeat center center;
+  min-height: 200px;
+}
+.instagram-btn-holder {
+	text-align:center;
+	padding-top:20px;
+	clear:both;
+	.btn {
+		    border: 1px solid #86AE4A;
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 10px 20px;
+    background: #86AE4A;
+	}
 }
 .grid-item--width2 { width: 400px; }
 .coffee-related {

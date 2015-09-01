@@ -212,10 +212,11 @@
 .aboutuspage, .calendarpage, .newspage, .contactpage, .coffeeadventurepage, .partnerspage {
 	#header-wrapper {
 		min-height:430px;
-  		background-size: cover;
+  		//background-size: cover;
 
 		.title {
-  			min-height:298px;
+  			min-height:30px;
+  			margin-bottom: 10px;
 		}
 	}
 }
@@ -606,4 +607,9 @@
 			width: 50%;
 		}
 	}
+}
+.gallery-thumb, .il-item {
+	float: left;
+  width: 50%;
+  padding: 3px;
 }
