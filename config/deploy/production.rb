@@ -1,3 +1,18 @@
+set :stage, :production
+set :branch, ENV['branch'] || 'master'
+set :rails_env, :production
+
+server '128.199.183.73',
+       user: 'rails',
+       roles: %w(web app),
+       ssh_options: {
+         user: 'root', # overrides user setting above
+         keys: %w(/Users/buddhi/.ssh/caffa_rsa),
+         forward_agent: false,
+         auth_methods: %w(publickey)
+       }
+
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
