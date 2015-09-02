@@ -1219,6 +1219,10 @@ li.post-list {
 .cafe-list-post, .news-post-list, .events-post-list {
 	overflow:hidden;
 
+	h3 {
+		text-align: center;
+	}
+
 	> .btn-holder {
 		text-align:center;
 	}
