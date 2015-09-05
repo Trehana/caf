@@ -1,8 +1,8 @@
 # Standard attachment that's not an image
 class AttachmentFile < Asset
   has_attached_file :data,
-                    url: '/assets/attachments/:id/:filename',
-                    path: ':rails_root/public/assets/attachments/:id/:filename'
+                    # url: '/assets/attachments/:id/:filename',
+                    path: '/attachments/:id/:filename'
 
   validates_attachment_presence :data
   validates_attachment_size :data, less_than: 100.megabytes

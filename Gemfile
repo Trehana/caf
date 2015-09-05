@@ -24,6 +24,7 @@ gem 'mysql2'
 # gem 'bcrypt', '~> 3.1.7' # TODO: Use ActiveModel has_secure_password
 gem 'jbuilder', '~> 2.0'
 gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'state_machines-activerecord'
 gem 'nokogiri'
