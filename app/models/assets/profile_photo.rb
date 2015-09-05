@@ -1,6 +1,6 @@
 # Profile photo for Profils
 class ProfilePhoto < Asset
-  has_attached_file :data
+  has_attached_file :data,
                     hash_data: ':class/:attachment/:id/:style/:updated_at',
                     path: '/profile_photos/:hash.:extension',
                     hash_secret: 'lppernpidvyywzxuljqvbwcldganplmzythvizrcvkjlquejfdyewgsyowbojvhneeqopaijhnovhxgqnbevryojpqsmibszekwi',
