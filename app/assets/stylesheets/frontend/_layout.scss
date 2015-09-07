@@ -366,14 +366,12 @@ input[type="text"] {
 
 				 	a {
 				 		display:inline-block;
-				 		font-size:18px;
-				 		line-height:20px;
 				 		text-transform:uppercase;
 				 		border:none;
 				 		color:#fff;
 				 		opacity:0.5;
 				 		@include transition;
-				 		font-size:14px;
+				 		font-size:12px;
 						line-height:16px;
 
 				 		&:hover {
