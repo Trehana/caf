@@ -20,6 +20,7 @@ module Admin
     # GET /pages/new
     def new
       @resource = @resource_class.create
+      @resource.update_attribute(:slug, @resource.id)
       set_js_vars
       respond_to do |format|
         format.html { render :edit }

@@ -11,6 +11,7 @@ module DefaultAddress
         address.errors.full_messages.each do |msg|
           errors[:base] << msg
         end
+        validate_model
       end
     end
 
