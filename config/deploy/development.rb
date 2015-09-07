@@ -2,7 +2,8 @@ set :stage, :development
 set :branch, ENV['branch'] || 'master'
 set :rails_env, :development
 
-server '128.199.252.34',
+server '128.199.183.73',
+        # '128.199.252.34',
        user: 'rails',
        roles: %w(web app),
        ssh_options: {

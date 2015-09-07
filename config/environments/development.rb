@@ -42,5 +42,14 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    url: ':s3_domain_url',
+    s3_credentials: {
+      bucket: 'caffa-zp-production',
+      access_key_id: 'AKIAIENG2WILYI7FM3OQ',
+      secret_access_key: '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'
+    }
+  }
 
 end
