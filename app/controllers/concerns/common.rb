@@ -21,8 +21,12 @@ module Common
         order: defined?(@search_order) ? @search_order : {}
       }
 
-      search_result = @search_critera[:search_fields].collect { |field, value| @resource_class.published_content.search(value, fields: [field], order: @search_critera[:order]).results }.reduce(:&)
-      @resources = Kaminari.paginate_array(search_result).page(params[:page]).per(6)
+      if @resource_class.published_content.exists?
+        search_result = @search_critera[:search_fields].collect { |field, value| @resource_class.published_content.search(value, fields: [field], order: @search_critera[:order]).results }.reduce(:&)
+        @resources = Kaminari.paginate_array(search_result).page(params[:page]).per(6)
+      else
+        @resources = @resource_class.published_content.page params[:page]
+      end
     else
       @resources = @resource_class.published_content.page params[:page]
     end
