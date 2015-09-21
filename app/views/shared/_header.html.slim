@@ -28,10 +28,15 @@
         .title
           //span.text1 == t('header_banner.line_1')
           //span.text2 == t('header_banner.line_2')
-          //span.text3 == t('header_banner.line_3') 
-          span.text1 = banner.line_1
-          span.text2 = banner.line_2
-          span.text3 = banner.line_3 
+          //span.text3 == t('header_banner.line_3')
+          - if !banner.nil?
+              span.text1 = banner.line_1
+              span.text2 = banner.line_2
+              span.text3 = banner.line_3
+          - else
+              span.text1 == t('header_banner.line_1')
+              span.text2 == t('header_banner.line_2')
+              span.text3 == t('header_banner.line_3')   
           //p.text4 == t('header_banner.text')
       #banner-navigation
         = render_navigation context: :nav_header, expand_all: true
