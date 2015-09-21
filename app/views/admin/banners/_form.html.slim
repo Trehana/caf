@@ -1,0 +1,22 @@
+= form_for [:admin, @banner] do |f|
+  - if @banner.errors.any?
+    h2
+      | #{pluralize(@banner.errors.count, "error")} prohibited this page from being saved:
+    ul
+      - @banner.errors.full_messages.each do |message|
+        li #{message}
+
+  .form-group
+    = f.label 'Line 1'
+    = f.text_field :line_1 
+  .form-group
+    = f.label 'Line 2'
+    = f.text_field :line_2   
+    .form-group
+    = f.label 'Line 3'
+    = f.text_field :line_3     
+    
+  .form-group
+    .btn-group aria-label="Actions" role="group"
+      = f.button t("#{@resource}.publish"),value: 'publish', class: "btn btn-success"
+      = link_to 'Back', '/admin/banners/', class: 'btn btn-default'

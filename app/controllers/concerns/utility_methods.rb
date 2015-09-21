@@ -26,7 +26,8 @@ module UtilityMethods
   def set_html_variables
     @parent_category = request.original_fullpath.split('/')[1]
     @body_class = @resource_class.name.underscore unless defined?(@body_class)
-
+    @banner = Banner.first
+    
     title = if defined?(@title)
               "#{@title}"
             elsif defined?(@resource) && @resource.try(:title) && !@resource.try(:title).empty?

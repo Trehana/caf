@@ -7,7 +7,7 @@ server '128.199.183.73',
        roles: %w(web app),
        ssh_options: {
          user: 'root', # overrides user setting above
-         keys: %w(/Users/buddhi/.ssh/caffa_rsa),
+         keys: %w(~/.ssh/caffa_rsa),# %w(/Users/buddhi/.ssh/caffa_rsa)
          forward_agent: false,
          auth_methods: %w(publickey)
        }

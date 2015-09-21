@@ -49,6 +49,8 @@ Rails.application.routes.draw do
     resources :users
     #
     root to: 'articles#index'
+    #
+    resources :banners
   end
 
   root to: 'pages#home'

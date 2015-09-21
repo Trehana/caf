@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814042910) do
+ActiveRecord::Schema.define(version: 20150916082635) do
 
   create_table "ad_areas", force: :cascade do |t|
     t.string   "title",             limit: 255
@@ -82,11 +82,21 @@ ActiveRecord::Schema.define(version: 20150814042910) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "banners", force: :cascade do |t|
+    t.string   "line_1",     limit: 255
+    t.string   "line_2",     limit: 255
+    t.string   "line_3",     limit: 255
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.string   "state",      limit: 255, default: "published"
+    t.string   "title",      limit: 255, default: "Headline Banner"
+    t.string   "slug",       limit: 255
+  end
+
   create_table "cafes", force: :cascade do |t|
     t.string   "title",              limit: 255
     t.string   "slug",               limit: 255
     t.text     "body",               limit: 65535
-    t.string   "menu",               limit: 255
     t.integer  "cover_photo_repeat", limit: 1,     default: 0
     t.string   "state",              limit: 255
     t.datetime "created_at",                                   null: false
@@ -95,6 +105,7 @@ ActiveRecord::Schema.define(version: 20150814042910) do
     t.string   "food",               limit: 255
     t.string   "type",               limit: 255
     t.string   "drinks",             limit: 255
+    t.string   "menu",               limit: 255
   end
 
   create_table "emerging_artists", force: :cascade do |t|
@@ -207,7 +218,7 @@ ActiveRecord::Schema.define(version: 20150814042910) do
   end
 
   add_index "taxons", ["lft"], name: "index_taxons_on_lft", using: :btree
-  add_index "taxons", ["parent_id"], name: "index_taxons_on_parant_id", using: :btree
+  add_index "taxons", ["parent_id"], name: "index_taxons_on_parent_id", using: :btree
   add_index "taxons", ["rgt"], name: "index_taxons_on_rgt", using: :btree
 
   create_table "users", force: :cascade do |t|

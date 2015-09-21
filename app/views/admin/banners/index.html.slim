@@ -1,0 +1,24 @@
+= render partial: 'index_header'
+table.table
+  thead
+    tr
+      th Line 1
+      th Line 2
+      th Line 3
+      th.action-holder colspan="1" Actions
+  tbody
+    - @resources.each do |resource|
+      tr 
+        td
+          = resource.line_1
+        td
+          = resource.line_2
+        td
+          = resource.line_3  
+
+        td
+          = render partial: 'admin/shared/index_edit_resource', locals: {resource: resource}
+        //td
+        //  = render partial: 'admin/shared/index_delete_resource', locals: {resource: resource}
+
+//= link_to t('common.add_resource', resource_class_name: 'Banner Headline'.titleize), url_for([:admin, :banner, action: 'new']), class: 'btn btn-default'

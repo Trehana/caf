@@ -10,7 +10,7 @@ body class="#{@body_class}"
   / include gon inside body. otherwise turbolinks breaks it
   = include_gon
   #container
-    = render partial: 'shared/header', locals: { active_page: @active_page, cover_photo_url: @cover_photo_url, repeat_style: @cover_photo_repeat }
+    = render partial: 'shared/header', locals: { active_page: @active_page, cover_photo_url: @cover_photo_url, repeat_style: @cover_photo_repeat, banner: @banner }
     
     - if notice
       p class="alert alert-success" = notice

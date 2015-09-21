@@ -224,6 +224,8 @@ en:
       user:
         nav_name: 'Users'
         email: 'Email'
+      banner:
+        nav_name: 'Headline Banner'
 
   activerecord:
     attributes:
