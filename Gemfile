@@ -59,4 +59,5 @@ gem 'bower-rails', github: 'rharriso/bower-rails' # Bower package managment for 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
-gem 'puma' # Use Puma as the app server
+gem 'puma' # Use Puma as the app server 
+#test commit
