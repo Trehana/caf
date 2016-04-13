@@ -27,6 +27,6 @@ SimpleNavigation::Configuration.run do |navigation|
       art_spot.item :sponsors, t('nav.header.art_spot.the_galleries'), art_galleries_path
       art_spot.item :photo_log, t('nav.header.art_spot.in_the_studio'), '/art-spot/in-the-studio.html'
     end
-    primary.item :the_caffa_store, "#{image_tag 'img-the-caffa-store.png', alt: t('nav.header.the_caffa_store.the_caffa_store')}".html_safe + "#{t('nav.header.the_caffa_store.the_caffa_store')}", '/the-caffa-store.html'
+    primary.item :the_caffa_store, "#{image_tag 'img-the-caffa-store.png', alt: t('nav.header.the_caffa_store.the_caffa_store')}".html_safe + "#{t('nav.header.the_caffa_store.the_caffa_store')}", 'https://caffaonline.com/'
   end
 end
