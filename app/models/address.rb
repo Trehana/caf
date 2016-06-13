@@ -10,7 +10,8 @@ class Address < ActiveRecord::Base
 
   def to_s
     address_string = Array.new
-    %w(address suburb country city postal_code).each do |field|
+    #%w(address suburb country city postal_code).each do |field|
+    %w(address suburb city country postal_code).each do |field|
       address_string << send(field).strip unless send(field).to_s.strip.blank?
     end
     address_string.join(' ')
