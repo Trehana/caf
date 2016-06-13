@@ -13,6 +13,8 @@ class EventsController < ApplicationController
 
     if Event.allowed_categories.include?(params[:tag])
       @tag = params[:tag]
+      logger = Logger.new(STDOUT)
+      logger.debug "-------- ANALYTICS DATA: #{@tag} ----------"
       @body_class << " #{@tag}-related"
       gon.push anchor_location: "category-navigation"
     end
@@ -25,7 +27,8 @@ class EventsController < ApplicationController
     unless @tag
       @resources = Event.between(params['start'], params['end']) if params['start'] && params['end']
     else
-      @resources = Event.joins(:tags).where(tags: {slug: @tag}).between(params['start'], params['end']) if params['start'] && params['end']
+      #@resources = Event.joins(:tags).where(tags: {slug: @tag}).between(params['start'], params['end']) if params['start'] && params['end']
+      @resources = Event.joins(:tags).where(tags: {name: @tag, type: 'Category'}).between(params['start'], params['end']) if params['start'] && params['end']
     end
 
     respond_to do |format|
