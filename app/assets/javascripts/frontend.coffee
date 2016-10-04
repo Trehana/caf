@@ -3,6 +3,7 @@
 #= require turbolinks
 #= require jquery.turbolinks
 #= require jquery_ujs
+#= require frontend/google_analytics
 #= require frontend/jquery.blueimp-gallery.min
 #= require frontend/html5
 #= require frontend/masonry
@@ -14,3 +15,4 @@
 #= require shared/calendar
 #= require shared/calendar_home_view
 #= require frontend/custom
+
